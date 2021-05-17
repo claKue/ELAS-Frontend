@@ -16,6 +16,7 @@ import Spoa from "./Projects/Spoa/Spoa";
 import StudySoon from "./Projects/StudySoon/StudySoon";
 import Footer from "./Website/Footer/Footer";
 
+
 const useStyles = makeStyles(theme => ({
   gridHeader: {
     marginTop: theme.spacing(4),
@@ -52,7 +53,29 @@ export default function App() {
               <AuthorizedRoute isAuth={isLoggedIn} path='/courseinsights' component={CourseInsights} classes={classes}/>
               <AuthorizedRoute isAuth={isLoggedIn} path='/e3selector' component={E3Selector} classes={classes}/>
               <AuthorizedRoute isAuth={isLoggedIn} path='/ineval' component={InEval} classes={classes}/>
-              <AuthorizedRoute isAuth={isLoggedIn} path='/intogen' component={Intogen} classes={classes}/>
+              <AuthorizedRoute isAuth={isLoggedIn} path='/intogen' component={Intogen} classes={classes}> 
+              {/* <div className="page-container">
+                <div className="content-wrap">
+                <Router>
+                  <Navbar />
+                </Router>
+                </div>
+                <Footer />
+                <div>
+                  <Router basename="/">
+                    <Navbar />
+                    <Switch>
+                      <Route exact path="/" component={Home}/>
+                      <Route path="/Visualization" component={Visualization}/>
+                      <Route path="/Nationality" component={Nationality}/>
+                      <Route path="/Education" component={Education}/>
+                      <Route path="/FindYourType" component={FindYourType}/>
+                      <Route path="/About" component={About}/>
+                    </Switch>
+                  </Router>
+                </div> 
+              </div> */}
+              </AuthorizedRoute>
               <AuthorizedRoute isAuth={isLoggedIn} path='/spoa' component={Spoa} classes={classes}/>
               <AuthorizedRoute isAuth={isLoggedIn} path='/studysoon' component={StudySoon} classes={classes}/>
             </>

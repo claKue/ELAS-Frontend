@@ -1,0 +1,13 @@
+.main-footer {
+    color: #fff;
+    background-color: rgb(44, 44, 44);
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.col-sm {
+    padding-bottom: 50px;
+    margin-left: -120px;
+}
