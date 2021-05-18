@@ -71,46 +71,5 @@
     color: #ff6600;
 }
 
-.chooseNationality {
-    font-size: 25px;
-    margin-top: 40px;
-    padding-left: 65px;
-}
 
-/* .border {
-    color: #ff6600;
-} */
-
-
-
-#countryCmbBox {
-    padding-left: 65px;
-}
-
-.col-lg-3 {
-    padding-left: 65px;
-}
-
-
-
-
-
-
-
-.cardsTitle {
-    font-size: 25px;
-}
-.cards {
-    width: 370px;
-    /* display: flex; */
-    flex-direction: column; 
-    margin-left: 1100px;
-}
-.root:hover {
-    color: #ff6600;
-}
-
-.borderCards {
-    color: rgb(207, 207, 207);
-}
 
