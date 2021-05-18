@@ -3,7 +3,7 @@ import {Link, Router, NavLink} from 'react-router-dom';
 //import {FaBars, FaTimes} from 'react-icons/fa';
 import MenuItems from './MenuItems';
 import './Navbar.css';
-import logo from './logo.png';
+//import logo from './logo.png';
 
 const Navbar = () => {
 
@@ -16,24 +16,8 @@ const Navbar = () => {
         <nav className="nav">
 
             
-
-
-             {/* <nav>
-                <ul>
-                    <li><NavLink to={'/'}> HOME </NavLink></li>
-                    <li> VISUALIZATION
-                        <ul>
-                            <li><NavLink to={'/Nationality'}>NATIONALITY</NavLink></li>
-                            <li><NavLink to={'/Education'}>EDUCATION DEGREE</NavLink></li>
-                        </ul>
-                    </li>
-                    <li><NavLink to={'/FindYourType'}> FIND YOUR TYPE </NavLink></li>
-                    <li><NavLink to={'/About'}> ABOUT US </NavLink></li>
-                </ul>
-            </nav>  */}
-
             <div className="nav-center container">
-                <img className="logo" src={logo} alt="Logo" />
+                {/* <img className="logo" src={logo} alt="Logo" />  */}
     
                 <ul className={click? "nav-list active": "nav-list"}>
                     {MenuItems.map(({id, title, cName}) => 
