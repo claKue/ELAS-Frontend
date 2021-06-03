@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Intogen.css';
 import './Intro.css';
-import img1 from '../components/assets/learning_styles.jpg'
+import img1 from '../components/assets/learning_styles.png'
 
 function Intro() {
 

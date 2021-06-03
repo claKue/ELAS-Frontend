@@ -11,7 +11,7 @@
     align-items: right;
     /* box-shadow:i 0 0 0 1000px; rgba(0,0,0,0.2); */
     object-fit: contain;
-    margin-top:-100px;
+    margin-top:-60px;
 }
 
 .intro-container > h1 {
@@ -36,10 +36,11 @@
     margin-left:5%;
 }
 .imageHome {
-    max-width: 40%;
     object-fit: contain;
+    max-height: 420px;
+    max-width: 420px;
+    margin-top: -35%;
     margin-left: 60%;
-    margin-top: -20%;
 }
 
 @media screen and (max-width: 960px) {
