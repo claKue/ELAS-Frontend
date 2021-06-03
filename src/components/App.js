@@ -54,35 +54,12 @@ export default function App() {
               <AuthorizedRoute isAuth={isLoggedIn} path='/e3selector' component={E3Selector} classes={classes}/>
               <AuthorizedRoute isAuth={isLoggedIn} path='/ineval' component={InEval} classes={classes}/>
               <AuthorizedRoute isAuth={isLoggedIn} path='/intogen' component={Intogen} classes={classes}> 
-              {/* <div className="page-container">
-                <div className="content-wrap">
-                <Router>
-                  <Navbar />
-                </Router>
-                </div>
-                <Footer />
-                <div>
-                  <Router basename="/">
-                    <Navbar />
-                    <Switch>
-                      <Route exact path="/" component={Home}/>
-                      <Route path="/Visualization" component={Visualization}/>
-                      <Route path="/Nationality" component={Nationality}/>
-                      <Route path="/Education" component={Education}/>
-                      <Route path="/FindYourType" component={FindYourType}/>
-                      <Route path="/About" component={About}/>
-                    </Switch>
-                  </Router>
-                </div> 
-              </div> */}
               </AuthorizedRoute>
               <AuthorizedRoute isAuth={isLoggedIn} path='/spoa' component={Spoa} classes={classes}/>
               <AuthorizedRoute isAuth={isLoggedIn} path='/studysoon' component={StudySoon} classes={classes}/>
             </>
           )}
           <Route render={() => <Redirect to={{pathname: "/"}}/>}/>
-
-
         </Grid>
       </Switch>
       <Footer />
