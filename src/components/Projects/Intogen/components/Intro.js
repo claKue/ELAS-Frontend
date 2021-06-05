@@ -3,6 +3,7 @@ import '../Intogen.css';
 import './Intro.css';
 import img1 from '../components/assets/learning_styles.png'
 
+
 function Intro() {
 
     return (
@@ -16,8 +17,8 @@ function Intro() {
                 1- Nationality <br/>
                 2- Education<br/>
                 3- Course suggestion with Learning Styles
+                <img className="imageHome" src={img1} alt="learning styles" />
            </p>
-           <img className="imageHome" src={img1} alt="learning styles" />
         </div>
     )
 }

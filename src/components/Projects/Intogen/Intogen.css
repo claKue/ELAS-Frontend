@@ -53,7 +53,7 @@
 }
 
 .aboutUs-container {
-  margin-top: 75px;
+  margin-top: -5px;
 }
 
 .aboutUsFindType {
@@ -67,7 +67,6 @@
   margin-left:5%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
   'Lucida Sans', Arial, sans-serif;
-  margin-top:50px; 
 }
 
 .aboutusText {
@@ -78,7 +77,7 @@
     text-align: left;
     max-width: 50%;
     margin-left:5%;
-    margin-top:-120px;
+    margin-top:-150px;
 }
 .imageAboutus {
   max-width: 400px;
