@@ -9,12 +9,14 @@ export default function Nationality() {
         <>
             <hr class="border2" data-content="Nationality"/>
             <div className="page-container">
-                <div className="nationality">
+                
                     <div className="leftSide">
                         <p>Choose a Nationality:</p>
                         <div class="col-lg-3">
-                            <select id = "countryCmbBox" class="form-control countrypicker" 
-                                data-live-search="true" onchange="getNationalityAverages()" />
+                            <select className="selectBox">
+                                <option value="None"></option>
+                                <option value="Countires">*Countries*</option>
+                            </select>
                             <hr class="border"/>
                         </div>
                         <p> <b>PLACEHOLDER FOR THE DIAGRAMS </b> <br/>
@@ -42,17 +44,17 @@ export default function Nationality() {
                     </div>
 
                     <div className="rightSide">
-                            <h3>Kolb's Learning Styles</h3>
-                            <hr class="border1"/>
-                            <div className="cards1">
-                                <LearningCards/>
-                            </div>
+                        <h3>Kolb's Learning Styles</h3>
+                        <hr class="border1"/>
+                        <div className="cards1">
+                            <LearningCards/>
+                        </div>
                     </div>
                      
-                </div>  
+                  
                         
             </div>
-            {/* <Footer/>  */}
+            <Footer/> 
         </>
     );
 }

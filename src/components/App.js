@@ -53,8 +53,7 @@ export default function App() {
               <AuthorizedRoute isAuth={isLoggedIn} path='/courseinsights' component={CourseInsights} classes={classes}/>
               <AuthorizedRoute isAuth={isLoggedIn} path='/e3selector' component={E3Selector} classes={classes}/>
               <AuthorizedRoute isAuth={isLoggedIn} path='/ineval' component={InEval} classes={classes}/>
-              <AuthorizedRoute isAuth={isLoggedIn} path='/intogen' component={Intogen} classes={classes}> 
-              </AuthorizedRoute>
+              <AuthorizedRoute isAuth={isLoggedIn} path='/intogen' component={Intogen} classes={classes} /> 
               <AuthorizedRoute isAuth={isLoggedIn} path='/spoa' component={Spoa} classes={classes}/>
               <AuthorizedRoute isAuth={isLoggedIn} path='/studysoon' component={StudySoon} classes={classes}/>
             </>

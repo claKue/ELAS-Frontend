@@ -87,6 +87,12 @@
 
 /* visualization page */
 
+.border {
+  width: 700px;
+  border: 1px solid rgba(0,0,0,.125);
+  margin-top: 10px;
+}
+
 .border1{
   width: 330px;
   border: 1px solid rgba(0,0,0,.125);
@@ -101,36 +107,28 @@
   font-size: 100px;
 }
 
-.rightSide {
-  height: 100%;
-  width: 350px;
-  right: 10px;
-  position: absolute;
-  top: 0px;
-  margin-top: 250px;
-  margin-right: 20px;
-  margin-bottom: 0px;
-}
-
 .cards1 {
   margin-left: -63px;
   padding: 4rem;
-  background: #fff;
+
 }
 
-.leftSide { 
-  height: 100%;
-  width: 700px;
-  left: 10px;
-  position: absolute;
-  padding: 10px;
-  top: 0px;
-  margin-top: 250px;
-  margin-left: 20px;
-  margin-bottom: 0px;
+.page-container {
+  overflow: hidden;
 }
 
-#countryCmbBox {
+.leftSide {
+  width: 750px;
+  float: left;
+
+}
+
+.rightSide {
+  float: right;
+  border-left: 1px solid rgb(255, 102, 0);
+}
+
+#selectBox {
   width: 80px;
 }
 

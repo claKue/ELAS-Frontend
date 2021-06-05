@@ -8,21 +8,22 @@ export default function Education() {
         <>
             <hr class="border2" data-content="Education"/>
             <div className="page-container">
-                <div className="education">
+                
                     <div className="leftSide">
                         <p>Choose your Education Degree:</p>
-                        <div class="col-lg-3">
-                            <select>
+                        <div class="boxes">
+                            <select className="selectBox">
                                 <option value="0">ISE</option>
                             </select>
-                            <select id="degreeCmbBox" onchange="degreeValChanged()">
+                            <select className="selectBox">
                                 <option value="None"></option>
-                                <option value="Bachelors">Bachelor </option>
-                                <option value="Master">Master </option>
+                                <option value="Bachelor">Bachelor</option>
+                                <option value="Master">Master</option>
                             </select>
-                            <select id="studyProgCmbBox" onchange="studyProgValChanged()">
+                            <select className="selectBox">
                                 <option value="None"></option>
-                                </select>
+                                <option value="Program">*Study Programm*</option>
+                            </select>
                             <hr class="border"/>
                         </div>
 
@@ -60,9 +61,9 @@ export default function Education() {
                     </div>
 
                     
-                </div>
+                
             </div>
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }
