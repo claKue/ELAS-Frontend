@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } 
-    from 'C:/Users/clari/Documents/GitHub/ELAS-Frontend/node_modules/recharts';
+    from 'recharts';
 
 const data = [
   {
