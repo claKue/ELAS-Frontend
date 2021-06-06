@@ -78,10 +78,20 @@
     max-width: 50%;
     margin-left:5%;
 }
+
+.aboutusSub {
+  color: rgb(255,102,0);
+  font-size:18px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+  'Lucida Sans', Arial, sans-serif;
+  text-align: left;
+}
+
 .imageAboutus {
-  max-width: 400px;
+  max-width: 500px;
   object-fit: contain;
-  margin-left: 800px;
+  margin-left: 650px;
+  margin-top:-800px;
 }
 .border3{
   width: 360px;

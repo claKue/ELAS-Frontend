@@ -13,6 +13,7 @@ import Footer from '../Footer'
                 <span className="subTitle">Welcome to <b>Intogen </b></span><br/>
             </div>
             <hr class="border4"/>
+            
             <p className="aboutusText">
                 Intogen was originally programmed by students from University Duisburg-Essen's ISE program Computer Engineering department (CE) major (Intelligent Networked Systems).
                 The web application was programmed under the supervision of Prof. Dr. Mohamed Amine Chatti. <br/> <br/>
@@ -23,9 +24,14 @@ import Footer from '../Footer'
                </p>
                <p className="aboutusText">
             <hr class="border1"/>
-                Intogen was later on updated by bachelor Komedia students. Their goal was to implement Intogen into the ELAS platform and improve this web application.
+            <h1 className="aboutusSub">
+                Our new mission:
+            </h1>
+                Intogen was later on updated by us bachelor Komedia students. Our goal was to implement Intogen into the ELAS platform and improve this web application. <br/>
                 Prof. Dr. Mohamed Amine Chatti was also the supervisor in this project. <br/> <br/>
-                </p>
+                 <img className="imageAboutus " src={img2} alt="learning styles" />
+                 </p>
+               
             <Footer/>
         </>
     )
