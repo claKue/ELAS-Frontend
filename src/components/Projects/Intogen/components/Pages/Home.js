@@ -10,6 +10,7 @@ function Home() {
         <>
             <hr class="border2" data-content="Home"/>
             <span className="subTitle">Welcome to <b>Intogen </b></span><br/>
+            <hr class="border3"/>
             <Intro />
             <Cards />
             <Footer /> 

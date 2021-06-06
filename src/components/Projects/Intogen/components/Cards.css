@@ -4,10 +4,10 @@
   font-weight: bold;
 }
 .Cards {
-margin-left: 10px;
+margin-left: 5px;
 float: left;
-  width: 285px;
-  padding: 0 5px;
+  width: 280px;
+  /* padding: 0 5px; */
   justify-content: center;
   margin-bottom:30px;
 }

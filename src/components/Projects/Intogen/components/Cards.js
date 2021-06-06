@@ -64,15 +64,12 @@ export default function OutlinedCard() {
               Active experimenter
             </Typography>
             <Typography variant="body2" component="p">
-              They want practical tasks and very little theory. They learn best from activities where:
-              New experiences are emphasised.
-              The focus is on the present and on doing such activities as games, problem solving,
-              simulations.
-              There is a lot of action and excitement.
-              They can lead and be in the limelight.
-              Ideas are generated without any concern about practical constraints.
-              They have to respond to a challenge and take risks.
-              The central focus is on team problem-solving. 
+            Activists learning style is: „hands-on“. They rely on intuition rather than logic and have a strong preference for „doing“ rather than „thinking“.
+            They use other people’s analysis and take a more practical, experiential approach. 
+            They like new challenges and experiences.
+            They like to take risks. 
+            The central focus is on team problem-solving.
+
             </Typography>
           </CardContent>
           <CardActions>
@@ -88,11 +85,12 @@ export default function OutlinedCard() {
               <Typography paragraph className="paragraphline">
               Acitivists are accomodators:
               </Typography>
-              <Typography paragraph>
-              They have the most hands-on approach, with a strong preference for doing rather than thinking. 
-              When they lean they will ask 'what if?' and 'why not?' to support their action-first approach. 
-              They do not like routine and will take creative risks to see what happens. 
-              They learn better by themselves than with others.
+              <Typography variant="body2" component="p">
+              Accomodators tend to rely on other peoples information. 
+              They are gut oriented people and don’t like logical analysis. <br/>
+              They do not like routine and will take creative risks to see what happens.
+              People with this learning style will as themselves: <br/>
+              ‚What if?‘
               </Typography>
             </CardContent>
           </Collapse>
@@ -113,8 +111,8 @@ export default function OutlinedCard() {
             </Typography>
             <Typography variant="body2" component="p">
       Theorists learning preference involves a logical approach. 
-      Ideas and concepts are more important than people.
-      These people want a good, clear explanation rather than a practical opportunity. 
+      Ideas and concepts are more important than people. <br/>
+      People with this learning style want a good and clear explanation rather than a practical opportunity. 
       They have an understanding of wide-ranging information and organizing it in a clear, logical way.
             </Typography>
           </CardContent>
@@ -133,7 +131,7 @@ export default function OutlinedCard() {
             Theorists are assimilators:
             </Typography>
             <Typography variant="body2" component="p">
-            People who are Assimilators are less focused on people and more interested in ideas and abstract concepts.  
+            Assimilators are less focused on people and more interested in ideas and abstract concepts.  
             They are more attracted to logically sounding theories.
             They prefer readings, lectures and having time to think things through.
             People with this learning style will ask themselves: <br/>
@@ -154,10 +152,10 @@ export default function OutlinedCard() {
             Reflective observer
             </Typography>
             <Typography variant="body2" component="p">
-            Reflectors are able to look at things from different perspectives.
-            They tend to be sensitive and prefer to watch, rather than do.
-            They gather information and use imagination to solve problems. 
-            They are best at viewing concrete situations from a different viewpoints.
+            Reflectors are able to look at things from different perspectives. <br/>
+            They are sensitive people and prefer to watch, rather than do. <br/>
+            People with this learning style like to gather information and use their own imagination to solve problems and conflicts. <br/>
+            They are best at viewing concrete situations from different viewpoints.
             </Typography>
           </CardContent>
           <CardActions>
@@ -175,9 +173,9 @@ export default function OutlinedCard() {
             Reflectors are divergers:
             </Typography>
             <Typography variant="body2" component="p">
-            Diverging learning styles perform better in situations that require idea generating, like brainstorming. 
-            Reflectors have a broad interest in culture and like to gather information.
-            They are interested in people and tend to be very imaginative and emotional. 
+            People with this learning styles perform better in idea generating situations, like brainstorming. 
+            Reflectors have an interest in culture and like to gather information. 
+            They are imaginative, emotional and are interested in people. 
             People with this learning style will ask themselves: <br/>
             ‚Why?‘
             </Typography>
@@ -196,8 +194,8 @@ export default function OutlinedCard() {
             Active experimenter
             </Typography>
             <Typography variant="body2" component="p">
-            Pragmatists like to solve problems and will use their learning to find solutions to practical issues.
-            They prefer technical tasks and are also less interested in people and their personal aspects.
+            Pragmatists like to solve problems and will use their learning to find solutions to practical issues. 
+            People with this learning style prefer technical tasks and are also less interested in people and their personal aspects.
             They are best at finding practical uses for theories and ideas. 
             They make decisions by finding solutions to problems.
             </Typography>
@@ -219,7 +217,8 @@ export default function OutlinedCard() {
             <Typography variant="body2" component="p">
             People with converging learning styles are more attracted to technology. 
             They like to experiment with new ideas and to work with practical applications. 
-            They like to figure out how things work in practise. Pragmatists like facts and effiency. 
+            They like to figure out how things work in practise. 
+            Pragmatists like facts and effiency. 
             People with this learning style will ask themselves: <br/>
             ‚How?‘
             </Typography>

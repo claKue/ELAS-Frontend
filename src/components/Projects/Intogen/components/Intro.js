@@ -19,7 +19,7 @@ function Intro() {
                 <img className="imageHome" src={img1} alt="learning styles" />
 
                 <hr class="border1"/>
-                <b className="descriptions">Following are the descriptions of Kolb's learning styles:</b>
+                <b className="descriptions">Learn more about Kolb's Learning Styles:</b>
            </p>
         </div>
     )

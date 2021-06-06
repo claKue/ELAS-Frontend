@@ -19,7 +19,7 @@
     align-items: right;
     /* box-shadow:i 0 0 0 1000px; rgba(0,0,0,0.2); */
     object-fit: contain;
-    margin-top:-100px;
+    margin-top:-80px;
 }
 
 .intro-container > h1 {
@@ -32,7 +32,7 @@
 }
 
 .intro-container > p {
-    margin-top: 0%;
+    margin-top: 5%;
     width: 95%;
     color: #111;
     font-size: 18px;
@@ -47,8 +47,8 @@
     object-fit: contain;
     max-height: 450px;
     max-width: 450px;
-    margin-top: -58%;
-    margin-left: 110%;
+    margin-top: -300px;
+    margin-left: 115%;
 }
 
 .descriptions {

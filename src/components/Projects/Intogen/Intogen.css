@@ -77,12 +77,23 @@
     text-align: left;
     max-width: 50%;
     margin-left:5%;
-    margin-top:-150px;
 }
 .imageAboutus {
   max-width: 400px;
   object-fit: contain;
   margin-left: 800px;
+}
+.border3{
+  width: 360px;
+  border: 1px solid rgba(0,0,0,.125);
+  margin-left: 5%;
+  margin-top:-10px;
+}
+.border4{
+  width: 360px;
+  border: 1px solid rgba(0,0,0,.125);
+  margin-left: 5%;
+  margin-top:-35px;
 }
 
 /* visualization page */
@@ -98,6 +109,7 @@
   border: 1px solid rgba(0,0,0,.125);
   margin-top: 10px;
 }
+
 
 .visualization {
   background-position: center;
