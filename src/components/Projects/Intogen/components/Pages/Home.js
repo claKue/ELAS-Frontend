@@ -10,7 +10,9 @@ function Home() {
         <>
             <hr class="border2" data-content="Home"/>
             <Intro />
-
+            <div className="Kolbstitle">
+                <h1>Learn more about Kolb's learning styles:</h1>
+            </div>
             <Cards />
             <Footer />
            

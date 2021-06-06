@@ -51,6 +51,7 @@ export default function OutlinedCard() {
 
   return (
     <div>
+
       {/* Card 1: Acitvists */}
       <Card className="Cards" variant="outlined">
     <CardContent>
@@ -62,7 +63,8 @@ export default function OutlinedCard() {
       Active experimenter
       </Typography>
       <Typography variant="body2" component="p">
-      Activists learning style is: „hands-on“. They rely on intuition rather than logic and have a strong preference for „doing“ rather than „thinking“.
+      Activists learning style is: „hands-on“. <br/>
+      They rely on intuition rather than logic and have a strong preference for „doing“ rather than „thinking“.
       They use other people’s analysis and take a more practical, experiential approach. 
       They like new challenges and experiences.
       They like to take risks. 
@@ -83,11 +85,12 @@ export default function OutlinedCard() {
        <Typography paragraph className="paragraphline">
        Acitivists are accomodators:
        </Typography>
-       <Typography paragraph>
+       <Typography variant="body2" component="p">
        Accomodators tend to rely on other peoples information. 
       They are gut oriented people and don’t like logical analysis. 
       They do not like routine and will take creative risks to see what happens.
-      People with this learning style will as themselves: ‚What if?‘
+      People with this learning style will as themselves: <br/>
+      ‚What if?‘
       </Typography>
      </CardContent>
      </Collapse>
@@ -124,11 +127,12 @@ export default function OutlinedCard() {
          <Typography paragraph className="paragraphline">
          Theorists are assimilators:
          </Typography>
-         <Typography paragraph>
+         <Typography variant="body2" component="p">
         People who are Assimilators are less focused on people and more interested in ideas and abstract concepts.  
         They are more attracted to logically sounding theories.
         They prefer readings, lectures and having time to think things through.
-        People with this learning style will ask themselves: ‚What is there I can know?‘
+        People with this learning style will ask themselves: <br/>
+        ‚What is there I can know?‘
         </Typography>
        </CardContent>
        </Collapse>
@@ -165,11 +169,12 @@ export default function OutlinedCard() {
          <Typography paragraph className="paragraphline">
          Reflectors are divergers:
          </Typography>
-         <Typography paragraph>
+         <Typography variant="body2" component="p">
         Diverging learning styles perform better in situations that require idea generating, like brainstorming. 
         Reflectors have a broad interest in culture and like to gather information.
         They are interested in people and tend to be very imaginative and emotional. 
-        People with this learning style will ask themselves: ‚Why?‘
+        People with this learning style will ask themselves: <br/>
+        ‚Why?‘
         </Typography>
        </CardContent>
        </Collapse>
@@ -206,11 +211,12 @@ export default function OutlinedCard() {
          <Typography paragraph className="paragraphline">
          Pragmatists are convergers:
          </Typography>
-         <Typography paragraph >
+         <Typography variant="body2" component="p">
          People with converging learning styles are more attracted to technology. 
          They like to experiment with new ideas and to work with practical applications. 
          They like to figure out how things work in practise. Pragmatists like facts and effiency. 
-        People with this learning style will ask themselves: ‚How?‘
+        People with this learning style will ask themselves: <br/>
+        ‚How?‘
         </Typography>
       </CardContent>
       </Collapse>
