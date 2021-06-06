@@ -70,6 +70,7 @@ render() {
             "Masters"
         ]
       },
+
       {
         type: "dropdown",
         name: "studyprogramm",
@@ -85,7 +86,47 @@ render() {
           "B.Sc. Steel Technology and Metall Forming",
           "B.Sc. Structural Engineering"
         ]
-      }
+      },
+      
+      {
+      type:"dropdown",
+      name: "likedcourses",
+      title: "Please choose a course which you liked the most.",
+      isRequired: true,
+      colCount: 0,
+      choices: [
+        "Discrete Mathematics",
+        "Softwaretechnik",
+        "Rechnerarchtiketur",
+        "Electronic Business",
+        "Wahrscheinlichkeitsrechnung und Statistik",
+        "Sicherheit in Kommunikationsnetzen",
+        "Real-Time Systems",
+        "Mathematics I1",
+        "Mathematics I2",
+        "Regelungstechnik EIT",
+        "Digitale Medien",
+        "Embedded Systems",
+        "Mechanics I1",
+        "Grundlagen der Künstlichen Intelligenz",
+        "Grundlagen der Bildverarbeitung",
+        "Optische Übertragungstechnik",
+      ]
+
+      },
+
+      {
+        type: "radiogroup",
+        name: "gender",
+        title: "What is your Gender?",
+        isRequired: true,
+        colCount: 3,
+        choices: [
+            "Male",
+            "Female",
+            "Other",
+        ]
+      },
     ]
 };
 
