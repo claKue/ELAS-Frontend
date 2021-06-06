@@ -50,54 +50,10 @@ export default function OutlinedCard() {
    };
 
   return (
-<<<<<<< Updated upstream
     <div>
-
-      {/* Card 1: Acitvists */}
-      <Card className="Cards" variant="outlined">
-    <CardContent>
-      <Typography style={{ color:"#FF6600"}} variant="h5" component="h2">
-        ACTIVISTS
-      </Typography>
-      <Typography className={classes.title} color="textSecondary" gutterBottom>
-      Concrete experiencer<br/>
-      Active experimenter
-      </Typography>
-      <Typography variant="body2" component="p">
-      Activists learning style is: „hands-on“. <br/>
-      They rely on intuition rather than logic and have a strong preference for „doing“ rather than „thinking“.
-      They use other people’s analysis and take a more practical, experiential approach. 
-      They like new challenges and experiences.
-      They like to take risks. 
-      The central focus is on team problem-solving.
-      </Typography>
-    </CardContent>
-    <CardActions>
-      <IconButton
-       className={clsx(classes.expand, {
-         [classes.expandOpen]: expanded,
-       })}
-       onClick={handleExpandClick}>
-       <ExpandMoreIcon />
-     </IconButton>
-   </CardActions>     
-   <Collapse in={expanded} timeout="auto" unmountOnExit>
-     <CardContent>
-       <Typography paragraph className="paragraphline">
-       Acitivists are accomodators:
-       </Typography>
-       <Typography variant="body2" component="p">
-       Accomodators tend to rely on other peoples information. 
-      They are gut oriented people and don’t like logical analysis. 
-      They do not like routine and will take creative risks to see what happens.
-      People with this learning style will as themselves: <br/>
-      ‚What if?‘
-      </Typography>
-     </CardContent>
-     </Collapse>
-  </Card>
-=======
     <div className= "page-container">
+      
+      {/* Card 1: Acitvists */}
       <Card className="Cards" variant="outlined">
         <CardContent>
           <Typography style={{ color:"#FF6600"}} variant="h5" component="h2">
@@ -144,7 +100,6 @@ export default function OutlinedCard() {
 
 
 
->>>>>>> Stashed changes
   
   {/* Cards 2: Theorists */}
   <Card className="Cards" variant="outlined">
@@ -271,6 +226,7 @@ export default function OutlinedCard() {
       </CardContent>
       </Collapse>
       </Card>
+      </div>
       </div>
 );
 }
