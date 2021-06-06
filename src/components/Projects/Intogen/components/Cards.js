@@ -50,6 +50,7 @@ export default function OutlinedCard() {
    };
 
   return (
+<<<<<<< Updated upstream
     <div>
 
       {/* Card 1: Acitvists */}
@@ -95,6 +96,55 @@ export default function OutlinedCard() {
      </CardContent>
      </Collapse>
   </Card>
+=======
+    <div className= "page-container">
+      <Card className="Cards" variant="outlined">
+        <CardContent>
+          <Typography style={{ color:"#FF6600"}} variant="h5" component="h2">
+            ACTIVISTS
+          </Typography>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            Concrete experiencer<br/>
+            Active experimenter
+          </Typography>
+          <Typography variant="body2" component="p">
+            They want practical tasks and very little theory. They learn best from activities where:
+            New experiences are emphasised.
+            The focus is on the present and on doing such activities as games, problem solving,
+            simulations.
+            There is a lot of action and excitement.
+            They can lead and be in the limelight.
+            Ideas are generated without any concern about practical constraints.
+            They have to respond to a challenge and take risks.
+            The central focus is on team problem-solving. 
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <IconButton className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}>
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>     
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph className="paragraphline">
+            Acitivists are accomodators:
+            </Typography>
+            <Typography paragraph>
+            They have the most hands-on approach, with a strong preference for doing rather than thinking. 
+            When they lean they will ask 'what if?' and 'why not?' to support their action-first approach. 
+            They do not like routine and will take creative risks to see what happens. 
+            They learn better by themselves than with others.
+            </Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
+
+
+
+>>>>>>> Stashed changes
   
   {/* Cards 2: Theorists */}
   <Card className="Cards" variant="outlined">

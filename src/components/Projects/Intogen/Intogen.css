@@ -38,7 +38,7 @@
     line-height: 2.5;
     font-size: 40px;
     padding: 0 .5em;
-    margin-left: 55px;
+    margin-left: 35px;
   }
 
 /* aboutUs page */
@@ -94,7 +94,7 @@
 }
 
 .border1{
-  width: 330px;
+  width: 360px;
   border: 1px solid rgba(0,0,0,.125);
   margin-top: 10px;
 }
@@ -115,6 +115,7 @@
 
 .page-container {
   overflow: hidden;
+  margin-left: 55px;
 }
 
 .leftSide {
@@ -125,7 +126,7 @@
 
 .rightSide {
   float: right;
-  border-left: 1px solid rgb(255, 102, 0);
+  
 }
 
 #selectBox {

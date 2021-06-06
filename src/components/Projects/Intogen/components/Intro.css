@@ -1,6 +1,4 @@
-.titleHome {
-    font-size: 250%;
-}
+
 .hairline {
     height: 2;
     width: 165;
@@ -47,8 +45,8 @@
 }
 .imageHome {
     object-fit: contain;
-    max-height: 420px;
-    max-width: 420px;
+    max-height: 450px;
+    max-width: 450px;
     margin-top: -58%;
-    margin-left: 120%;
+    margin-left: 110%;
 }
