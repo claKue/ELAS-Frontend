@@ -39,7 +39,7 @@ render() {
                       text: "Disagree" }],
                 rows: [
                  { value: "1", 
-                   text: "I have strong beliefs about what is rigth and wrong, good and bad." }, 
+                   text: "I have strong beliefs about what is right and wrong, good and bad." }, 
                  { value: "2", 
                    text: "I often act without considering the possible consequences." },
                  { value: "3", 
@@ -133,7 +133,7 @@ render() {
             ]
           }
         ]
-      },{
+      }, {
 
         questions: [
           {
@@ -169,8 +169,7 @@ render() {
             ]
           }
         ]
-      },
-      {
+      }, {
         
         questions: [
           {
@@ -182,74 +181,58 @@ render() {
                 "Bachelors",
                 "Masters"
                     ]
-                  }
-                ]
-          }, {
-            
-            questions: [
-              {
-                type: "dropdown",
-                name: "Choose your study programm",
-                isRequired: true,
-                colCount: 0,
-                choices: [
-                  "B.Sc. Computer Engineering (Software Engineering",
-                  "B.Sc. Computer Engineering (Communications",
-                  "B.Sc. Electrical and Electronic Engineering",
-                  "B.Sc. Mechanical Engineering",
-                  "B.Sc. Metallurgy and Metal Forming",
-                  "B.Sc. Steel Technology and Metall Forming",
-                  "B.Sc. Structural Engineering"
+                  }, {
+                    type: "dropdown",
+                    name: "Choose your study programm",
+                    isRequired: true,
+                    colCount: 0,
+                    choices: [
+                      "B.Sc. Computer Engineering (Software Engineering",
+                      "B.Sc. Computer Engineering (Communications",
+                      "B.Sc. Electrical and Electronic Engineering",
+                      "B.Sc. Mechanical Engineering",
+                      "B.Sc. Metallurgy and Metal Forming",
+                      "B.Sc. Steel Technology and Metall Forming",
+                      "B.Sc. Structural Engineering"
+                              ]
+                            }, {
+                              type:"dropdown",
+                              name: "Please choose a course which you liked the most.",
+                              isRequired: true,
+                              colCount: 0,
+                              choices: [
+                                "Discrete Mathematics",
+                                "Softwaretechnik",
+                                "Rechnerarchtiketur",
+                                "Electronic Business",
+                                "Wahrscheinlichkeitsrechnung und Statistik",
+                                "Sicherheit in Kommunikationsnetzen",
+                                "Real-Time Systems",
+                                "Mathematics I1",
+                                "Mathematics I2",
+                                "Regelungstechnik EIT",
+                                "Digitale Medien",
+                                "Embedded Systems",
+                                "Mechanics I1",
+                                "Grundlagen der Künstlichen Intelligenz",
+                                "Grundlagen der Bildverarbeitung",
+                                "Optische Übertragungstechnik",
+                              ]
+                            }, {
+                              type: "radiogroup",
+                              name: "What is your gender",
+                              isRequired: true,
+                              colCount: 3,
+                              choices: [
+                                  "Male",
+                                  "Female",
+                                  "Other",
+                              ]
+                            }
                           ]
-                        }
-                      ]
-      }, {
-        
-        questions: [
-          {
-            type:"dropdown",
-            name: "Please choose a course which you liked the most.",
-            isRequired: true,
-            colCount: 0,
-            choices: [
-              "Discrete Mathematics",
-              "Softwaretechnik",
-              "Rechnerarchtiketur",
-              "Electronic Business",
-              "Wahrscheinlichkeitsrechnung und Statistik",
-              "Sicherheit in Kommunikationsnetzen",
-              "Real-Time Systems",
-              "Mathematics I1",
-              "Mathematics I2",
-              "Regelungstechnik EIT",
-              "Digitale Medien",
-              "Embedded Systems",
-              "Mechanics I1",
-              "Grundlagen der Künstlichen Intelligenz",
-              "Grundlagen der Bildverarbeitung",
-              "Optische Übertragungstechnik",
-            ]
-          }
-        ]
-
-      }, {
-        
-        questions: [
-          {
-              type: "radiogroup",
-              name: "What is your gender",
-              isRequired: true,
-              colCount: 3,
-              choices: [
-                  "Male",
-                  "Female",
-                  "Other",
-              ]
-            }
-          ]
-      },
-  ]
-};
+                        } 
+                     ]
+                  };
 
 
 var surveyRender = !this.state.isCompleted ? (
