@@ -3,7 +3,6 @@ import * as Survey from "survey-react";
 import "survey-react/modern.css";
 import Footer from '../Footer'
 
-
 Survey.StylesManager.applyTheme("modern");
 
 class FindYourType extends Component {
@@ -266,6 +265,5 @@ return (
       );
     }
 }
-
 
 export default FindYourType;

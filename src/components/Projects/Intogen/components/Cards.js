@@ -12,11 +12,11 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './Cards.css';
  
  
- const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles((theme) => ({
     root: {
        maxWidth: 345,
-     },
-     bullet: {
+    },
+    bullet: {
       display: 'inline-block',
       margin: '0 2px',
       transform: 'scale(0.8)',
@@ -28,26 +28,26 @@ import './Cards.css';
       marginBottom: 12,
     },
     // Expanding component
-     expand: {
-       transform: 'rotate(0deg)',
-       marginLeft: 'auto',
-       transition: theme.transitions.create('transform', {
-         duration: theme.transitions.duration.shortest,
-       }),
-     },
-     expandOpen: {
-       transform: 'rotate(180deg)',
-     },
+    expand: {
+      transform: 'rotate(0deg)',
+      marginLeft: 'auto',
+      transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+      }),
+    },
+    expandOpen: {
+      transform: 'rotate(180deg)',
+    },
 
-   }));
+  }));
 
 export default function OutlinedCard() {
   const classes = useStyles();
-   const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(false);
 
-   const handleExpandClick = () => {
+  const handleExpandClick = () => {
      setExpanded(!expanded);
-   };
+  };
 
   return (
     <div>
@@ -99,132 +99,132 @@ export default function OutlinedCard() {
 
 
     
-      {/* Cards 2: Theorists */}
-      <Card className="Cards" variant="outlined">
+        {/* Cards 2: Theorists */}
+        <Card className="Cards" variant="outlined">
           <CardContent>
             <Typography style={{ color:"#FF6600"}} variant="h5" component="h2">
               THEORISTS
             </Typography>
             <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Abstract conceptualiser<br/>
-            Reflective observer
+              Abstract conceptualiser<br/>
+              Reflective observer
             </Typography>
             <Typography variant="body2" component="p">
-      Theorists learning preference involves a logical approach. 
-      Ideas and concepts are more important than people. <br/>
-      People with this learning style want a good and clear explanation rather than a practical opportunity. 
-      They have an understanding of wide-ranging information and organizing it in a clear, logical way.
+              Theorists learning preference involves a logical approach. 
+              Ideas and concepts are more important than people. <br/>
+              People with this learning style want a good and clear explanation rather than a practical opportunity. 
+              They have an understanding of wide-ranging information and organizing it in a clear, logical way.
             </Typography>
           </CardContent>
           <CardActions>
-            <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}>
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>     
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph className="paragraphline">
-            Theorists are assimilators:
-            </Typography>
-            <Typography variant="body2" component="p">
-            Assimilators are less focused on people and more interested in ideas and abstract concepts.  
-            They are more attracted to logically sounding theories.
-            They prefer readings, lectures and having time to think things through.
-            People with this learning style will ask themselves: <br/>
-            ‚What is there I can know?‘
-            </Typography>
-          </CardContent>
+              <IconButton
+                className={clsx(classes.expand, {
+                  [classes.expandOpen]: expanded,
+                })}
+                onClick={handleExpandClick}>
+                <ExpandMoreIcon />
+              </IconButton>
+          </CardActions>     
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography paragraph className="paragraphline">
+                Theorists are assimilators:
+              </Typography>
+              <Typography variant="body2" component="p">
+              Assimilators are less focused on people and more interested in ideas and abstract concepts.  
+              They are more attracted to logically sounding theories.
+              They prefer readings, lectures and having time to think things through.
+              People with this learning style will ask themselves: <br/>
+              ‚What is there I can know?‘
+              </Typography>
+            </CardContent>
           </Collapse>
         </Card>
 
-              {/* Card 3: Reflectors */}
+        {/* Card 3: Reflectors */}
         <Card className="Cards" variant="outlined">
           <CardContent>
             <Typography style={{ color:"#FF6600"}} variant="h5" component="h2">
               REFLECTORS
             </Typography>
             <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Concrete experiencer<br/>
-            Reflective observer
+              Concrete experiencer<br/>
+              Reflective observer
             </Typography>
             <Typography variant="body2" component="p">
-            Reflectors are able to look at things from different perspectives. <br/>
-            They are sensitive people and prefer to watch, rather than do. <br/>
-            People with this learning style like to gather information and use their own imagination to solve problems and conflicts. <br/>
-            They are best at viewing concrete situations from different viewpoints.
+              Reflectors are able to look at things from different perspectives. <br/>
+              They are sensitive people and prefer to watch, rather than do. <br/>
+              People with this learning style like to gather information and use their own imagination to solve problems and conflicts. <br/>
+              They are best at viewing concrete situations from different viewpoints.
             </Typography>
           </CardContent>
           <CardActions>
             <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}>
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>     
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph className="paragraphline">
-            Reflectors are divergers:
-            </Typography>
-            <Typography variant="body2" component="p">
-            People with this learning styles perform better in idea generating situations, like brainstorming. 
-            Reflectors have an interest in culture and like to gather information. 
-            They are imaginative, emotional and are interested in people. 
-            People with this learning style will ask themselves: <br/>
-            ‚Why?‘
-            </Typography>
-          </CardContent>
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded,
+              })}
+              onClick={handleExpandClick}>
+              <ExpandMoreIcon />
+            </IconButton>
+          </CardActions>     
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography paragraph className="paragraphline">
+                Reflectors are divergers:
+              </Typography>
+              <Typography variant="body2" component="p">
+                People with this learning styles perform better in idea generating situations, like brainstorming. 
+                Reflectors have an interest in culture and like to gather information. 
+                They are imaginative, emotional and are interested in people. 
+                People with this learning style will ask themselves: <br/>
+                ‚Why?‘
+              </Typography>
+            </CardContent>
           </Collapse>
         </Card>
 
-            {/* Card 4: Pragmatists */}
+        {/* Card 4: Pragmatists */}
         <Card className="Cards" variant="outlined">
           <CardContent>
             <Typography style={{ color:"#FF6600"}} variant="h5" component="h2">
               PRAGMATISTS
             </Typography>
             <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Abstract conceptualization <br/>
-            Active experimenter
+              Abstract conceptualization <br/>
+              Active experimenter
             </Typography>
             <Typography variant="body2" component="p">
-            Pragmatists like to solve problems and will use their learning to find solutions to practical issues. 
-            People with this learning style prefer technical tasks and are also less interested in people and their personal aspects.
-            They are best at finding practical uses for theories and ideas. 
-            They make decisions by finding solutions to problems.
+              Pragmatists like to solve problems and will use their learning to find solutions to practical issues. 
+              People with this learning style prefer technical tasks and are also less interested in people and their personal aspects.
+              They are best at finding practical uses for theories and ideas. 
+              They make decisions by finding solutions to problems.
             </Typography>
           </CardContent>
           <CardActions>
             <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}>
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>     
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph className="paragraphline">
-            Pragmatists are convergers:
-            </Typography>
-            <Typography variant="body2" component="p">
-            People with converging learning styles are more attracted to technology. 
-            They like to experiment with new ideas and to work with practical applications. 
-            They like to figure out how things work in practise. 
-            Pragmatists like facts and effiency. 
-            People with this learning style will ask themselves: <br/>
-            ‚How?‘
-            </Typography>
-          </CardContent>
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded,
+              })}
+              onClick={handleExpandClick}>
+              <ExpandMoreIcon />
+            </IconButton>
+          </CardActions>     
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography paragraph className="paragraphline">
+                Pragmatists are convergers:
+              </Typography>
+              <Typography variant="body2" component="p">
+                People with converging learning styles are more attracted to technology. 
+                They like to experiment with new ideas and to work with practical applications. 
+                They like to figure out how things work in practise. 
+                Pragmatists like facts and effiency. 
+                People with this learning style will ask themselves: <br/>
+                ‚How?‘
+              </Typography>
+            </CardContent>
           </Collapse>
-          </Card>
+        </Card>
       </div>
     </div>
   );

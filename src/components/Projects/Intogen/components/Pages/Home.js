@@ -4,7 +4,6 @@ import Cards from '../Cards';
 import Footer from '../Footer'
 import img1 from '../assets/learning_styles.png';
 
-
 export default function Home() {
     return (
         <>

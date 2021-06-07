@@ -6,8 +6,7 @@ import logo from './assets/logo.jpg'
 
 function Navbar() {
     const [click, setClick] = useState(false);
-
-    const handleClick = () => setClick(!click); // warum funktioniert handleClick nicht???
+    const handleClick = () => setClick(!click); 
     const closeMobileMenu = () => setClick(false);
 
     return (   
@@ -46,7 +45,6 @@ function Navbar() {
                         </li>
                     </ul>
                 </div>
-                
             </nav>
         </>
     )

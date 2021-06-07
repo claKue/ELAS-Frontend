@@ -4,29 +4,9 @@
   font-weight: bold;
 }
 .Cards {
-margin-left: 5px;
-float: left;
+  margin-left: 5px;
+  float: left;
   width: 280px;
-  /* padding: 0 5px; */
   justify-content: center;
   margin-bottom:30px;
 }
-  @media only screen and (min-width: 1200px) {
-    .content__blog__container {
-      width: 84%;
-    }
-  }
-  
-  @media only screen and (min-width: 1024px) {
-    .cards__items {
-      display: flex;
-    }
-  }
-  
-  @media only screen and (max-width: 1024px) {
-    .cards__item {
-      margin-bottom: 2rem;
-    }
-  }
-
-
