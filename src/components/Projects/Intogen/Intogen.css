@@ -77,13 +77,6 @@
   text-align: left;
 }
 
-.imageAboutus {
-  max-width: 500px;
-  object-fit: contain;
-  margin-left: 650px;
-  margin-top:-800px;
-}
-
 .border4{
   width: 360px;
   border: 1px solid rgba(0,0,0,.125);
@@ -105,12 +98,16 @@
     color: '#A2A2A2';
   }
 
-.imageHome {
+.image {
     object-fit: contain;
     max-height: 450px;
-    max-width: 450px;
-    margin-top: -300px;
-    margin-left: 115%;
+    max-width: 500px;
+    margin-top: -800px;
+    margin-left: 650px;
+}
+
+#imageHome {
+  margin-top: -270px;
 }
 
 .descriptions {

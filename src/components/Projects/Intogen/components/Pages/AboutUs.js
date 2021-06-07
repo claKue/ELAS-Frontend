@@ -21,7 +21,7 @@ import Footer from '../Footer'
                 <h1 className="aboutusSub">Our new mission:</h1>
                 Intogen was later on updated by us bachelor Komedia students. Our goal was to implement Intogen into the ELAS platform and improve this web application. <br/>
                 Prof. Dr. Mohamed Amine Chatti was also the supervisor in this project. <br/> <br/>
-                <img className="imageAboutus " src={img2} alt="learning styles" />
+                <img className="image" src={img2} alt="learning styles" />
             </p>
             <Footer/>
         </>
