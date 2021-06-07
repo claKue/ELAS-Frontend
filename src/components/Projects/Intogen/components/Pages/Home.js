@@ -20,7 +20,7 @@ export default function Home() {
                 1- Nationality <br/>
                 2- Education<br/>
                 3- Course suggestion with Learning Styles
-                <img className="imageHome" src={img1} alt="learning styles" />
+                <img className="image" id="imageHome" src={img1} alt="learning styles" />
 
                 <hr class="border1"/>
                 <b className="descriptions">Learn more about Kolb's Learning Styles:</b>
