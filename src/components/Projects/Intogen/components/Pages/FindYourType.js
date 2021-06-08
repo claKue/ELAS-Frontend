@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import * as Survey from "survey-react";
 import "survey-react/modern.css";
-import Footer from '../Footer'
+import Footer from '../Footer';
+import '../../Intogen.css';
 
 Survey.StylesManager.applyTheme("modern");
 
@@ -20,17 +21,26 @@ class FindYourType extends Component {
   }
 
 render() {
-  
+  var myCss = {
+      matrix: {
+        root: "Intogen.css"
+      }
+  };
+
   var json = {
+
     title: "David Kolb's questionnaire",
+    showProgressBar: "top",
     pages: [
-          {
+          { 
           
             questions: [
+              
               {
                 type: "matrix",
                 name: "Please indicate if you agree or disagree with the following statements!", 
-                isRequired: "true",
+                isRequired: true,
+                isAllRowRequired: true,
                 columns: [ 
                   { value: 1, 
                     text: "Agree" }, 
@@ -57,7 +67,7 @@ render() {
                    text: "I take care over how I interpret data and avoid jumping to conclusions." },
                  { value: "10", 
                    text: "I am attracted more to novel, unusual ideas than to practical ones." }
-                       ]
+                       ],
               }
             ]
       }, {
@@ -66,7 +76,8 @@ render() {
           {
             type: "matrix",
             name: "Good! Now please proceed as before.",
-            isRequired: "true",
+            isRequired: true,
+            isAllRowRequired: true,
             columns: [ 
               { value: 1, 
                 text: "Agree" }, 
@@ -102,7 +113,8 @@ render() {
           {
             type: "matrix",
             name: "Again, please choose if you would rather agree or disagree!",
-            isRequired: "true",
+            isRequired: true,
+            isAllRowRequired: true,
             columns: [ 
               { value: 1, 
                 text: "Agree" }, 
@@ -138,7 +150,8 @@ render() {
           {
             type: "matrix",
             name: "Almost done! Please indicate if you agree or disagree with the presented statements.",
-            isRequired: "true",
+            isRequired: true,
+            isAllRowRequired: true,
             columns: [ 
               { value: 1, 
                 text: "Agree" }, 
@@ -237,6 +250,7 @@ render() {
 var surveyRender = !this.state.isCompleted ? (
   <Survey.Survey 
   json={ json }
+  myCss={ myCss }
   showCompletedPage={false}
   onComplete={this.onCompleteComponent}
   />
