@@ -27,7 +27,7 @@ render() {
         root: "table table-striped",
         // tableWrapper: "sv-matrix",
         rowError: "sv-matrix__row--error",
-        cell: "sv-table__cell sv-matrix__cell",
+        //cell: "sv-table__cell sv-matrix__cell",
         // headerCell: "sv-table__cell sv-table__cell--header",
         label: "sv-item sv-radio sv-matrix__label",
         // itemValue: "sv-visuallyhidden sv-item__control sv-radio__control",
@@ -45,12 +45,18 @@ render() {
 
   var json = {
 
-    title: "David Kolb's questionnaire",
+    title: "David Kolb's Learning Style Questionnaire",
     showProgressBar: "top",
+    showQuestionNumbers: "off",
     pages: [
           { 
           
             questions: [
+
+              {
+                type: "matrix",
+                name: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response."
+              },
               
               {
                 type: "matrix",
