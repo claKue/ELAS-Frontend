@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../Intogen.css'
 import img2 from '../assets/unilogo.png'
 import Footer from '../Footer'
+import {Link, BrowserRouter as Router} from 'react-router-dom';
 
  export default function AboutUs() {
+
+    const [click, setClick] = useState(false);
+    const closeMobileMenu = () => setClick(false);
+
     return (
         <>
             <hr class="border2" data-content="About Us"/>
@@ -14,7 +19,7 @@ import Footer from '../Footer'
                 Intogen was originally programmed by students from University Duisburg-Essen's ISE program Computer Engineering department (CE) major (Intelligent Networked Systems).
                 The web application was programmed under the supervision of Prof. Dr. Mohamed Amine Chatti. <br/> <br/>
                 To provide this application, the students needed to collect data from other ISE students, for which they used Sample Surveys method. <br/>
-                You can see the survey questions under <a className="aboutUsFindType" href="/findyourtype">Find Your Type</a>. <br/>
+                You can see the survey questions under <Link to="/findyourtype" className="aboutUsFindType" onClick={closeMobileMenu}>Find Your Type</Link>. <br/>
                 Each participants information will be handled anonymously. The data will be used for visual analytics to help students find their learning styles and check their suggested courses.
                 Teachers and organisations can also use the service to improve learning experience of students later on when the web service is developed. 
                 <hr class="border1"/>
