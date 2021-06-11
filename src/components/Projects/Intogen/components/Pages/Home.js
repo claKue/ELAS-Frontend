@@ -1,8 +1,9 @@
 import React from 'react';
 import '../../Intogen.css'
-import Cards from '../Cards';
+// import Cards from '../Cards';
 import Footer from '../Footer'
 import img1 from '../assets/learning_styles.png';
+import LearningCards from '../LearningCards.js'
 
 export default function Home() {
     return (
@@ -24,7 +25,8 @@ export default function Home() {
                 <hr class="border1"/>
                 <b className="descriptions">Learn more about Kolb's Learning Styles:</b>
             </p> 
-            <Cards />
+            {/* <Cards /> */}
+            {/* <LearningCards /> */}
             <Footer /> 
         </>
     )

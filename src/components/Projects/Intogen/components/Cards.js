@@ -74,7 +74,7 @@ export default function OutlinedCard() {
             <IconButton className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,
               })}
-              onClick={handleExpandClick}>
+              onClick={handleExpandClick}> 
               <ExpandMoreIcon />
             </IconButton>
           </CardActions>     
