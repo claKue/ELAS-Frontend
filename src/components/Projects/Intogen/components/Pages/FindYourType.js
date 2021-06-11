@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import * as Survey from "survey-react";
-import "survey-react/modern.css";
+import "survey-react/survey.css";
 import Footer from '../Footer';
-import '../../Intogen.css';
 import Results from '../Results'
 
-Survey.StylesManager.applyTheme("modern");
+Survey.StylesManager.applyTheme("orange");
 
 class FindYourType extends Component {
     constructor(props) {
@@ -24,8 +23,24 @@ class FindYourType extends Component {
 render() {
   var myCss = {
       matrix: {
-        root: "Intogen.css"
+
+        root: "table table-striped",
+        // tableWrapper: "sv-matrix",
+        rowError: "sv-matrix__row--error",
+        cell: "sv-table__cell sv-matrix__cell",
+        // headerCell: "sv-table__cell sv-table__cell--header",
+        label: "sv-item sv-radio sv-matrix__label",
+        // itemValue: "sv-visuallyhidden sv-item__control sv-radio__control",
+        itemChecked: "sv-radio--checked",
+        itemDisabled: "sv-item--disabled sv-radio--disabled",
+        itemHover: "sv-radio--allowhover",
+        materialDecorator: "sv-item__decorator sv-radio__decorator",
+        // itemDecorator: "sv-item__svg sv-radio__svg",
+        cellText: "sv-matrix__text",
+        cellTextSelected: "sv-matrix__text--checked",
+        // cellTextDisabled: "sv-matrix__text--disabled",
       }
+      
   };
 
   var json = {
@@ -41,7 +56,7 @@ render() {
                 type: "matrix",
                 name: "Please indicate if you agree or disagree with the following statements!", 
                 isRequired: true,
-                isAllRowRequired: true,
+                //isAllRowRequired: true,
                 columns: [ 
                   { value: 1, 
                     text: "Agree" }, 
@@ -77,8 +92,8 @@ render() {
           {
             type: "matrix",
             name: "Good! Now please proceed as before.",
-            isRequired: true,
-            isAllRowRequired: true,
+            //isRequired: true,
+            //isAllRowRequired: true,
             columns: [ 
               { value: 1, 
                 text: "Agree" }, 
@@ -114,8 +129,8 @@ render() {
           {
             type: "matrix",
             name: "Again, please choose if you would rather agree or disagree!",
-            isRequired: true,
-            isAllRowRequired: true,
+            //isRequired: true,
+            //isAllRowRequired: true,
             columns: [ 
               { value: 1, 
                 text: "Agree" }, 
@@ -151,8 +166,8 @@ render() {
           {
             type: "matrix",
             name: "Almost done! Please indicate if you agree or disagree with the presented statements.",
-            isRequired: true,
-            isAllRowRequired: true,
+            //isRequired: true,
+            //isAllRowRequired: true,
             columns: [ 
               { value: 1, 
                 text: "Agree" }, 
@@ -189,7 +204,7 @@ render() {
           {
             type: "radiogroup",
             name: "What are you currently studying?",
-            isRequired: true,
+            //isRequired: true,
             colCount: 2,
             choices: [
                 "Bachelors",
@@ -198,7 +213,7 @@ render() {
                   }, {
                     type: "dropdown",
                     name: "Choose your study programm",
-                    isRequired: true,
+                    //isRequired: true,
                     colCount: 0,
                     choices: [
                       "B.Sc. Computer Engineering (Software Engineering",
@@ -212,7 +227,7 @@ render() {
                             }, {
                               type:"dropdown",
                               name: "Please choose a course which you liked the most.",
-                              isRequired: true,
+                              //isRequired: true,
                               colCount: 0,
                               choices: [
                                 "Discrete Mathematics",
@@ -233,9 +248,17 @@ render() {
                                 "Optische Übertragungstechnik",
                               ]
                             }, {
+                              type:"dropdown",
+                              name: "Please choose a course wich you disliked the most.",
+                              //isRequired: true,
+                              colCount: 0,
+                              choices: [
+                                "PLACEHOLDER"
+                              ]
+                            }, {
                               type: "radiogroup",
                               name: "What is your gender",
-                              isRequired: true,
+                              //isRequired: true,
                               colCount: 3,
                               choices: [
                                   "Male",
@@ -252,7 +275,7 @@ render() {
 var surveyRender = !this.state.isCompleted ? (
   <Survey.Survey 
   json={ json }
-  myCss={ myCss }
+  css={ myCss }
   showCompletedPage={false}
   onComplete={this.onCompleteComponent}
   />
@@ -270,9 +293,6 @@ return (
     <hr class="border2" data-content="Find your Type"/>
       { surveyRender }
       { onSurveyCompletion }
-      <h1 style={{fontSize: 20, textAlign: "left", marginLeft: "55px" }}>
-        * Requiered fields
-      </h1>
       <Footer/>
     </div>
   </div>
