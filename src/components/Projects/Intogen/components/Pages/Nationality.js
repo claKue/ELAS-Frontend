@@ -12,10 +12,10 @@ export default function Nationality() {
                 <div className="leftSide">
                     <h4>Choose a Nationality:</h4>
                     <div class="boxes">
-                        <select className="selectBox">
+                        <select id="countryBox">
                             <option value="None"></option>
                             <option value="Countries">*Countries*</option>
-                        </select>
+                        </select> 
                         <hr class="border"/>
                     </div>
                     <div className="diagram-container">

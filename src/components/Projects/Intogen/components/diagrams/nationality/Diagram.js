@@ -28,6 +28,8 @@ const data = [
   }
 ];
 
+
+
 export default class Diagram extends PureComponent {
     render() {
         return (
@@ -57,3 +59,72 @@ export default class Diagram extends PureComponent {
         )
     }
 }
+
+
+
+
+
+// import Highcharts from 'highcharts';
+
+// const publicPort = 'https://intogen-backend.herokuapp.com/';
+// const data = '.data/out.csv';
+
+// export default function Diagram() {
+//   const countryBox = document.getElementById('countryBox');
+//       for(const i=0; i<data.length; i++) {
+//         const option = document.createElement("option");
+//         option.text = data[i];
+//           countryBox.add(option);
+//       }
+//   const req = {country:countryBox.value};
+    
+//   $.ajax({
+//       type:'post',
+//       url:publicPort + 'GetUniqueNationalities',
+//       contentType: 'application/json',
+//       data:JSON.stringify(req),
+//       success:function(res) {
+//         Highcharts.chart({
+//           title: {
+//               text: data.title.text
+//           },
+//           tooltip: {
+//               pointFormat: '{series.name}: <b>{point.y}</b>'
+//           },
+//           xAxis: {
+//               categories: data.XAxis.categories
+//           },
+//           yAxis: {
+//               title: {text: "Percentage (%)"},
+//               max: 100
+//           },
+//           labels: {
+//               items: [{
+//                   style: {
+//                       left: '60px',
+//                       top: '0px',
+//                       color: (
+//                           Highcharts.defaultOptions.title.style &&
+//                           Highcharts.defaultOptions.title.style.color
+//                       ) || 'black'
+//                   }
+//               }]
+//           },
+//           series: [{
+//               type: 'column',
+//               name: 'Male',
+//               data: data.barChartData.maleData
+//           }, {
+//               type: 'column',
+//               name: 'Female',
+//               data: data.barChartData.femaleData
+//           }, {
+//               type: 'column',
+//               name: 'Other',
+//               data: data.barChatData.otherData
+//           }]
+//         })
+//       }
+//   })
+  
+// }

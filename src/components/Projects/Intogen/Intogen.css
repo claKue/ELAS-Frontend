@@ -91,6 +91,11 @@
 
 /* home page */
 
+.singleCards {
+  display: flex;
+  flex-direction: row;
+}
+
 .hairline {
     height: 2;
     width: 165;
@@ -163,7 +168,7 @@
   
 }
 
-#selectBox {
+#countryBox {
   width: 80px;
 }
 

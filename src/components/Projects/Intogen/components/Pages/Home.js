@@ -1,9 +1,15 @@
 import React from 'react';
 import '../../Intogen.css'
-// import Cards from '../Cards';
+
+import CardsActivists from '../Cards/CardsActivists';
+import CardsReflectors from '../Cards/CardsReflectors';
+import CardsTheorists from '../Cards/CardsTheorists';
+import CardsPragmatists from '../Cards/CardsPragmatists';
+import Cards from '../Cards/Cards';
+
 import Footer from '../Footer'
 import img1 from '../assets/learning_styles.png';
-import LearningCards from '../LearningCards.js'
+// import LearningCards from '../LearningCards.js'
 
 export default function Home() {
     return (
@@ -25,8 +31,14 @@ export default function Home() {
                 <hr class="border1"/>
                 <b className="descriptions">Learn more about Kolb's Learning Styles:</b>
             </p> 
-            {/* <Cards /> */}
-            {/* <LearningCards /> */}
+
+            {/* style zu singleCards siehe Intogen.css */}
+            <div className="singleCards"> 
+                <CardsActivists />
+                <CardsReflectors />
+                <CardsPragmatists />
+                <CardsTheorists />
+            </div>
             <Footer /> 
         </>
     )
