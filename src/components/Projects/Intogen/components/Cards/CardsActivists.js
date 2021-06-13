@@ -329,7 +329,7 @@ import './Cards.css';
  
   const useStyles = makeStyles((theme) => ({
     root: {
-       maxWidth: 345,
+       maxWidth: 200,
     },
     bullet: {
       display: 'inline-block',
@@ -377,7 +377,7 @@ export default function OutlinedCard() {
               Active experimenter
             </Typography>
             <Typography variant="body2" component="p">
-            Activists learning style is: „hands-on“. They rely on intuition rather than logic and have a strong preference for „doing“ rather than „thinking“.
+            Activists learning style is: „hands-on“. They rely on intuition, not logic and have a strong preference for „doing“ rather than „thinking“.
             They use other people’s analysis and take a more practical, experimental approach. 
             They like new challenges, experiences and take risks.
             The central focus is on team problem-solving.
@@ -398,7 +398,7 @@ export default function OutlinedCard() {
               </Typography>
               <Typography variant="body2" component="p">
               Accomodators tend to rely on other people's information. 
-              They are gut oriented people and don’t like logical analysis. 
+              They are gut oriented people and don’t like logical analysis. <br/>
               They do not like routine and will take creative risks to see what happens.
               People with this learning style will ask themselves: <br/>
               ‚What if?‘

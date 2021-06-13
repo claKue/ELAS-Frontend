@@ -92,8 +92,12 @@
 /* home page */
 
 .singleCards {
-  display: flex;
+  display:flex;
   flex-direction: row;
+  row-gap: 1px;
+  width: 1270px;
+  justify-content: center;
+  margin-bottom:30px;
 }
 
 .hairline {
@@ -112,7 +116,7 @@
     max-height: 450px;
     max-width: 500px;
     margin-top: -800px;
-    margin-left: 650px;
+    margin-left: 800px;
 }
 
 #imageHome {

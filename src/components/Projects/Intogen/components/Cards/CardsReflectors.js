@@ -332,7 +332,7 @@ import './Cards.css';
  
   const useStyles = makeStyles((theme) => ({
     root: {
-       maxWidth: 345,
+       maxWidth: 200,
     },
     bullet: {
       display: 'inline-block',
