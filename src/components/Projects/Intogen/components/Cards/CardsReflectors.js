@@ -368,7 +368,7 @@ export default function OutlinedCard() {
 
   return (
     <div>
-      <div className= "page-container">
+      <div className= "cards-container">
 
 
         {/* Card 3: Reflectors */}

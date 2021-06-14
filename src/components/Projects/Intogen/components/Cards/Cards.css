@@ -8,10 +8,9 @@
   float: left;
   width: 280px;
   justify-content: center;
-  margin-bottom:30px;
+  margin-bottom:20px;
 }
 
-/* .singleCards {
-  margin-right: 5px;
-  margin-left: 55px;
-} */
+.cards-container {
+  margin-right: 20px;
+}

@@ -366,7 +366,7 @@ export default function OutlinedCard() {
 
   return (
     <div>
-      <div className= "page-container">
+      <div className= "cards-container">
     
          {/* Cards 2: Theorists */}
          <Card className="Cards" variant="outlined">
