@@ -3,8 +3,17 @@ import '../../Intogen.css'
 import Footer from '../Footer'
 import LearningCards from '../LearningCards'
 import Diagram from '../diagrams/nationality/Diagram'
+import data from '../diagrams/data/out';
 
 export default function Nationality() {
+
+    console.log(data[0].Nationality);
+
+    // [
+    //     {nationality: 'Pakistan'},
+    //     {nationality: 'Germany'}
+    // ]
+
     return (  
         <> 
             <hr class="border2" data-content="Nationality"/>

@@ -3,6 +3,7 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import Footer from '../Footer';
 import Results from '../Results'
+import '../../Intogen.css'
 
 Survey.StylesManager.applyTheme("orange");
 
@@ -46,7 +47,7 @@ render() {
 
   var json = {
 
-    title: "David Kolb's Learning Style Questionnaire",
+    // title: "David Kolb's Learning Style Questionnaire",
     showProgressBar: "top",
     showQuestionNumbers: "off",
     pages: [
@@ -305,12 +306,13 @@ var onSurveyCompletion = this.state.isCompleted ? (
 
 return (
   <div className="App">
-    <div>
     <hr class="border2" data-content="Find your Type"/>
-      { surveyRender }
-      { onSurveyCompletion }
-      <Footer/>
+    <div className="page-container">
+      <span className="subTitle">David Kolb's Learning Style <b>Questionnaire</b></span><br/>
+        { surveyRender }
+        { onSurveyCompletion }
     </div>
+    <Footer/>
   </div>
       );
     }
