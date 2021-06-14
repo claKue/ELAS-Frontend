@@ -394,7 +394,7 @@ export default function OutlinedCard() {
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph className="paragraphline">
-              Acitivists are accomodators:
+              Activists are accomodators:
               </Typography>
               <Typography variant="body2" component="p">
               Accomodators tend to rely on other people's information. 
