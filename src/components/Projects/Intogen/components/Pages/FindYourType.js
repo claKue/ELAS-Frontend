@@ -43,6 +43,7 @@ render() {
       
   };
 
+
   var json = {
 
     title: "David Kolb's Learning Style Questionnaire",
@@ -54,15 +55,15 @@ render() {
             questions: [
 
               {
-                type: "matrix",
+                type: "radiogroup",
                 name: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response."
               },
               
               {
                 type: "matrix",
-                name: "Please indicate if you agree or disagree with the following statements!", 
-                isRequired: true,
-                //isAllRowRequired: true,
+                name: "Questions 1-10", 
+                title: "Please indicate if you agree or disagree with the following statements!",
+                isAllRowRequired: true,
                 columns: [ 
                   { value: 1, 
                     text: "Agree" }, 
@@ -97,8 +98,8 @@ render() {
         questions: [
           {
             type: "matrix",
-            name: "Good! Now please proceed as before.",
-            //isRequired: true,
+            name: "Questions 11-20",
+            title:"Good! Now please proceed as before.",
             //isAllRowRequired: true,
             columns: [ 
               { value: 1, 
@@ -134,8 +135,8 @@ render() {
         questions: [
           {
             type: "matrix",
-            name: "Again, please choose if you would rather agree or disagree!",
-            //isRequired: true,
+            name: "Questions 21-30",
+            title: "Again, please choose if you would rather agree or disagree!",
             //isAllRowRequired: true,
             columns: [ 
               { value: 1, 
@@ -171,8 +172,8 @@ render() {
         questions: [
           {
             type: "matrix",
-            name: "Almost done! Please indicate if you agree or disagree with the presented statements.",
-            //isRequired: true,
+            name: "Questions 31-40",
+            title: "Almost done! Please indicate if you agree or disagree with the presented statements.",
             //isAllRowRequired: true,
             columns: [ 
               { value: 1, 
@@ -207,10 +208,12 @@ render() {
       {
         
         questions: [
+          
           {
             type: "radiogroup",
-            name: "What are you currently studying?",
-            //isRequired: true,
+            name: "BA/MA",
+            title: "What are you currently studying?",
+            isRequired: true,
             colCount: 2,
             choices: [
                 "Bachelors",
@@ -218,8 +221,9 @@ render() {
                     ]
                   }, {
                     type: "dropdown",
-                    name: "Choose your study programm",
-                    //isRequired: true,
+                    name: "study-programm",
+                    title: "Choose your study programm.",
+                    isRequired: true,
                     colCount: 0,
                     choices: [
                       "B.Sc. Computer Engineering (Software Engineering",
@@ -232,8 +236,9 @@ render() {
                               ]
                             }, {
                               type:"dropdown",
-                              name: "Please choose a course which you liked the most.",
-                              //isRequired: true,
+                              name: "most-liked",
+                              title: "Please choose a course which you liked the most.",
+                              isRequired: true,
                               colCount: 0,
                               choices: [
                                 "Discrete Mathematics",
@@ -255,22 +260,27 @@ render() {
                               ]
                             }, {
                               type:"dropdown",
-                              name: "Please choose a course wich you disliked the most.",
-                              //isRequired: true,
+                              name: "most-disliked",
+                              title: "Please choose a course wich you disliked the most.",
+                              isRequired: true,
                               colCount: 0,
                               choices: [
                                 "PLACEHOLDER"
                               ]
                             }, {
                               type: "radiogroup",
-                              name: "What is your gender",
-                              //isRequired: true,
+                              name: "gender",
+                              title: "Please name your gender.",
+                              isRequired: true,
                               colCount: 3,
                               choices: [
                                   "Male",
                                   "Female",
                                   "Other",
                               ]
+                            }, {
+                              type: "radiogroup",
+                              name: "* requiered fields"
                             }
                           ]
                         } 
@@ -280,8 +290,8 @@ render() {
 
 var surveyRender = !this.state.isCompleted ? (
   <Survey.Survey 
-  json={ json }
-  css={ myCss }
+  json={json}
+  css={myCss}
   showCompletedPage={false}
   onComplete={this.onCompleteComponent}
   />
