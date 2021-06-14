@@ -70,7 +70,7 @@ function LearningCards() {
                             They use other people’s analysis and take a more practical, experimental approach. 
                             They like new challenges, experiences and take risks.
                             The central focus is on team problem-solving. <br/>
-                            <b>Activistis are accomodators:</b> <br/>
+                            <b>Activists are accomodators:</b> <br/>
                             Accomodators tend to rely on other people's information. 
                             They are gut oriented people and don’t like logical analysis.
                             They do not like routine and will take creative risks to see what happens.
