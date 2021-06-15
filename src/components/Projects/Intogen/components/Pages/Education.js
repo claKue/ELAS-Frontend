@@ -4,7 +4,25 @@ import LearningCards from '../LearningCards'
 import Footer from '../Footer'
 import Diagram from '../diagrams/nationality/Diagram'
 
+import data from '../diagrams/data/out';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+
 export default function Education() {
+
+    function getUnique(arr, index) {
+        const unique = arr
+             .map(e => e[index])
+             // store the keys of the unique objects
+             .map((e, i, final) => final.indexOf(e) === i && i)
+             // eliminate the dead keys & store unique objects
+            .filter(e => arr[e]).map(e => arr[e]);      
+        return unique;
+    }
+
+    const uniqueStudyPrograms = getUnique(data,'Study_program');  
+    const major = getUnique(data, 'Major');
+
     return (
         <>
             <hr class="border2" data-content="Education"/>
@@ -12,20 +30,35 @@ export default function Education() {
                 <div className="leftSide">
                     <h4>Choose your Education Degree:</h4>
                     <div class="boxes">
-                        <select className="selectBox">
-                            <option value="0">ISE</option>
-                        </select>
-                        <select className="selectBox">
-                            <option value="None"></option>
-                            <option value="Bachelor">Bachelor</option>
-                            <option value="Master">Master</option>
-                        </select>
-                        <select className="selectBox">
-                            <option value="None"></option>
-                            <option value="Program">*Study Programm*</option>
-                        </select>
-                        <hr class="border"/>
+                        {/* <Autocomplete
+                            id="combo-box-demo"
+                            options={ise}
+                            getOptionLabel={(option) => option.ISE}
+                            style={{ width: 100, marginRight: 10 }}
+                            size= {"small"}
+                            renderInput={(params) => <TextField {...params} label="ISE" variant="outlined" />}
+                        /> */}                        
+                        
+                        <Autocomplete
+                            id="combo-box-demo"
+                            options={major}
+                            getOptionLabel={(option) => option.Major} 
+                            style={{ width: 200, marginRight: 10 }}
+                            size= {"small"}
+                            // onChange={handleSelect}
+                            renderInput={(params) => <TextField {...params} label="Major" variant="outlined" />}
+                        />
+                        <Autocomplete
+                            id="combo-box-demo"
+                            options={uniqueStudyPrograms}
+                            getOptionLabel={(option) => option.Study_program} 
+                            style={{ width: 400, marginRight: 10 }}
+                            size= {"small"}
+                            // onChange={handleSelect}
+                            renderInput={(params) => <TextField {...params} label="Study program" variant="outlined" />}
+                        />
                     </div>
+                    <hr class="border"/>
                     <div className="diagram-container">
                         <Diagram />
                     </div>

@@ -5,11 +5,13 @@ import CardsActivists from '../Cards/CardsActivists';
 import CardsReflectors from '../Cards/CardsReflectors';
 import CardsTheorists from '../Cards/CardsTheorists';
 import CardsPragmatists from '../Cards/CardsPragmatists';
-import Cards from '../Cards/Cards';
+// import Cards from '../Cards/Cards';
 
 import Footer from '../Footer'
 import img1 from '../assets/learning_styles.png';
 // import LearningCards from '../LearningCards.js'
+
+import Icons from '../Icons';
 
 export default function Home() {
     return (
@@ -42,6 +44,7 @@ export default function Home() {
                     <CardsPragmatists />
                     <CardsTheorists />
                 </div>
+                <Icons/>
             </div>
             <Footer /> 
         </>

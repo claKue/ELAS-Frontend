@@ -3,6 +3,7 @@ import '../../Intogen.css'
 import img2 from '../assets/unilogo.png'
 import Footer from '../Footer'
 import {Link, BrowserRouter as Router} from 'react-router-dom';
+import Icons from '../Icons';
 
  export default function AboutUs() {
 
@@ -29,8 +30,12 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
                         Intogen was later on updated by us bachelor Komedia students. Our goal was to implement Intogen into the ELAS platform and improve this web application. <br/>
                         Prof. Dr. Mohamed Amine Chatti was also the supervisor in this project. 
                     </p>
-                    <img className="image2" src={img2} alt="ELAS Logo" />
+                    
                 </p>
+                <img className="image2" src={img2} alt="ELAS Logo" />
+                <div className="iconsAboutUs">
+                    <Icons/>
+                </div>
             </div>
             <Footer/>
         </>

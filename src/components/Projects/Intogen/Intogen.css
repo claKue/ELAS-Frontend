@@ -88,12 +88,18 @@
   margin-top: -2px;
 }
 
+
 .image2 {
   object-fit: contain;
     max-height: 450px;
-    max-width: 500px;
+    max-width: 400px;
     margin-top: -100px;
     margin-left: 745px;
+}
+
+.iconsAboutUs {
+  margin-top: 200px;
+  margin-bottom: -50px;
 }
 
 /* home page */
@@ -124,6 +130,11 @@
 }
 
 /* visualization page */
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+}
 
 .border {
   width: 700px;

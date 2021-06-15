@@ -11,28 +11,24 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 export default function Nationality() {
     // console.log(data[0].Nationality);
 
-    
     function getUnique(arr, index) {
-
         const unique = arr
              .map(e => e[index])
-      
              // store the keys of the unique objects
              .map((e, i, final) => final.indexOf(e) === i && i)
-      
              // eliminate the dead keys & store unique objects
             .filter(e => arr[e]).map(e => arr[e]);      
-      
-         return unique;
+        return unique;
     }
 
-    // hier müsstet ihr dann statt Nationality Study Program o.ä. nehmen (genau so benannt wie in out.js)
     const uniqueNationalities = getUnique(data,'Nationality');  
   
     // [
     //     {nationality: 'Pakistan'},
     //     {nationality: 'Germany'}
     // ]
+
+    const handleSelect = (events, values) => {console.log(values)}
 
     return (  
         <> 
@@ -44,10 +40,11 @@ export default function Nationality() {
                         <Autocomplete
                             id="combo-box-demo"
                             options={uniqueNationalities}
-                            // hier statt option.Nationality dann option.Study_program o.ä.
                             getOptionLabel={(option) => option.Nationality} 
                             style={{ width: 200 }}
-                            renderInput={(params) => <TextField {...params} label="Countries" variant="outlined" />}
+                            size= {"small"}
+                            onChange={handleSelect}
+                            renderInput={(params) => <TextField {...params} label="Nationality" variant="outlined" />}
                         />
                     </div>
                     <hr class="border"/>
