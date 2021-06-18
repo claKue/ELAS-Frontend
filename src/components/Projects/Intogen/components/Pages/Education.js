@@ -22,6 +22,7 @@ export default function Education() {
 
     const uniqueStudyPrograms = getUnique(data,'Study_program');  
     const major = getUnique(data, 'Major');
+    const handleSelect = (event, values) => {console.log(values)}
 
     return (
         <>
@@ -45,16 +46,18 @@ export default function Education() {
                             getOptionLabel={(option) => option.Major} 
                             style={{ width: 200, marginRight: 10 }}
                             size= {"small"}
-                            // onChange={handleSelect}
+                            onChange = {handleSelect}
                             renderInput={(params) => <TextField {...params} label="Major" variant="outlined" />}
                         />
+                        
+
                         <Autocomplete
                             id="combo-box-demo"
                             options={uniqueStudyPrograms}
                             getOptionLabel={(option) => option.Study_program} 
                             style={{ width: 400, marginRight: 10 }}
                             size= {"small"}
-                            // onChange={handleSelect}
+                            onChange={handleSelect}
                             renderInput={(params) => <TextField {...params} label="Study program" variant="outlined" />}
                         />
                     </div>
@@ -75,3 +78,4 @@ export default function Education() {
         </>
     );
 }
+
