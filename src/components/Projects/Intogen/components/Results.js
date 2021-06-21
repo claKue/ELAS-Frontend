@@ -7,7 +7,6 @@ import './Results.css';
 export default function Nationality() {
     return (  
         <> 
-            <div className="page-container">
                 <div className="leftSide">
                     <h4>Results of your test</h4>
                     <div className="textDescription">
@@ -77,7 +76,6 @@ export default function Nationality() {
                         <LearningCards/>
                     </div>
                 </div>       
-            </div> 
         </>
     );
 }

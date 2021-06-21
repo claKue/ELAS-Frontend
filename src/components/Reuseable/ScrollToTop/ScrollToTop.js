@@ -12,11 +12,11 @@ const useStyles = makeStyles(theme => ({
     bottom: theme.spacing(5.5),
     position: 'fixed',
     transition: "all .3s linear",
-    color: theme.palette.common.white,
-    backgroundColor: theme.palette.primary.light,
+    color: theme.palette.common.white, 
+    backgroundColor: "rgb(255, 102, 0)",
     '&:hover': {
       color: theme.palette.common.white,
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: "rgb(255, 167, 109)",
     },
   },
 }))

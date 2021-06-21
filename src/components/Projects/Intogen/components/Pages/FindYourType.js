@@ -5,6 +5,8 @@ import Footer from '../Footer';
 import Results from '../Results'
 import '../../Intogen.css'
 
+import Nationality from './Nationality';
+
 Survey.StylesManager.applyTheme("orange");
 
 class FindYourType extends Component {
@@ -209,7 +211,6 @@ render() {
       {
         
         questions: [
-          
           {
             type: "radiogroup",
             name: "BA/MA",
@@ -217,7 +218,7 @@ render() {
             isRequired: true,
             colCount: 2,
             choices: [
-                "Bachelors",
+                "Bachelor",
                 "Masters"
                     ]
                   }, {

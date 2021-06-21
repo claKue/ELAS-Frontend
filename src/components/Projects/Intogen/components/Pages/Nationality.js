@@ -8,6 +8,10 @@ import data from '../diagrams/data/out';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
+import DiagramTesting from '../DiagramTesting'
+
+
+
 export default function Nationality() {
     // console.log(data[0].Nationality);
 
@@ -29,6 +33,7 @@ export default function Nationality() {
     // ]
 
     const handleSelect = (events, values) => {console.log(values)}
+    
 
     return (  
         <> 
@@ -60,7 +65,13 @@ export default function Nationality() {
                     </div>
                 </div>       
             </div>
+            <DiagramTesting />
+
             <Footer/> 
         </>
     );
 }
+
+
+
+
