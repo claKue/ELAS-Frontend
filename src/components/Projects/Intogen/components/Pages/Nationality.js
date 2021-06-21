@@ -32,7 +32,20 @@ export default function Nationality() {
     //     {nationality: 'Germany'}
     // ]
 
-    const handleSelect = (events, values) => {console.log(values)}
+    const handleSelect = (events, values) => {
+        const filter = data.filter(a => a.Nationality == values.Nationality)
+        
+        let activistAverage = 0;
+        for(let i = 0; i<filter.length; i++) {
+            // filter[i].Activist
+            activistAverage += filter[i].Activist
+        }
+        let result = activistAverage / filter.length
+        
+        console.log(filter)
+        console.log(result.toFixed(2))
+    }
+        
     
 
     return (  

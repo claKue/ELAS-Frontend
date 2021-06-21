@@ -1,140 +1,141 @@
 import React, { Component, useState, useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import out from '../data/out'
+import data from '../data/out'
 
-// const Diagram = () => {
-//   const [options, setOptions] = useState({
-//     title: {
-//       text: "Learners' Overview"
-//     },
-//     // series: [{ data: [] }],
-//     series: [{
-//             name: 'Female',
-//             data: [out.Activist, out.Reflector, out.Theorist, out.Pragmatist]
-      
-//         }, {
-//             name: 'Male',
-//             data: [out.Activist, out.Reflector, out.Theorist, out.Pragmatist]
-      
-//         }, {
-//             name: 'Other',
-//             data: [out.Activist, out.Reflector, out.Theorist, out.Pragmatist]
-      
-//         }],
-//     chart: {
-//       type: 'column'
-//     },
-//         xAxis: {
-//             categories: [
-//                 'Activist',
-//                 'Reflector',
-//                 'Theorist',
-//                 'Pragmatist'
-//             ],
-//             crosshair: true
-//         },
-//         yAxis: {
-//             min: 0,
-//             title: {
-//                 text: 'Percentage (%)'
-//             }
-//         },
-//         tooltip: {
-//             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-//             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-//                 '<td style="padding:0"><b>{point.y:.1f}%</b></td></tr>',
-//             footerFormat: '</table>',
-//             shared: true,
-//             useHTML: true
-//         },
-//         plotOptions: {
-//             column: {
-//                 pointPadding: 0.2,
-//                 borderWidth: 0
-//             }
-//         }
-//   });
-
-//   useEffect(() => {
-//     fetch("out.js")
-//       .then(response => {
-//         return response.json();
-//       })
-//       .then(data => {
-//         setOptions({ series: [{ data: out }] });
-//       });
-//   }, []);
-
-//   return <HighchartsReact highcharts={Highcharts} options={options} />;
-// };
-
-// export default Diagram;
-
-const options = {
-  chart: {
-    type: 'column'
-  },
-  title: {
+const Diagram = () => {
+  const [options, setOptions] = useState({
+    title: {
       text: "Learners' Overview"
-  },
-  xAxis: {
-      categories: [
-          'Activist',
-          'Reflector',
-          'Theorist',
-          'Pragmatist'
-      ],
-      crosshair: true
-  },
-  yAxis: {
-      min: 0,
-      title: {
-          text: 'Percentage (%)'
-      }
-  },
-  tooltip: {
-      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-          '<td style="padding:0"><b>{point.y:.1f}%</b></td></tr>',
-      footerFormat: '</table>',
-      shared: true,
-      useHTML: true
-  },
-  plotOptions: {
-      column: {
-          pointPadding: 0.2,
-          borderWidth: 0
-      }
-  },
-  series: [{
-      name: 'Female',
-      data: [49.9, 71.5, 106.4, 129.2]
+    },
+    // series: [{ data: [] }],
+    series: [{
+            name: 'Female',
+            data: [data.Activist, data.Reflector, data.Theorist, data.Pragmatist]
+      
+        }, {
+            name: 'Male',
+            data: [data.Activist, data.Reflector, data.Theorist, data.Pragmatist]
+      
+        }, {
+            name: 'Other',
+            data: [data.Activist, data.Reflector, data.Theorist, data.Pragmatist]
+      
+        }],
+    chart: {
+      type: 'column'
+    },
+        xAxis: {
+            categories: [
+                'Activist',
+                'Reflector',
+                'Theorist',
+                'Pragmatist'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Percentage (%)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}%</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        }
+  });
 
-  }, {
-      name: 'Male',
-      data: [83.6, 78.8, 98.5, 93.4]
+  useEffect(() => {
+    fetch("out.js")
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setOptions({ series: [{ data: data }] });
+      });
+  }, []);
 
-  }, {
-      name: 'Other',
-      data: [48.9, 38.8, 39.3, 41.4]
 
-  }]
-}
-
-
-class Diagram extends Component {
-
-  render() {
-    return(
-      <div className="Diagram">
-        <HighchartsReact highcharts={Highcharts} options={options} />
-      </div>
-    )
-  }
-}
+  return <HighchartsReact highcharts={Highcharts} options={options} />;
+};
 
 export default Diagram;
+
+// const options = {
+//   chart: {
+//     type: 'column'
+//   },
+//   title: {
+//       text: "Learners' Overview"
+//   },
+//   xAxis: {
+//       categories: [
+//           'Activist',
+//           'Reflector',
+//           'Theorist',
+//           'Pragmatist'
+//       ],
+//       crosshair: true
+//   },
+//   yAxis: {
+//       min: 0,
+//       title: {
+//           text: 'Percentage (%)'
+//       }
+//   },
+//   tooltip: {
+//       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+//       pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+//           '<td style="padding:0"><b>{point.y:.1f}%</b></td></tr>',
+//       footerFormat: '</table>',
+//       shared: true,
+//       useHTML: true
+//   },
+//   plotOptions: {
+//       column: {
+//           pointPadding: 0.2,
+//           borderWidth: 0
+//       }
+//   },
+//   series: [{
+//       name: 'Female',
+//       data: [49.9, 71.5, 106.4, 129.2]
+
+//   }, {
+//       name: 'Male',
+//       data: [83.6, 78.8, 98.5, 93.4]
+
+//   }, {
+//       name: 'Other',
+//       data: [48.9, 38.8, 39.3, 41.4]
+
+//   }]
+// }
+
+
+// class Diagram extends Component {
+
+//   render() {
+//     return(
+//       <div className="Diagram">
+//         <HighchartsReact highcharts={Highcharts} options={options} />
+//       </div>
+//     )
+//   }
+// }
+
+// export default Diagram;
 
 
 // import 'c3.min.css';
