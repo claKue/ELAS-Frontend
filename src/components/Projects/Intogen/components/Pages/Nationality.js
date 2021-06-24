@@ -30,17 +30,17 @@ export default function Nationality() {
 
     const handleSelect = (events, values) => {
         const filter = data.filter(a => a.Nationality == values.Nationality)
-        console.log(filter)
+        // console.log(filter)
 
         const nationalityMales = filter.filter(t=>t.Gender ==='Male');
-        console.log("This are the males from this nationality: ", nationalityMales)
+        // console.log(nationalityMales)
 
         const nationalityFemales = filter.filter(t=>t.Gender ==='Female');
-        console.log("This are the females from this nationality: ", nationalityFemales)
+        // console.log(nationalityFemales)
 
 
-
-        // // filter males for average
+        // filter males and females in general
+        // // males 
         // const maleFilter = (a) => {
         //     return a.Gender == "Male";
         // }
@@ -48,19 +48,13 @@ export default function Nationality() {
         // let males = data.filter(maleFilter);
         // console.log(males);
 
-        // // filter females for average
+        // // females
         // const femaleFilter = (a) => {
         //     return a.Gender == "Female";
         // }
 
         // let females = data.filter(femaleFilter);
         // console.log(females);
-
-         
-
-        const nothing = 0;
-
-
 
 
         // Male Average Nationality Activist
@@ -141,7 +135,7 @@ export default function Nationality() {
             <hr class="border2" data-content="Nationality"/>
             <div className="page-container">
                 <div className="leftSide">
-                    <h4>Choose a Nationality:</h4>
+                    <h4>Choose your <b>Nationality:</b></h4>
                     <div class="boxes">
                         <Autocomplete
                             id="combo-box-demo"
@@ -153,6 +147,9 @@ export default function Nationality() {
                             renderInput={(params) => <TextField {...params} label="Nationality" variant="outlined" />}
                         />
                     </div>
+                    <p className="subtitlesDiagram">
+                        Following are the learning types' averages of your nationality.
+                    </p>
                     <hr class="border"/>
                     <div className="diagram-container">
                         <Diagram females={females} males={males} categories={category}/>

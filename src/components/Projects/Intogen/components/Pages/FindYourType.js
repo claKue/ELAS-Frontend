@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom'
 
 <script src="https://unpkg.com/survey-react"></script>
 
-import Nationality from './Nationality';
+
 
 Survey.StylesManager.applyTheme("orange");
 

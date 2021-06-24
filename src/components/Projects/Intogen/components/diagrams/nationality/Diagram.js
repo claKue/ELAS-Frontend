@@ -17,6 +17,7 @@ function Diagram(props) {
     },
     yAxis: {
         min: 0,
+        max: 100,
         title: {
             text: 'Percentage (%)'
         }
@@ -37,18 +38,18 @@ function Diagram(props) {
     },
     series: [{
         name: 'Male',
-        data: props.males
-  
+        data: props.males,
+        color: Highcharts.getOptions().colors[1] 
     },
     {
         name: 'Female',
-        data: props.females
-  
+        data: props.females,
+        color: Highcharts.getOptions().colors[3]
     }, 
     {
         name: 'Other',
-        data: []
-  
+        data: [],
+        color: Highcharts.getOptions().colors[6]
     }
     ]
   }

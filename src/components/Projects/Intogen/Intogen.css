@@ -178,6 +178,12 @@
   float: right;
 }
 
+.subtitlesDiagram {
+  font-size: 18px;
+  max-width: 70%;
+  margin-top: 10px;
+}
+
 /* findYourType page */
 
 .findyourtype {
