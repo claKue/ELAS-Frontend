@@ -36,19 +36,20 @@ function Diagram(props) {
         }
     },
     series: [{
-        name: 'all students from this nationality',
-        data: props.options
+        name: 'Male',
+        data: props.males
+  
+    },
+    {
+        name: 'Female',
+        data: props.females
+  
+    }, 
+    {
+        name: 'Other',
+        data: []
   
     }
-    // {
-    //     name: 'Male',
-    //     data: [activistAverage, reflectorAverage, theoristAverage, pragmatistAverage]
-  
-    // }, {
-    //     name: 'Other',
-    //     data: [activistAverage, reflectorAverage, theoristAverage, pragmatistAverage]
-  
-    // }
     ]
   }
 
