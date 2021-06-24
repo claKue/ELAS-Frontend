@@ -1,13 +1,12 @@
-
 import React, {useState} from 'react';
 import '../../Intogen.css'
 import LearningCards from '../LearningCards'
 import Footer from '../Footer'
 import Diagram from '../diagrams/nationality/Diagram'
-
 import data from '../diagrams/data/out';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+
 
 export default function Education() {
 
@@ -30,6 +29,7 @@ export default function Education() {
     const handleSelect = (events, values) => {
     const filter = data.filter(a => a.Study_program == values.Study_program)
 
+        // Male, Activist Average
         let activistSum = 0;
         for(let i = 0; i<filter.length; i++) {
             activistSum += filter[i].Activist
@@ -37,7 +37,7 @@ export default function Education() {
         let activistAverage = activistSum / filter.length
         console.log("Activist Average: " + activistAverage)
 
-
+        // Male, Reflector Average
         let reflectorSum = 0;
         for(let i = 0; i<filter.length; i++) {
             reflectorSum += filter[i].Reflector
@@ -45,7 +45,7 @@ export default function Education() {
         let reflectorAverage = reflectorSum / filter.length
         console.log("Reflector Average: " + reflectorAverage)
 
-
+        // Male, Theorist Average
         let theoristSum = 0;
         for(let i = 0; i<filter.length; i++) {
             theoristSum += filter[i].Theorist
@@ -53,13 +53,16 @@ export default function Education() {
         let theoristAverage = theoristSum / filter.length
         console.log("Theorist Average: " + theoristAverage)
 
-
+        // Male, Pragmatist Average
         let pragmatistSum = 0;
         for(let i = 0; i<filter.length; i++) {
             pragmatistSum += filter[i].Pragmatist
         }
         let pragmatistAverage = pragmatistSum / filter.length
         console.log("Pragmatist Average: " + pragmatistAverage)
+
+        //Female, Activist Average
+        
 
         setOption([activistAverage, reflectorAverage, theoristAverage, pragmatistAverage])
         setCategory(['Activist','Reflector','Theorist','Pragmatist'])
