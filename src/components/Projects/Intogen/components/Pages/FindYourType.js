@@ -2,28 +2,31 @@ import React, { Component } from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import Footer from '../Footer';
-import Results from '../Results'
-import '../../Intogen.css'
+import Results from '../Results';
+import '../../Intogen.css';
+import ReactDOM from 'react-dom'
+
+<script src="https://unpkg.com/survey-react"></script>
 
 import Nationality from './Nationality';
 
 Survey.StylesManager.applyTheme("orange");
 
-class FindYourType extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
+// class FindYourType extends Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
 
-        }
-        this.onCompleteComponent = this.onCompleteComponent.bind(this)
-        }
-  onCompleteComponent = () => {
-    this.setState({
-      isCompleted: true
-    })
-  }
+//         }
+//         this.onCompleteComponent = this.onCompleteComponent.bind(this)
+//         }
+//   onCompleteComponent = () => {
+//     this.setState({
+//       isCompleted: true
+//     })
+//   }
 
-render() {
+// render() {
   var myCss = {
       matrix: {
 
@@ -66,7 +69,7 @@ render() {
                 type: "matrix",
                 name: "Questions 1-10", 
                 title: "Please indicate if you agree or disagree with the following statements!",
-                isAllRowRequired: true,
+                // isAllRowRequired: true,
                 columns: [ 
                   { value: 1, 
                     text: "Agree" }, 
@@ -215,7 +218,7 @@ render() {
             type: "radiogroup",
             name: "BA/MA",
             title: "What are you currently studying?",
-            isRequired: true,
+            // isRequired: true,
             colCount: 2,
             choices: [
                 "Bachelor",
@@ -225,7 +228,7 @@ render() {
                     type: "dropdown",
                     name: "study-programm",
                     title: "Choose your study programm.",
-                    isRequired: true,
+                    // isRequired: true,
                     colCount: 0,
                     choices: [
                       "B.Sc. Computer Engineering (Software Engineering",
@@ -240,7 +243,7 @@ render() {
                               type:"dropdown",
                               name: "most-liked",
                               title: "Please choose a course which you liked the most.",
-                              isRequired: true,
+                              // isRequired: true,
                               colCount: 0,
                               choices: [
                                 "Discrete Mathematics",
@@ -264,7 +267,7 @@ render() {
                               type:"dropdown",
                               name: "most-disliked",
                               title: "Please choose a course wich you disliked the most.",
-                              isRequired: true,
+                              // isRequired: true,
                               colCount: 0,
                               choices: [
                                 "PLACEHOLDER"
@@ -273,7 +276,7 @@ render() {
                               type: "radiogroup",
                               name: "gender",
                               title: "Please name your gender.",
-                              isRequired: true,
+                              // isRequired: true,
                               colCount: 3,
                               choices: [
                                   "Male",
@@ -289,9 +292,26 @@ render() {
                      ]
                   };
 
+class FindYourType extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+
+        }
+        this.onCompleteComponent = this.onCompleteComponent.bind(this)
+        }
+  onCompleteComponent = () => {
+    this.setState({
+      isCompleted: true
+    })
+  }
+                
+
+render() {
 
 var surveyRender = !this.state.isCompleted ? (
   <Survey.Survey 
+  // model={model}
   json={json}
   css={myCss}
   showCompletedPage={false}
@@ -302,6 +322,7 @@ var surveyRender = !this.state.isCompleted ? (
 var onSurveyCompletion = this.state.isCompleted ? (
   <div>
       <Results />
+      {/* {JSON.stringify(model.data, null, 3)} */}
   </div>
 ) : null;
 
@@ -317,6 +338,7 @@ return (
   </div>
       );
     }
-}
+  }
+
 
 export default FindYourType;
