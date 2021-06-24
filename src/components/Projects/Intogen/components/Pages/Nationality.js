@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import '../../Intogen.css'
 import Footer from '../Footer'
 import LearningCards from '../LearningCards'
@@ -8,12 +8,10 @@ import data from '../diagrams/data/out';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
-import DiagramTesting from '../DiagramTesting'
-
-
-
 export default function Nationality() {
-    // console.log(data[0].Nationality);
+
+    const [option, setOption] = useState([]);
+    const [category, setCategory] = useState([]);
 
     function getUnique(arr, index) {
         const unique = arr
@@ -27,25 +25,95 @@ export default function Nationality() {
 
     const uniqueNationalities = getUnique(data,'Nationality');  
   
-    // [
-    //     {nationality: 'Pakistan'},
-    //     {nationality: 'Germany'}
-    // ]
 
     const handleSelect = (events, values) => {
         const filter = data.filter(a => a.Nationality == values.Nationality)
-        
-        let activistAverage = 0;
-        for(let i = 0; i<filter.length; i++) {
-            // filter[i].Activist
-            activistAverage += filter[i].Activist
-        }
-        let result = activistAverage / filter.length
-        
         console.log(filter)
-        console.log(result.toFixed(2))
-    }
+
+        // // filter males for average
+        // const maleFilter = (a) => {
+        //     return a.Gender == "Male";
+        // }
+
+        // let males = data.filter(maleFilter);
+        // console.log(males);
+
+        // // filter females for average
+        // const femaleFilter = (a) => {
+        //     return a.Gender == "Female";
+        // }
+
+        // let females = data.filter(femaleFilter);
+        // console.log(females);
+
         
+        // Male Average Nationality Activist
+        let activistSum = 0;
+        for(let i = 0; i<filter.length; i++) {
+            activistSum += filter[i].Activist
+        }
+        let activistAverage = activistSum / filter.length
+        console.log("Activist Average: " + activistAverage)
+
+        // // Female Average Nationality Activist
+        // let activistSum = 0;
+        // for(let i = 0; i<filter.length; i++) {
+        //     activistSum += filter[i].Activist
+        // }
+        // let activistAverage = activistSum / filter.length
+
+        // Male Average Nationality Reflector
+        let reflectorSum = 0;
+        for(let i = 0; i<filter.length; i++) {
+            reflectorSum += filter[i].Reflector
+        }
+        let reflectorAverage = reflectorSum / filter.length
+        console.log("Reflector Average: " + reflectorAverage)
+
+        // // Female Average Nationality Reflector
+        // let reflectorSum = 0;
+        // for(let i = 0; i<filter.length; i++) {
+        //     reflectorSum += filter[i].Reflector
+        // }
+        // let reflectorAverage = reflectorSum / filter.length
+
+        // Male Average Nationality Theorist
+        let theoristSum = 0;
+        for(let i = 0; i<filter.length; i++) {
+            theoristSum += filter[i].Theorist
+        }
+        let theoristAverage = theoristSum / filter.length
+        console.log("Theorist Average: " + theoristAverage)
+
+        // // Female Average Nationality Theorist
+        // let theoristSum = 0;
+        // for(let i = 0; i<filter.length; i++) {
+        //     theoristSum += filter[i].Theorist
+        // }
+        // let theoristAverage = theoristSum / filter.length
+
+        // Male Average Nationality Pragmatist
+        let pragmatistSum = 0;
+        for(let i = 0; i<filter.length; i++) {
+            pragmatistSum += filter[i].Pragmatist
+        }
+        let pragmatistAverage = pragmatistSum / filter.length
+        console.log("Pragmatist Average: " + pragmatistAverage)
+
+        setOption([activistAverage, reflectorAverage, theoristAverage, pragmatistAverage])
+        setCategory(['Activist','Reflector','Theorist','Pragmatist'])
+
+        // // Female Average Nationality Pragmatist
+        // let pragmatistSum = 0;
+        // for(let i = 0; i<filter.length; i++) {
+        //     pragmatistSum += filter[i].Pragmatist
+        // }
+        // let pragmatistAverage = pragmatistSum / filter.length
+
+    }
+
+    
+    console.log(option)
     
 
     return (  
@@ -67,7 +135,7 @@ export default function Nationality() {
                     </div>
                     <hr class="border"/>
                     <div className="diagram-container">
-                        <Diagram />
+                        <Diagram options={option} categories={category}/>
                     </div>
                 </div>
                 <div className="rightSide">
@@ -78,8 +146,6 @@ export default function Nationality() {
                     </div>
                 </div>       
             </div>
-            <DiagramTesting />
-
             <Footer/> 
         </>
     );
