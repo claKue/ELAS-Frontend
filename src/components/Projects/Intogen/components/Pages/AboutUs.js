@@ -28,7 +28,7 @@ import Icons from '../Icons';
                     <h1 className="aboutusSub">Our new mission:</h1>
                     <p className="newMission">
                         Intogen was later on updated by us bachelor Komedia students. Our goal was to implement Intogen into the ELAS platform and improve this web application. <br/>
-                        Prof. Dr. Mohamed Amine Chatti was also the supervisor in this project. 
+                        Prof. Dr. Mohamed Amine Chatti was also the supervisor in this project with the special help of Shoeb Joarder.
                     </p>
                     
                 </p>

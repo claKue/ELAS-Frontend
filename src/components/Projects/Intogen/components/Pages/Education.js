@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, {useState} from 'react';
 import '../../Intogen.css'
 import LearningCards from '../LearningCards'
 import Footer from '../Footer'
@@ -9,6 +10,9 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 export default function Education() {
+
+    const [option, setOption] = useState([]);
+    const [category, setCategory] = useState([]);
 
     function getUnique(arr, index) {
         const unique = arr
@@ -23,7 +27,46 @@ export default function Education() {
     const uniqueStudyPrograms = getUnique(data,'Study_program');  
     const major = getUnique(data, 'Major');
     
-    const handleSelect = (event, values) => {console.log(values)}
+    const handleSelect = (events, values) => {
+    const filter = data.filter(a => a.Study_program == values.Study_program)
+
+        let activistSum = 0;
+        for(let i = 0; i<filter.length; i++) {
+            activistSum += filter[i].Activist
+        }
+        let activistAverage = activistSum / filter.length
+        console.log("Activist Average: " + activistAverage)
+
+
+        let reflectorSum = 0;
+        for(let i = 0; i<filter.length; i++) {
+            reflectorSum += filter[i].Reflector
+        }
+        let reflectorAverage = reflectorSum / filter.length
+        console.log("Reflector Average: " + reflectorAverage)
+
+
+        let theoristSum = 0;
+        for(let i = 0; i<filter.length; i++) {
+            theoristSum += filter[i].Theorist
+        }
+        let theoristAverage = theoristSum / filter.length
+        console.log("Theorist Average: " + theoristAverage)
+
+
+        let pragmatistSum = 0;
+        for(let i = 0; i<filter.length; i++) {
+            pragmatistSum += filter[i].Pragmatist
+        }
+        let pragmatistAverage = pragmatistSum / filter.length
+        console.log("Pragmatist Average: " + pragmatistAverage)
+
+        setOption([activistAverage, reflectorAverage, theoristAverage, pragmatistAverage])
+        setCategory(['Activist','Reflector','Theorist','Pragmatist'])
+
+}
+
+console.log(option)
 
     return (
         <>
@@ -53,7 +96,7 @@ export default function Education() {
                     </div>
                     <hr class="border"/>
                     <div className="diagram-container">
-                        <Diagram />
+                    <Diagram options={option} categories={category}/>
                     </div>
                 </div>
                 <div className="rightSide">
@@ -67,5 +110,5 @@ export default function Education() {
             <Footer />
         </>
     );
-}
+    }
 
