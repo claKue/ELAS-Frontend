@@ -4,68 +4,34 @@ import "survey-react/survey.css";
 import Footer from '../Footer';
 import Results from '../Results';
 import '../../Intogen.css';
-import ReactDOM from 'react-dom'
-
-<script src="https://unpkg.com/survey-react"></script>
-
-
 
 Survey.StylesManager.applyTheme("orange");
 
-// class FindYourType extends Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-
-//         }
-//         this.onCompleteComponent = this.onCompleteComponent.bind(this)
-//         }
-//   onCompleteComponent = () => {
-//     this.setState({
-//       isCompleted: true
-//     })
-//   }
-
-// render() {
   var myCss = {
       matrix: {
-
         root: "table table-striped",
-        // tableWrapper: "sv-matrix",
         rowError: "sv-matrix__row--error",
-        //cell: "sv-table__cell sv-matrix__cell",
-        // headerCell: "sv-table__cell sv-table__cell--header",
         label: "sv-item sv-radio sv-matrix__label",
-        // itemValue: "sv-visuallyhidden sv-item__control sv-radio__control",
         itemChecked: "sv-radio--checked",
         itemDisabled: "sv-item--disabled sv-radio--disabled",
         itemHover: "sv-radio--allowhover",
         materialDecorator: "sv-item__decorator sv-radio__decorator",
-        // itemDecorator: "sv-item__svg sv-radio__svg",
         cellText: "sv-matrix__text",
         cellTextSelected: "sv-matrix__text--checked",
-        // cellTextDisabled: "sv-matrix__text--disabled",
       }
-      
   };
-
 
   var json = {
 
-    // title: "David Kolb's Learning Style Questionnaire",
     showProgressBar: "top",
     showQuestionNumbers: "off",
     pages: [
           { 
-          
             questions: [
-
               {
                 type: "radiogroup",
                 name: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response."
-              },
-              
-              {
+              }, {
                 type: "matrix",
                 name: "Questions 1-10", 
                 title: "Please indicate if you agree or disagree with the following statements!",
@@ -100,7 +66,6 @@ Survey.StylesManager.applyTheme("orange");
               }
             ]
       }, {
-
         questions: [
           {
             type: "matrix",
@@ -137,7 +102,6 @@ Survey.StylesManager.applyTheme("orange");
           }
         ]
       }, {
-
         questions: [
           {
             type: "matrix",
@@ -174,7 +138,6 @@ Survey.StylesManager.applyTheme("orange");
           }
         ]
       }, {
-
         questions: [
           {
             type: "matrix",
@@ -210,9 +173,7 @@ Survey.StylesManager.applyTheme("orange");
             ]
           }
         ]
-      }, 
-      {
-        
+      }, {
         questions: [
           {
             type: "radiogroup",
@@ -295,6 +256,8 @@ Survey.StylesManager.applyTheme("orange");
 class FindYourType extends Component {
     constructor(props) {
         super(props)
+
+        this.model = new Survey.Model(json);
         this.state = {
 
         }
@@ -305,13 +268,12 @@ class FindYourType extends Component {
       isCompleted: true
     })
   }
-                
-
+  
 render() {
 
 var surveyRender = !this.state.isCompleted ? (
   <Survey.Survey 
-  // model={model}
+  model={this.model}
   json={json}
   css={myCss}
   showCompletedPage={false}
@@ -321,10 +283,12 @@ var surveyRender = !this.state.isCompleted ? (
 
 var onSurveyCompletion = this.state.isCompleted ? (
   <div>
-      <Results />
-      {/* {JSON.stringify(model.data, null, 3)} */}
+      {/* <Results /> */}
+      {JSON.stringify(this.model.data, null, 3)}
   </div>
 ) : null;
+
+console.log(this.model)
 
 return (
   <div className="App">
