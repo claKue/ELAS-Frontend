@@ -7,16 +7,13 @@ import data from '../diagrams/data/out';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
-
 export default function Education() {
 
     const [females, setFemales] = useState([]);
     const [males, setMales] = useState([]);
     const [average, setAverage] = useState([]);
-
     const [amountmales, setAmountmales] = useState();
     const [amountfemales, setAmountfemales] = useState();
-
     const [category, setCategory] = useState([]);
 
     function getUnique(arr, index) {
@@ -35,7 +32,7 @@ export default function Education() {
     const handleSelect = (events, values) => {
     const filter = data.filter(a => a.Study_program == values.Study_program)
 
-    const study_programMales = filter.filter(t=>t.Gender ==='Male');
+        const study_programMales = filter.filter(t=>t.Gender ==='Male');
         console.log(study_programMales)
 
         const study_programFemales = filter.filter(t=>t.Gender ==='Female');
@@ -43,9 +40,9 @@ export default function Education() {
 
         let amountMales = study_programMales.length
         let amountFemales = study_programFemales.length
+
         console.log(amountMales)
         console.log(amountFemales)
-
 
         // Male, Activist Average (Study Program)
         let activistSumMales = 0;
@@ -55,7 +52,6 @@ export default function Education() {
         let activistAverageMales = activistSumMales / study_programMales.length
         // console.log("Activist Average Males: " + activistAverageMales)
 
-
          // Female, Activist Average (Study Program)
          let activistSumFemales = 0;
          for(let i = 0; i<study_programFemales.length; i++) {
@@ -63,7 +59,6 @@ export default function Education() {
          }
          let activistAverageFemales = activistSumFemales / study_programFemales.length
          // console.log("Activist Average Females: " + activistAverageFemales)
-
 
         // Male, Reflector Average (Study Program)
         let reflectorSumMales = 0;
@@ -125,17 +120,15 @@ export default function Education() {
         // Average Pragmatist
         let averagePragmatist = (pragmatistAverageMales + pragmatistAverageFemales) / 2
 
+
         setMales([activistAverageMales, reflectorAverageMales, theoristAverageMales, pragmatistAverageMales])
         setFemales([activistAverageFemales, reflectorAverageFemales, theoristAverageFemales, pragmatistAverageFemales])
         setAverage([averageActivist, averageReflector, averageTheorist, averagePragmatist])
-
         setAmountmales(amountMales)
         setAmountfemales(amountFemales)
-        
         setCategory(['Activist','Reflector','Theorist','Pragmatist'])
 
 }
-
 
     return (
         <>
