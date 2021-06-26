@@ -12,6 +12,11 @@ export default function Nationality() {
 
     const [females, setFemales] = useState([]);
     const [males, setMales] = useState([]);
+    const [average, setAverage] = useState([]);
+
+    const [amountmales, setAmountmales] = useState();
+    const [amountfemales, setAmountfemales] = useState();
+
     const [category, setCategory] = useState([]);
 
     // eliminates all duplicate countries
@@ -33,10 +38,17 @@ export default function Nationality() {
         // console.log(filter)
 
         const nationalityMales = filter.filter(t=>t.Gender ==='Male');
-        // console.log(nationalityMales)
+        console.log(nationalityMales)
 
         const nationalityFemales = filter.filter(t=>t.Gender ==='Female');
-        // console.log(nationalityFemales)
+        console.log(nationalityFemales)
+
+        let amountMales = nationalityMales.length
+        let amountFemales = nationalityFemales.length
+        console.log(amountMales)
+        console.log(amountFemales)
+
+
 
 
         // filter males and females in general
@@ -73,6 +85,9 @@ export default function Nationality() {
         let activistAverageFemales = activistSumFemales / nationalityFemales.length
         // console.log("Activist Average Females: " + activistAverageMales)
 
+        // Average Activist
+        let averageActivist = (activistAverageMales + activistAverageFemales) / 2
+
         // Male Average Nationality Reflector
         let reflectorSumMales = 0;
         for(let i = 0; i<nationalityMales.length; i++) {
@@ -88,6 +103,9 @@ export default function Nationality() {
         }
         let reflectorAverageFemales = reflectorSumFemales / nationalityFemales.length
         // console.log("Reflector Average Females: " + reflectorAverageMales)
+
+        // Average Reflector
+        let averageReflector = (reflectorAverageMales + reflectorAverageFemales) / 2
 
         // Male Average Nationality Theorist
         let theoristSumMales = 0;
@@ -105,6 +123,9 @@ export default function Nationality() {
         let theoristAverageFemales = theoristSumFemales / nationalityFemales.length
         // console.log("Theorist Average Females: " + theoristAverageMales)
 
+        // Average Theorist
+        let averageTheorist = (theoristAverageMales + theoristAverageFemales) / 2
+
         // Male Average Nationality Pragmatist
         let pragmatistSumMales = 0;
         for(let i = 0; i<nationalityMales.length; i++) {
@@ -121,8 +142,16 @@ export default function Nationality() {
         let pragmatistAverageFemales = pragmatistSumFemales / nationalityFemales.length
         // console.log("Pragmatist Average Females: " + pragmatistAverageMales)
 
+        // Average Pragmatist
+        let averagePragmatist = (pragmatistAverageMales + pragmatistAverageFemales) / 2
+
         setMales([activistAverageMales, reflectorAverageMales, theoristAverageMales, pragmatistAverageMales])
         setFemales([activistAverageFemales, reflectorAverageFemales, theoristAverageFemales, pragmatistAverageFemales])
+        setAverage([averageActivist, averageReflector, averageTheorist, averagePragmatist])
+
+        setAmountmales(amountMales)
+        setAmountfemales(amountFemales)
+        
         setCategory(['Activist','Reflector','Theorist','Pragmatist'])
     }
 
@@ -152,7 +181,8 @@ export default function Nationality() {
                     </p>
                     <hr class="border"/>
                     <div className="diagram-container">
-                        <Diagram females={females} males={males} categories={category}/>
+                        <Diagram females={females} males={males} average = {average} amountmales= {amountmales} 
+                        amountfemales= {amountfemales} categories={category}/>
                     </div>
                 </div>
                 <div className="rightSide">
