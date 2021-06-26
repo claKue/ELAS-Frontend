@@ -135,7 +135,7 @@ export default function Education() {
             <hr class="border2" data-content="Education"/>
             <div className="page-container">
                 <div className="leftSide">
-                    <h4>Choose your Education Degree:</h4>
+                    <h4>Choose your <b>Education Degree:</b></h4>
                     <div class="boxes">                   
                         <Autocomplete
                             id="combo-box-demo"
@@ -143,7 +143,6 @@ export default function Education() {
                             getOptionLabel={(option) => option.Major} 
                             style={{ width: 200, marginRight: 10 }}
                             size= {"small"}
-                            onChange = {handleSelect}
                             renderInput={(params) => <TextField {...params} label="Major" variant="outlined" />}
                         />                    
                         <Autocomplete
@@ -156,6 +155,9 @@ export default function Education() {
                             renderInput={(params) => <TextField {...params} label="Study program" variant="outlined" />}
                         />
                     </div>
+                    <p className="subtitlesDiagram">
+                        Following are the learning types' averages of your <span className="underlined">study program.</span>
+                    </p>
                     <hr class="border"/>
                     <div className="diagram-container">
                     <Diagram females={females} males={males} average = {average} amountmales= {amountmales} 

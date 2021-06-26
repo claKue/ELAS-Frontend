@@ -177,7 +177,7 @@ export default function Nationality() {
                         />
                     </div>
                     <p className="subtitlesDiagram">
-                        Following are the learning types' averages of your nationality.
+                        Following are the learning types' averages of your <span className="underlined">nationality.</span>
                     </p>
                     <hr class="border"/>
                     <div className="diagram-container">

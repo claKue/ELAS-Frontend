@@ -77,7 +77,7 @@ function Diagram(props) {
             y: 0,
             color: Highcharts.getOptions().colors[6]
         }],
-        center: [50, 40],
+        center: [50, 10],
         size: 80,
         showInLegend: false,
         dataLabels: {

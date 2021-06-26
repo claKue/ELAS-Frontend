@@ -180,8 +180,12 @@
 
 .subtitlesDiagram {
   font-size: 18px;
-  max-width: 70%;
+  max-width: 80%;
   margin-top: 10px;
+}
+
+.underlined {
+  text-decoration: underline;
 }
 
 /* findYourType page */
