@@ -35,14 +35,24 @@ onComplete={this.onCompleteComponent}
 />
 ) : null
 
+
+//{JSON.stringify(this.model.data, replacer)}
 var onSurveyCompletion = this.state.isCompleted ? (
 <div>
     {/* <Results /> */}
-    {JSON.stringify(this.model.data, null, 2)}
+    {JSON.stringify(this.model.data)}
 </div>
 ) : null;
 
-console.log(this.model)
+// function replacer(key, value) {
+//   if (key === 'Activist','Reflector','Theorist','Pragmatist') {
+//     return undefined;
+//   }
+//   return value;
+// };
+
+// console.log(this.model);
+
 
 
 return (
@@ -225,7 +235,11 @@ return (
             ]
           }
         ]
-      }, {
+      }, 
+      
+      //Cascading Conditions for study-programm
+
+      {
         questions: [
           {
             type: "radiogroup",
@@ -235,46 +249,60 @@ return (
             colCount: 2,
             choices: [
                 "Bachelor",
-                "Masters"
+                "Master"
                     ]
                   }, {
                     type: "dropdown",
-                    name: "study-programm",
+                    name: "programm",
                     title: "Choose your study programm.",
+                    visibleIf: "{BA/MA}=Bachelor",
                     // isRequired: true,
                     colCount: 0,
                     choices: [
-                      "B.Sc. Computer Engineering (Software Engineering",
-                      "B.Sc. Computer Engineering (Communications",
+                      "B.Sc. Computer Engineering (Software Engineering)",
+                      "B.Sc. Computer Engineering (Communications)",
                       "B.Sc. Electrical and Electronic Engineering",
                       "B.Sc. Mechanical Engineering",
                       "B.Sc. Metallurgy and Metal Forming",
                       "B.Sc. Steel Technology and Metall Forming",
                       "B.Sc. Structural Engineering"
                               ]
-                            }, {
+                  }, {
+                    type: "dropdown",
+                    name: "programm",
+                    title: "Choose your study programm.",
+                    visibleIf: "{BA/MA}=Master",
+                    // isRequired: true,
+                    colCount: 0,
+                    choices: [
+                      "M.Sc. Automation and Control Engineering",
+                      "M.Sc. Computer Enginerring (Intelligent Networked Systems)",
+                      "M.Sc. Computer Engineering (Interactive Systems and Visualization)",
+                      "M.Sc. Computational Mechanics",
+                      "M.Sc. Communications Engineering",
+                      "M.Sc. Embedded Systems Engineering",
+                      "M.Sc. Mechanical Engineering (General Mechanical Engineering)",
+                      "M.Sc. Mechanical Engineering (Energy and Environmental Engineering)",
+                      "M.Sc. Mechanical Engineering (Mechatronics)",
+                      "M.Sc. Mechanical Engineering (Production and Logistics)",
+                      "M.Sc. Mechanical Engineering (Ship and Offshore Technology)",
+                      "M.Sc. Metallurgy and Metal Forming",
+                      "M.Sc. Management and Technology of Water and Waste Water",
+                      "M.Sc. Power Engineering"
+                              ]            
+                  }, 
+                  
+  //Cascading Conditions for most liked Courses                
+                  
+                  {
                               type:"dropdown",
                               name: "most-liked",
                               title: "Please choose a course which you liked the most.",
                               // isRequired: true,
+                              visibleIf: "{programm}=B.Sc. Computer Engineering (Software Engineering), B.Sc. Computer Engineering (Communications)",
                               colCount: 0,
                               choices: [
-                                "Discrete Mathematics",
-                                "Softwaretechnik",
-                                "Rechnerarchtiketur",
-                                "Electronic Business",
-                                "Wahrscheinlichkeitsrechnung und Statistik",
-                                "Sicherheit in Kommunikationsnetzen",
-                                "Real-Time Systems",
-                                "Mathematics I1",
-                                "Mathematics I2",
-                                "Regelungstechnik EIT",
-                                "Digitale Medien",
-                                "Embedded Systems",
-                                "Mechanics I1",
-                                "Grundlagen der Künstlichen Intelligenz",
-                                "Grundlagen der Bildverarbeitung",
-                                "Optische Übertragungstechnik",
+                                
                               ]
                             }, {
                               type:"dropdown",
