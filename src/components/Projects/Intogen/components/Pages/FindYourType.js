@@ -104,8 +104,8 @@ return (
           }
         ]
       }, { 
-            navigationTitle: "Questions",
-            navigationDescription: "1-10",
+            navigationTitle: "Activist",
+            navigationDescription: "Score",
             questions: [
                {
                 type: "matrix",
@@ -142,8 +142,8 @@ return (
               }
             ]
       }, {
-        navigationTitle: "Questions",
-        navigationDescription: "11-20",
+        navigationTitle: "Reflector",
+        navigationDescription: "Score",
         questions: [
           {
             type: "matrix",
@@ -180,8 +180,8 @@ return (
           }
         ]
       }, {
-        navigationTitle: "Questions",
-        navigationDescription: "21-30",
+        navigationTitle: "Theorist",
+        navigationDescription: "Score",
         questions: [
           {
             type: "matrix",
@@ -218,8 +218,8 @@ return (
           }
         ]
       }, {
-        navigationTitle: "Questions",
-        navigationDescription: "31-40",
+        navigationTitle: "Pragmatist",
+        navigationDescription: "Score",
         questions: [
           {
             type: "matrix",
