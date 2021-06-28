@@ -26,11 +26,199 @@ export default function Education() {
         return unique;
     }
 
-    const uniqueStudyPrograms = getUnique(data,'Study_program');  
+
+    const uniqueStudyPrograms = getUnique(data,'Study_program'); 
     const major = getUnique(data, 'Major');
+
+    const ise = [{ ise: 'ISE' }];
+
+
+
+    const handleChange = () => {
+        // console.log(data)
+
+        const allFemales = data.filter(a=>a.Gender === 'Female');
+        const allMales = data.filter(a=>a.Gender === 'Male');
+
+        const amountAllFemales = allFemales.length;
+        const amountAllMales = allMales.length;
+
+        // Male, Activist Average (ISE)
+        let activistSumMales = 0;
+        for(let i = 0; i<amountAllMales; i++) {
+            activistSumMales += allMales[i].Activist
+        }
+        let activistAverageMales = activistSumMales / amountAllMales
+        // console.log("Activist Average Males: " + activistAverageMales)
+
+         // Female, Activist Average (ISE)
+         let activistSumFemales = 0;
+         for(let i = 0; i<amountAllFemales; i++) {
+             activistSumFemales += allFemales[i].Activist
+         }
+         let activistAverageFemales = activistSumFemales / amountAllFemales
+         // console.log("Activist Average Females: " + activistAverageFemales)
+
+        // Male, Reflector Average (ISE)
+        let reflectorSumMales = 0;
+        for(let i = 0; i<amountAllMales; i++) {
+            reflectorSumMales += allMales[i].Reflector
+        }
+        let reflectorAverageMales = reflectorSumMales / amountAllMales
+        // console.log("Reflector Average Males: " + reflectorAverageMales)
+
+         // Female, Reflector Average (ISE)
+         let reflectorSumFemales = 0;
+         for(let i = 0; i<amountAllFemales; i++) {
+             reflectorSumFemales += allFemales[i].Reflector
+         }
+         let reflectorAverageFemales = reflectorSumFemales / amountAllFemales
+         // console.log("Reflector Average Females: " + reflectorAverageFemales)
+
+         // Male, Theorist Average (ISE)
+         let theoristSumMales = 0;
+         for(let i = 0; i<amountAllMales; i++) {
+             theoristSumMales += allMales[i].Theorist
+         }
+         let theoristAverageMales = theoristSumMales / amountAllMales
+         // console.log("Theorist Average Males: " + theoristAverageMales)
+
+          // Female, Theorist Average (ISE)
+          let theoristSumFemales = 0;
+          for(let i = 0; i<amountAllFemales; i++) {
+              theoristSumFemales += allFemales[i].Theorist
+          }
+          let theoristAverageFemales = theoristSumFemales / amountAllFemales
+          // console.log("Theorist Average Females: " + theoristAverageFemales)
+
+          // Male, Pragmatist Average (ISE)
+         let pragmatistSumMales = 0;
+         for(let i = 0; i<amountAllMales; i++) {
+             pragmatistSumMales += allMales[i].Pragmatist
+         }
+         let pragmatistAverageMales = pragmatistSumMales / amountAllMales
+         // console.log("Pragmatist Average Males: " + pragmatistAverageMales)
+
+          // Female, Pragmatist Average (ISE)
+          let pragmatistSumFemales = 0;
+          for(let i = 0; i<amountAllFemales; i++) {
+              pragmatistSumFemales += allFemales[i].Pragmatist
+          }
+          let pragmatistAverageFemales = pragmatistSumFemales / amountAllFemales
+          // console.log("Pragmatist Average Females: " + pragmatistAverageFemales)
+
+        // Average Activist
+        let averageActivist = (activistAverageMales + activistAverageFemales) / 2
+
+        // Average Reflector
+        let averageReflector = (reflectorAverageMales + reflectorAverageFemales) / 2
+
+        // Average Theorist
+        let averageTheorist = (theoristAverageMales + theoristAverageFemales) / 2
+
+        // Average Pragmatist
+        let averagePragmatist = (pragmatistAverageMales + pragmatistAverageFemales) / 2
+
+        setMales([activistAverageMales, reflectorAverageMales, theoristAverageMales, pragmatistAverageMales])
+        setFemales([activistAverageFemales, reflectorAverageFemales, theoristAverageFemales, pragmatistAverageFemales])
+        setAverage([averageActivist, averageReflector, averageTheorist, averagePragmatist])
+
+        setAmountmales(amountAllMales)
+        setAmountfemales(amountAllFemales)
+        setCategory(['Activist','Reflector','Theorist','Pragmatist'])
+    }
+
+    const handleMajor = (events, values) => {
+        const filter = data.filter(a => a.Major == values.Major)
+
+        const males = filter.filter(b=>b.Gender === 'Male');
+        const females = filter.filter(b=>b.Gender === 'Female');
+
+        let amountMales = males.length
+        let amountFemales = females.length
+
+        // Male, Activist Average (Major)
+        let activistSumMales = 0;
+        for(let i = 0; i<amountMales; i++) {
+            activistSumMales += males[i].Activist
+        }
+        let activistAverageMales = activistSumMales / amountMales
+
+         // Female, Activist Average (Major)
+         let activistSumFemales = 0;
+         for(let i = 0; i<amountFemales; i++) {
+             activistSumFemales += females[i].Activist
+         }
+         let activistAverageFemales = activistSumFemales / amountFemales
+
+        // Male, Reflector Average (Major)
+        let reflectorSumMales = 0;
+        for(let i = 0; i<amountMales; i++) {
+            reflectorSumMales += males[i].Reflector
+        }
+        let reflectorAverageMales = reflectorSumMales / amountMales
+
+         // Female, Reflector Average (Major)
+         let reflectorSumFemales = 0;
+         for(let i = 0; i<amountFemales; i++) {
+             reflectorSumFemales += females[i].Reflector
+         }
+         let reflectorAverageFemales = reflectorSumFemales / amountFemales
+
+         // Male, Theorist Average (Major)
+         let theoristSumMales = 0;
+         for(let i = 0; i<amountMales; i++) {
+             theoristSumMales += males[i].Theorist
+         }
+         let theoristAverageMales = theoristSumMales / amountMales
+
+          // Female, Theorist Average (Major)
+          let theoristSumFemales = 0;
+          for(let i = 0; i<amountFemales; i++) {
+              theoristSumFemales += females[i].Theorist
+          }
+          let theoristAverageFemales = theoristSumFemales / amountFemales
+
+          // Male, Pragmatist Average (Major)
+         let pragmatistSumMales = 0;
+         for(let i = 0; i<amountMales; i++) {
+             pragmatistSumMales += males[i].Pragmatist
+         }
+         let pragmatistAverageMales = pragmatistSumMales / amountMales
+
+          // Female, Pragmatist Average (Major)
+          let pragmatistSumFemales = 0;
+          for(let i = 0; i<amountFemales; i++) {
+              pragmatistSumFemales += females[i].Pragmatist
+          }
+          let pragmatistAverageFemales = pragmatistSumFemales / amountFemales
+
+        // Average Activist
+        let averageActivist = (activistAverageMales + activistAverageFemales) / 2
+
+        // Average Reflector
+        let averageReflector = (reflectorAverageMales + reflectorAverageFemales) / 2
+
+        // Average Theorist
+        let averageTheorist = (theoristAverageMales + theoristAverageFemales) / 2
+
+        // Average Pragmatist
+        let averagePragmatist = (pragmatistAverageMales + pragmatistAverageFemales) / 2
+
+
+        setMales([activistAverageMales, reflectorAverageMales, theoristAverageMales, pragmatistAverageMales])
+        setFemales([activistAverageFemales, reflectorAverageFemales, theoristAverageFemales, pragmatistAverageFemales])
+        setAverage([averageActivist, averageReflector, averageTheorist, averagePragmatist])
+
+        setAmountmales(amountMales)
+        setAmountfemales(amountFemales)
+        setCategory(['Activist','Reflector','Theorist','Pragmatist'])
+
+    }
     
     const handleSelect = (events, values) => {
-    const filter = data.filter(a => a.Study_program == values.Study_program)
+        const filter = data.filter(a => a.Study_program == values.Study_program)
+        // console.log(filter)
 
         const study_programMales = filter.filter(t=>t.Gender ==='Male');
         console.log(study_programMales)
@@ -38,18 +226,20 @@ export default function Education() {
         const study_programFemales = filter.filter(t=>t.Gender ==='Female');
         console.log(study_programFemales)
 
+        
+
         let amountMales = study_programMales.length
         let amountFemales = study_programFemales.length
 
-        console.log(amountMales)
-        console.log(amountFemales)
+        // console.log(amountMales)
+        // console.log(amountFemales)
 
         // Male, Activist Average (Study Program)
         let activistSumMales = 0;
-        for(let i = 0; i<study_programMales.length; i++) {
+        for(let i = 0; i<amountMales; i++) {
             activistSumMales += study_programMales[i].Activist
         }
-        let activistAverageMales = activistSumMales / study_programMales.length
+        let activistAverageMales = activistSumMales / amountMales
         // console.log("Activist Average Males: " + activistAverageMales)
 
          // Female, Activist Average (Study Program)
@@ -57,55 +247,55 @@ export default function Education() {
          for(let i = 0; i<study_programFemales.length; i++) {
              activistSumFemales += study_programFemales[i].Activist
          }
-         let activistAverageFemales = activistSumFemales / study_programFemales.length
+         let activistAverageFemales = activistSumFemales / amountFemales
          // console.log("Activist Average Females: " + activistAverageFemales)
 
         // Male, Reflector Average (Study Program)
         let reflectorSumMales = 0;
-        for(let i = 0; i<study_programMales.length; i++) {
+        for(let i = 0; i<amountMales; i++) {
             reflectorSumMales += study_programMales[i].Reflector
         }
-        let reflectorAverageMales = reflectorSumMales / filter.length
+        let reflectorAverageMales = reflectorSumMales / amountMales
         // console.log("Reflector Average Males: " + reflectorAverageMales)
 
          // Female, Reflector Average (Study Program)
          let reflectorSumFemales = 0;
-         for(let i = 0; i<study_programFemales.length; i++) {
+         for(let i = 0; i<amountFemales; i++) {
              reflectorSumFemales += study_programFemales[i].Reflector
          }
-         let reflectorAverageFemales = reflectorSumFemales / filter.length
+         let reflectorAverageFemales = reflectorSumFemales / amountFemales
          // console.log("Reflector Average Females: " + reflectorAverageFemales)
 
          // Male, Theorist Average (Study Program)
          let theoristSumMales = 0;
-         for(let i = 0; i<study_programMales.length; i++) {
+         for(let i = 0; i<amountMales; i++) {
              theoristSumMales += study_programMales[i].Theorist
          }
-         let theoristAverageMales = theoristSumMales / filter.length
+         let theoristAverageMales = theoristSumMales / amountMales
          // console.log("Theorist Average Males: " + theoristAverageMales)
 
           // Female, Theorist Average (Study Program)
           let theoristSumFemales = 0;
-          for(let i = 0; i<study_programFemales.length; i++) {
+          for(let i = 0; i<amountFemales; i++) {
               theoristSumFemales += study_programFemales[i].Theorist
           }
-          let theoristAverageFemales = theoristSumFemales / filter.length
+          let theoristAverageFemales = theoristSumFemales / amountFemales
           // console.log("Theorist Average Females: " + theoristAverageFemales)
 
           // Male, Pragmatist Average (Study Program)
          let pragmatistSumMales = 0;
-         for(let i = 0; i<study_programMales.length; i++) {
+         for(let i = 0; i<amountMales; i++) {
              pragmatistSumMales += study_programMales[i].Pragmatist
          }
-         let pragmatistAverageMales = pragmatistSumMales / filter.length
+         let pragmatistAverageMales = pragmatistSumMales / amountMales
          // console.log("Pragmatist Average Males: " + pragmatistAverageMales)
 
           // Female, Pragmatist Average (Study Program)
           let pragmatistSumFemales = 0;
-          for(let i = 0; i<study_programFemales.length; i++) {
+          for(let i = 0; i<amountFemales; i++) {
               pragmatistSumFemales += study_programFemales[i].Pragmatist
           }
-          let pragmatistAverageFemales = pragmatistSumFemales / filter.length
+          let pragmatistAverageFemales = pragmatistSumFemales / amountFemales
           // console.log("Pragmatist Average Females: " + pragmatistAverageFemales)
 
         // Average Activist
@@ -128,7 +318,7 @@ export default function Education() {
         setAmountfemales(amountFemales)
         setCategory(['Activist','Reflector','Theorist','Pragmatist'])
 
-}
+    }
 
     return (
         <>
@@ -136,13 +326,23 @@ export default function Education() {
             <div className="page-container">
                 <div className="leftSide">
                     <h4>Choose your <b>Education Degree:</b></h4>
-                    <div class="boxes">                   
+                    <div class="boxes">   
+                        <Autocomplete
+                            id="combo-box-demo"
+                            options={ise}
+                            getOptionLabel={(option) => option.ise} 
+                            style={{ width: 200, marginRight: 10 }}
+                            size= {"small"}
+                            onChange={handleChange}
+                            renderInput={(params) => <TextField {...params} label="ISE" variant="outlined" />}
+                        />
                         <Autocomplete
                             id="combo-box-demo"
                             options={major}
                             getOptionLabel={(option) => option.Major} 
                             style={{ width: 200, marginRight: 10 }}
                             size= {"small"}
+                            onChange={handleMajor}
                             renderInput={(params) => <TextField {...params} label="Major" variant="outlined" />}
                         />                    
                         <Autocomplete
