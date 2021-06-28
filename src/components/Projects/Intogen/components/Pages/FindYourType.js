@@ -7,6 +7,7 @@ import '../../Intogen.css';
 import data from '../diagrams/data/bachelorprogramms';
 
 
+
 Survey.StylesManager.applyTheme("orange");
 
 class FindYourType extends Component {
@@ -54,9 +55,7 @@ var onSurveyCompletion = this.state.isCompleted ? (
 //   return value;
 // };
 
-// console.log(this.model);
-
-
+console.log(this.model);
 
 return (
 <div className="App">
@@ -71,6 +70,7 @@ return (
     );
   }
 }
+
 
   var myCss = {
       matrix: {
@@ -92,23 +92,34 @@ return (
     progressBarType: "buttons",
     showQuestionNumbers: "off",
     pages: [
-          { 
+      {
+        navigationTitle: "Start",
+        navigationDescription: "Introduction",
+        questions: [
+          {
+            type: "radiogroup",
+            name: "introduction",
+            title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response."
+            
+          }
+        ]
+      }, { 
             navigationTitle: "Questions",
             navigationDescription: "1-10",
             questions: [
-              {
-                type: "radiogroup",
-                name: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response."
-              }, {
+               {
                 type: "matrix",
                 name: "Activist", 
                 title: "Please indicate if you agree or disagree with the following statements!",
-                // isAllRowRequired: true,
+                isAllRowRequired: true,
+                defaultValue: {
+                  2:"0", 4:"0", 10:"0", 13:"0", 18:"0", 21:"0", 24:"0", 30:"0", 37:"0", 39:"0"
+                },
                 columns: [ 
                   { value: 10, 
                     text: "Agree" }, 
-                   { value: 0, 
-                      text: "Disagree" }],
+                  { value: 0, 
+                    text: "Disagree" }],
                 rows: [
                  { value: "2", 
                    text: "I often act without considering the possible consequences." },
@@ -142,6 +153,9 @@ return (
             name: "Reflector",
             title:"Good! Now please proceed as before.",
             //isAllRowRequired: true,
+            defaultValue: {
+              5:"0", 9:"0", 14:"0", 16:"0", 17:"0", 20:"0", 25:"0", 29:"0", 33:"0", 34:"0"
+            },
             columns: [ 
               { value: 10, 
                 text: "Agree" }, 
@@ -180,6 +194,9 @@ return (
             name: "Theorist",
             title: "Again, please choose if you would rather agree or disagree!",
             //isAllRowRequired: true,
+            defaultValue: {
+              1:"0", 6:"0", 8:"0", 11:"0", 15:"0", 22:"0", 27:"0", 32:"0", 35:"0", 40:"0"
+            },
             columns: [ 
               { value: 10, 
                 text: "Agree" }, 
@@ -218,6 +235,9 @@ return (
             name: "Pragmatist",
             title: "Almost done! Please indicate if you agree or disagree with the presented statements.",
             //isAllRowRequired: true,
+            defaultValue: {
+              3:"0", 7:"0", 12:"0", 19:"0", 23:"0", 26:"0", 28:"0", 31:"0", 36:"0", 38:"0"
+            },
             columns: [ 
               { value: 10, 
                 text: "Agree" }, 
