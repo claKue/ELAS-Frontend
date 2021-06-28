@@ -201,3 +201,28 @@
   color: #111;
   font-size: 100px;
 }
+/* styling for ProgressBar */
+
+.sv_progress-buttons__list-container .sv_progress-buttons__list li::before {
+  border: 3px solid #FF6601;
+  background-color: #FF6601;
+}
+
+.sv_progress-buttons__list-container .sv_progress-buttons__list li::after {
+  background-color: #FF6601;
+}
+
+.sv_progress-buttons__list-container .sv_progress-buttons__list li.sv_progress-buttons__list-element--current::before {
+  border-color: #FF6601;
+  background-color: white;
+}
+
+.sv_progress-buttons__list-container .sv_progress-buttons__list li.sv_progress-buttons__list-element--passed::before {
+  border-color: #FF6601;
+  background-color: #FF6601;
+}
+
+.sv_progress-buttons__list-container 
+.sv_progress-buttons__list li.sv_progress-buttons__list-element--passed + li::after {
+  background-color: #FF6601;
+}

@@ -4,6 +4,8 @@ import "survey-react/survey.css";
 import Footer from '../Footer';
 import Results from '../Results';
 import '../../Intogen.css';
+import data from '../diagrams/data/bachelorprogramms';
+
 
 Survey.StylesManager.applyTheme("orange");
 
@@ -22,6 +24,7 @@ onCompleteComponent = () => {
     isCompleted: true
   })
 }
+
 
 render() {
 
@@ -86,9 +89,12 @@ return (
   var json = {
 
     showProgressBar: "top",
+    progressBarType: "buttons",
     showQuestionNumbers: "off",
     pages: [
           { 
+            navigationTitle: "Questions",
+            navigationDescription: "1-10",
             questions: [
               {
                 type: "radiogroup",
@@ -123,11 +129,13 @@ return (
                  { value: "37",
                    text: "I find the formality of having specific objectives and plans stifling."},
                  { value: "39",
-                   text: "I quickly get bored with methodical, detailed work"}
+                   text: "I quickly get bored with methodical, detailed work."}
                        ],
               }
             ]
       }, {
+        navigationTitle: "Questions",
+        navigationDescription: "11-20",
         questions: [
           {
             type: "matrix",
@@ -164,6 +172,8 @@ return (
           }
         ]
       }, {
+        navigationTitle: "Questions",
+        navigationDescription: "21-30",
         questions: [
           {
             type: "matrix",
@@ -200,6 +210,8 @@ return (
           }
         ]
       }, {
+        navigationTitle: "Questions",
+        navigationDescription: "31-40",
         questions: [
           {
             type: "matrix",
@@ -240,6 +252,8 @@ return (
       //Cascading Conditions for study-programm
 
       {
+        navigationTitle: "Finish",
+        navigationDescription: "Personal Info",
         questions: [
           {
             type: "radiogroup",
@@ -290,18 +304,14 @@ return (
                       "M.Sc. Management and Technology of Water and Waste Water",
                       "M.Sc. Power Engineering"
                               ]            
-                  }, 
-                  
-  //Cascading Conditions for most liked Courses                
-                  
-                  {
+                  }, {
                               type:"dropdown",
                               name: "most-liked",
                               title: "Please choose a course which you liked the most.",
                               // isRequired: true,
                               visibleIf: "{programm}=B.Sc. Computer Engineering (Software Engineering), B.Sc. Computer Engineering (Communications)",
                               colCount: 0,
-                              choices: [
+                              choices: [ 
                                 
                               ]
                             }, {
