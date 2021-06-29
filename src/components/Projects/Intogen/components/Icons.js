@@ -9,7 +9,7 @@ export default function Icons() {
         <div className="links">
                     <div class="link">
                             <div class="icon">
-                                <a className="hoverLink" href="http://www.youtube.de">
+                                <a className="hoverLink" href="https://www.youtube.com/watch?v=9O9Os2UsS_o">
                                     <IconContext.Provider value={{ className: "youtubeIcon" }}>
                                         <div>
                                             <FaYoutube/>
@@ -24,7 +24,7 @@ export default function Icons() {
 
                     <div class="link">
                             <div class="icon">
-                                <a className="hoverLink" href="https://circleci.com/integrations/github/">
+                                <a className="hoverLink" href="https://github.com/claKue/ELAS-Frontend">
                                     <IconContext.Provider value={{ className: "githubIcon" }}>
                                         <div>
                                             <FaGithub/>

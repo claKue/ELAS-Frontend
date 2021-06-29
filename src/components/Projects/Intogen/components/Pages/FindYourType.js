@@ -3,10 +3,48 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import Footer from '../Footer';
 import Results from '../Results';
+// import Formular from '../Formular'
 import '../../Intogen.css';
-import data from '../diagrams/data/bachelorprogramms';
+// import data from '../diagrams/data/bachelorprogramms';
+import data from '../diagrams/data/out';
+
+function getUnique(arr, index) {
+  const unique = arr
+       .map(e => e[index])
+       // store the keys of the unique objects
+       .map((e, i, final) => final.indexOf(e) === i && i)
+       // eliminate the dead keys & store unique objects
+      .filter(e => arr[e]).map(e => arr[e]);      
+  return unique;
+}
+
+const uniqueStudyPrograms = getUnique(data,'Study_program'); 
+const major = getUnique(data, 'Major');
+
+console.log(uniqueStudyPrograms[1].Study_program)
+
+let studyPrograms = [];
+         for(let i = 0; i<uniqueStudyPrograms.length; i++) {
+             studyPrograms += uniqueStudyPrograms[i].Study_program
+         }
+console.log(studyPrograms)
 
 
+    // let studyProgramsBachelor = [];
+    //     for(let i = 0; i<uniqueStudyPrograms.length; i++) {
+    //       if ('B.Sc.' in uniqueStudyPrograms[i].Study_program) {
+    //         studyProgramsBachelor += uniqueStudyPrograms[i].Study_program
+    //       }
+    //     }
+    // console.log(studyProgramsBachelor)
+
+    // let studyProgramsMaster = [];
+    //     for(let i = 0; i<uniqueStudyPrograms.length; i++) {
+    //       if ('M.Sc.' in uniqueStudyPrograms[i].Study_program) {
+    //         studyProgramsMaster += uniqueStudyPrograms[i].Study_program
+    //       }
+    //     }
+    // console.log(studyProgramsMaster)
 
 Survey.StylesManager.applyTheme("orange");
 
@@ -20,12 +58,15 @@ class FindYourType extends Component {
       }
       this.onCompleteComponent = this.onCompleteComponent.bind(this)
       }
-onCompleteComponent = () => {
-  this.setState({
-    isCompleted: true
-  })
-}
+    onCompleteComponent = () => {
+      this.setState({
+        isCompleted: true
+      })
+    };
 
+    
+
+    
 
 render() {
 
@@ -43,10 +84,13 @@ onComplete={this.onCompleteComponent}
 //{JSON.stringify(this.model.data, replacer)}
 var onSurveyCompletion = this.state.isCompleted ? (
 <div>
-    {/* <Results /> */}
     {JSON.stringify(this.model.data)}
+    <Results />
+    {/* <Formular />     */}
+    
 </div>
 ) : null;
+
 
 // function replacer(key, value) {
 //   if (key === 'Activist','Reflector','Theorist','Pragmatist') {
@@ -55,7 +99,8 @@ var onSurveyCompletion = this.state.isCompleted ? (
 //   return value;
 // };
 
-console.log(this.model);
+// console.log(this.model);
+
 
 return (
 <div className="App">
@@ -265,35 +310,37 @@ return (
         questions: [
           {
             type: "radiogroup",
-            name: "BA/MA",
+            name: "Major",
             title: "What are you currently studying?",
             // isRequired: true,
             colCount: 2,
             choices: [
                 "Bachelor",
                 "Master"
+                // major.Major
                     ]
                   }, {
                     type: "dropdown",
                     name: "programm",
                     title: "Choose your study programm.",
-                    visibleIf: "{BA/MA}=Bachelor",
+                    visibleIf: "{Major}=Bachelor",
                     // isRequired: true,
                     colCount: 0,
-                    choices: [
-                      "B.Sc. Computer Engineering (Software Engineering)",
-                      "B.Sc. Computer Engineering (Communications)",
-                      "B.Sc. Electrical and Electronic Engineering",
-                      "B.Sc. Mechanical Engineering",
-                      "B.Sc. Metallurgy and Metal Forming",
-                      "B.Sc. Steel Technology and Metall Forming",
-                      "B.Sc. Structural Engineering"
-                              ]
+                    choices: studyPrograms
+                    // [
+                    //   "B.Sc. Computer Engineering (Software Engineering)",
+                    //   "B.Sc. Computer Engineering (Communications)",
+                    //   "B.Sc. Electrical and Electronic Engineering",
+                    //   "B.Sc. Mechanical Engineering",
+                    //   "B.Sc. Metallurgy and Metal Forming",
+                    //   "B.Sc. Steel Technology and Metall Forming",
+                    //   "B.Sc. Structural Engineering"
+                    //           ]
                   }, {
                     type: "dropdown",
                     name: "programm",
                     title: "Choose your study programm.",
-                    visibleIf: "{BA/MA}=Master",
+                    visibleIf: "{Major}=Master",
                     // isRequired: true,
                     colCount: 0,
                     choices: [
@@ -317,7 +364,7 @@ return (
                               name: "most-liked",
                               title: "Please choose a course which you liked the most.",
                               // isRequired: true,
-                              visibleIf: "{programm}=B.Sc. Computer Engineering (Software Engineering), B.Sc. Computer Engineering (Communications)",
+                              // visibleIf: "{programm}=B.Sc. Computer Engineering (Software Engineering), B.Sc. Computer Engineering (Communications)",
                               colCount: 0,
                               choices: [ 
                                 
@@ -325,7 +372,7 @@ return (
                             }, {
                               type:"dropdown",
                               name: "most-disliked",
-                              title: "Please choose a course wich you disliked the most.",
+                              title: "Please choose a course which you disliked the most.",
                               // isRequired: true,
                               colCount: 0,
                               choices: [

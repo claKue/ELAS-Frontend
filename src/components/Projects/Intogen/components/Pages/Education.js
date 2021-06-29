@@ -341,7 +341,7 @@ export default function Education() {
                             options={major}
                             getOptionLabel={(option) => option.Major} 
                             style={{ width: 200, marginRight: 10 }}
-                            size= {"small"}
+                            size= {"small"} 
                             onChange={handleMajor}
                             renderInput={(params) => <TextField {...params} label="Major" variant="outlined" />}
                         />                    

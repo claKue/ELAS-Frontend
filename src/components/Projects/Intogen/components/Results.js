@@ -1,10 +1,33 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import LearningCards from './LearningCards'
 import Diagram from './diagrams/nationality/Diagram'
-import Form from 'react-bootstrap/Form'
 import './Results.css';
+import ResultsDiagram from '../components/ResultsDiagram';
+import ResultsCourses from './ResultsCourses';
+
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+
+import FindYourType from '../components/Pages/FindYourType'
 
 export default function Nationality() {
+
+    const [activist, setActivist] = useState([]);
+    const [reflector, setReflector] = useState([]);
+    const [theorist, setTheorist] = useState([]);
+    const [pragmatist, setPragmatist] = useState([]);
+
+    // setActivist([activistScore])
+    // setReflector([reflectorScore])
+    // setTheorist([theoristScore])
+    // setPragmatist([pragmatistScore])
+
+
+
+
+
+
     return (  
         <> 
                 <div className="leftSide">
@@ -16,7 +39,8 @@ export default function Nationality() {
                         approach towards learning.
                     </div>
                     <div className="diagram-container">
-                        <Diagram />
+                        <ResultsDiagram activists={activist} reflectors={reflector} 
+                            theorists={theorist} pragmatists={pragmatist} />
                     </div>
 
                     <h4 className="titles">Change combinations for different suggestions:</h4>
@@ -27,18 +51,12 @@ export default function Nationality() {
                     </div>
 
                     <div className="checkBoxes">
-                        <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Activist" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Reflector" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Pragmatist" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Theorist" />
-                        </Form.Group>
+                        <FormGroup>
+                            <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }}/>} label="Activist" />
+                            <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Reflector" />
+                            <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Pragmatist" />
+                            <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Theorist" />
+                        </FormGroup>
                     </div>
 
                     <h4 className="titles">Suggested courses:</h4>
@@ -53,7 +71,7 @@ export default function Nationality() {
                     </div>
 
                     <div className="diagram-container">
-                        <Diagram />
+                        <ResultsCourses />
                     </div>
 
                     <h4 className="titles">Suggested courses weightage:</h4>
@@ -65,7 +83,7 @@ export default function Nationality() {
                     </div>
 
                     <div className="diagram-container">
-                        <Diagram />
+                        <ResultsCourses />
                     </div>
                 </div>
                 
