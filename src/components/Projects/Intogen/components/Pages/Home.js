@@ -24,7 +24,7 @@ export default function Home() {
                     <p className="text-container">
                         Intogen is David Kolb's research based web service, which helps ISE students of the University Duisburg-Essen
                         to identify their preferred Learning Styles. The Learning style's data will be used to provide an overview on the basis of their nationalities and education.
-                        After completing the survey, students are able to see suggested courses they might like to study based off of their Learning Style. <br/><br/>
+                        After completing the survey, students are able to see suggested courses they might like to study based of their Learning Style. <br/><br/>
                         Dataset overview: <br/>
                         1- Nationality <br/>
                         2- Education<br/>

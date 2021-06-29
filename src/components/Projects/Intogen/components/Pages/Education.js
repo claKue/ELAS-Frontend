@@ -320,6 +320,24 @@ export default function Education() {
 
     }
 
+    
+    // Why does the 'in' operator doesn't work here???
+    // let studyProgramsBachelor = [];
+    //     for(let i = 0; i<uniqueStudyPrograms.length; i++) {
+    //       if ('B.Sc.' in uniqueStudyPrograms[i].Study_program) {
+    //         studyProgramsBachelor += uniqueStudyPrograms[i].Study_program
+    //       }
+    //     }
+    // console.log(studyProgramsBachelor)
+
+    // let studyProgramsMaster = [];
+    //     for(let i = 0; i<uniqueStudyPrograms.length; i++) {
+    //       if ('M.Sc.' in uniqueStudyPrograms[i].Study_program) {
+    //         studyProgramsMaster += uniqueStudyPrograms[i].Study_program
+    //       }
+    //     }
+    // console.log(studyProgramsMaster)
+
     return (
         <>
             <hr class="border2" data-content="Education"/>

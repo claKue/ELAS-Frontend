@@ -9,7 +9,7 @@ function ResultsCourses(props) {
       type: 'column'
     },
     title: {
-        text: "Your personal learning style preferences"
+        text: "Courses you might like to study"
     },
     xAxis: {
         categories: ["Course1", "Course2", "Course1", "Course2", "Course1", "Course2","Course1", "Course2", "Course1", "Course2"],
