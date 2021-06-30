@@ -119,12 +119,9 @@ return (
   const json = {
 
     showProgressBar: "top",
-    progressBarType: "buttons",
     showQuestionNumbers: "off",
     pages: [
       {
-        navigationTitle: "Start",
-        navigationDescription: "Introduction",
         questions: [
           {
             type: "radiogroup",
@@ -134,8 +131,6 @@ return (
           }
         ]
       }, { 
-            navigationTitle: "Activist",
-            navigationDescription: "Score",
             questions: [
                {
                 type: "matrix",
@@ -172,8 +167,6 @@ return (
               }
             ]
       }, {
-        navigationTitle: "Reflector",
-        navigationDescription: "Score",
         questions: [
           {
             type: "matrix",
@@ -210,8 +203,6 @@ return (
           }
         ]
       }, {
-        navigationTitle: "Theorist",
-        navigationDescription: "Score",
         questions: [
           {
             type: "matrix",
@@ -248,8 +239,6 @@ return (
           }
         ]
       }, {
-        navigationTitle: "Pragmatist",
-        navigationDescription: "Score",
         questions: [
           {
             type: "matrix",
@@ -290,8 +279,6 @@ return (
       // study-programm
 
       {
-        navigationTitle: "Finish",
-        navigationDescription: "Personal Info",
         questions: [
           {
             type: "radiogroup",
