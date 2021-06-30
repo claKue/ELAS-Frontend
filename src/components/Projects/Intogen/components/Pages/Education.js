@@ -330,6 +330,17 @@ export default function Education() {
     //     }
     // console.log(studyProgramsBachelor)
 
+    // const [studyProgramsBachelor, setStudyProgramsBachelor] = useState([]);
+
+    // for (let studyprogram of uniqueStudyPrograms) {
+    //     if (studyprogram.Study_program.includes ('B.Sc.')) {
+    //         setStudyProgramsBachelor(studyProgramsBachelor.concat(studyprogram))
+    //     }
+    // }
+
+    // console.log(studyProgramsBachelor)
+
+
     // let studyProgramsMaster = [];
     //     for(let i = 0; i<uniqueStudyPrograms.length; i++) {
     //       if ('M.Sc.' in uniqueStudyPrograms[i].Study_program) {

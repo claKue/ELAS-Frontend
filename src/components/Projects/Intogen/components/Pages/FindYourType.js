@@ -1,12 +1,17 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import Footer from '../Footer';
 import Results from '../Results';
-// import Formular from '../Formular'
+import Formular from '../Formular'
 import '../../Intogen.css';
 // import data from '../diagrams/data/bachelorprogramms';
 import data from '../diagrams/data/out';
+
+
+
+
+
 
 function getUnique(arr, index) {
   const unique = arr
@@ -21,13 +26,15 @@ function getUnique(arr, index) {
 const uniqueStudyPrograms = getUnique(data,'Study_program'); 
 const major = getUnique(data, 'Major');
 
-console.log(uniqueStudyPrograms[1].Study_program)
+// console.log(uniqueStudyPrograms[1].Study_program)
 
-let studyPrograms = [];
-         for(let i = 0; i<uniqueStudyPrograms.length; i++) {
-             studyPrograms += uniqueStudyPrograms[i].Study_program
-         }
-console.log(studyPrograms)
+// let studyPrograms = [];
+//          for(let i = 0; i<uniqueStudyPrograms.length; i++) {
+//              studyPrograms += uniqueStudyPrograms[i].Study_program
+//          }
+// console.log(studyPrograms)
+
+
 
 
 
@@ -49,7 +56,9 @@ class FindYourType extends Component {
       })
     };
 
-    
+    // const [studyProgramsBachelor, setStudyProgramsBachelor] = useState([]);
+
+
 
     
 
@@ -85,7 +94,13 @@ var onSurveyCompletion = this.state.isCompleted ? (
 // };
 
 // console.log(this.model);
+// for (let studyprogram of uniqueStudyPrograms) {
+//   if (studyprogram.Study_program.includes ('B.Sc.')) {
+//       setStudyProgramsBachelor(studyProgramsBachelor.concat(studyprogram))
+//   }
+// }
 
+// console.log(studyProgramsBachelor)
 
 return (
 <div className="App">
@@ -298,7 +313,7 @@ return (
                     visibleIf: "{Major}=Bachelor",
                     // isRequired: true,
                     colCount: 0,
-                    choices: studyPrograms
+                    choices: []
                     // [
                     //   "B.Sc. Computer Engineering (Software Engineering)",
                     //   "B.Sc. Computer Engineering (Communications)",
