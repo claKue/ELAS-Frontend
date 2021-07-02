@@ -7,6 +7,11 @@ import data from '../diagrams/data/out';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControl from '@material-ui/core/FormControl';
+
 export default function Education() {
 
     const [females, setFemales] = useState([]);
@@ -15,6 +20,8 @@ export default function Education() {
     const [amountmales, setAmountmales] = useState();
     const [amountfemales, setAmountfemales] = useState();
     const [category, setCategory] = useState([]);
+
+    const [studyProgram, setStudyProgram] = useState([{label: ""}]);
 
     function getUnique(arr, index) {
         const unique = arr
@@ -28,9 +35,13 @@ export default function Education() {
 
 
     const uniqueStudyPrograms = getUnique(data,'Study_program'); 
+    console.log(uniqueStudyPrograms)
+
     const major = getUnique(data, 'Major');
 
     const ise = [{ ise: 'ISE' }];
+
+    const [value, setValue] = useState('master');
 
 
 
@@ -129,7 +140,20 @@ export default function Education() {
     }
 
     const handleMajor = (events, values) => {
+
+        setValue(events.target.value);
+
         const filter = data.filter(a => a.Major == values.Major)
+
+        // console.log(filter)
+        const uniqueStudyPrograms = getUnique(filter,'Study_program'); 
+
+        let studyPrograms = [];
+        for(let i = 0; i<uniqueStudyPrograms.length; i++) {
+            studyPrograms.push({label: uniqueStudyPrograms[i].Study_program})
+        }
+        setStudyProgram(studyPrograms)
+
 
         const males = filter.filter(b=>b.Gender === 'Male');
         const females = filter.filter(b=>b.Gender === 'Female');
@@ -146,10 +170,13 @@ export default function Education() {
 
          // Female, Activist Average (Major)
          let activistSumFemales = 0;
-         for(let i = 0; i<amountFemales; i++) {
-             activistSumFemales += females[i].Activist
+         let activistAverageFemales = 0;
+         if (amountFemales !== 0) {
+            for(let i = 0; i<amountFemales; i++) {
+                activistSumFemales += females[i].Activist
+            }
+            activistAverageFemales = activistSumFemales / amountFemales
          }
-         let activistAverageFemales = activistSumFemales / amountFemales
 
         // Male, Reflector Average (Major)
         let reflectorSumMales = 0;
@@ -160,10 +187,13 @@ export default function Education() {
 
          // Female, Reflector Average (Major)
          let reflectorSumFemales = 0;
-         for(let i = 0; i<amountFemales; i++) {
-             reflectorSumFemales += females[i].Reflector
+         let reflectorAverageFemales = 0;
+         if (amountFemales !== 0) {
+            for(let i = 0; i<amountFemales; i++) {
+                reflectorSumFemales += females[i].Reflector
+            }
+            reflectorAverageFemales = reflectorSumFemales / amountFemales
          }
-         let reflectorAverageFemales = reflectorSumFemales / amountFemales
 
          // Male, Theorist Average (Major)
          let theoristSumMales = 0;
@@ -174,10 +204,13 @@ export default function Education() {
 
           // Female, Theorist Average (Major)
           let theoristSumFemales = 0;
-          for(let i = 0; i<amountFemales; i++) {
-              theoristSumFemales += females[i].Theorist
+          let theoristAverageFemales = 0;
+          if (amountFemales !== 0) {
+            for(let i = 0; i<amountFemales; i++) {
+                theoristSumFemales += females[i].Theorist
+            }
+            theoristAverageFemales = theoristSumFemales / amountFemales
           }
-          let theoristAverageFemales = theoristSumFemales / amountFemales
 
           // Male, Pragmatist Average (Major)
          let pragmatistSumMales = 0;
@@ -188,10 +221,13 @@ export default function Education() {
 
           // Female, Pragmatist Average (Major)
           let pragmatistSumFemales = 0;
-          for(let i = 0; i<amountFemales; i++) {
-              pragmatistSumFemales += females[i].Pragmatist
+          let pragmatistAverageFemales = 0;
+          if (amountFemales !== 0) {
+            for(let i = 0; i<amountFemales; i++) {
+                pragmatistSumFemales += females[i].Pragmatist
+            }
+            pragmatistAverageFemales = pragmatistSumFemales / amountFemales
           }
-          let pragmatistAverageFemales = pragmatistSumFemales / amountFemales
 
         // Average Activist
         let averageActivist = (activistAverageMales + activistAverageFemales) / 2
@@ -204,6 +240,13 @@ export default function Education() {
 
         // Average Pragmatist
         let averagePragmatist = (pragmatistAverageMales + pragmatistAverageFemales) / 2
+
+        if (amountFemales == 0) {
+            averageActivist = activistAverageMales
+            averageReflector = reflectorAverageMales
+            averageTheorist = theoristAverageMales
+            averagePragmatist = pragmatistAverageMales
+        }
 
 
         setMales([activistAverageMales, reflectorAverageMales, theoristAverageMales, pragmatistAverageMales])
@@ -320,35 +363,6 @@ export default function Education() {
 
     }
 
-    
-    // Why does the 'in' operator doesn't work here???
-    // let studyProgramsBachelor = [];
-    //     for(let i = 0; i<uniqueStudyPrograms.length; i++) {
-    //       if ('B.Sc.' in uniqueStudyPrograms[i].Study_program) {
-    //         studyProgramsBachelor += uniqueStudyPrograms[i].Study_program
-    //       }
-    //     }
-    // console.log(studyProgramsBachelor)
-
-    // const [studyProgramsBachelor, setStudyProgramsBachelor] = useState([]);
-
-    // for (let studyprogram of uniqueStudyPrograms) {
-    //     if (studyprogram.Study_program.includes ('B.Sc.')) {
-    //         setStudyProgramsBachelor(studyProgramsBachelor.concat(studyprogram))
-    //     }
-    // }
-
-    // console.log(studyProgramsBachelor)
-
-
-    // let studyProgramsMaster = [];
-    //     for(let i = 0; i<uniqueStudyPrograms.length; i++) {
-    //       if ('M.Sc.' in uniqueStudyPrograms[i].Study_program) {
-    //         studyProgramsMaster += uniqueStudyPrograms[i].Study_program
-    //       }
-    //     }
-    // console.log(studyProgramsMaster)
-
     return (
         <>
             <hr class="border2" data-content="Education"/>
@@ -357,6 +371,7 @@ export default function Education() {
                     <h4>Choose your <b>Education Degree:</b></h4>
                     <div class="boxes">   
                         <Autocomplete
+                            className="autocomplete"
                             id="combo-box-demo"
                             options={ise}
                             getOptionLabel={(option) => option.ise} 
@@ -366,6 +381,7 @@ export default function Education() {
                             renderInput={(params) => <TextField {...params} label="ISE" variant="outlined" />}
                         />
                         <Autocomplete
+                            className="autocomplete"
                             id="combo-box-demo"
                             options={major}
                             getOptionLabel={(option) => option.Major} 
@@ -373,11 +389,21 @@ export default function Education() {
                             size= {"small"} 
                             onChange={handleMajor}
                             renderInput={(params) => <TextField {...params} label="Major" variant="outlined" />}
-                        />                    
+                        />   
+
+                        <FormControl component="fieldset">
+                                <RadioGroup row value={value}>
+                                    <FormControlLabel onChange={handleMajor} value="master" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Master" />
+                                    <FormControlLabel onChange={handleMajor} value="bachelor" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Bachelor" />    
+                                </RadioGroup>
+                        </FormControl>     
+
+                                 
                         <Autocomplete
+                            className="autocomplete"
                             id="combo-box-demo"
-                            options={uniqueStudyPrograms}
-                            getOptionLabel={(option) => option.Study_program} 
+                            options={studyProgram}
+                            getOptionLabel={(option) => option.label} 
                             style={{ width: 400, marginRight: 10 }}
                             size= {"small"}
                             onChange={handleSelect}

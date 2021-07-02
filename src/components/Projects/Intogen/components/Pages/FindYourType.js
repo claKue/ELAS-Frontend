@@ -9,35 +9,6 @@ import '../../Intogen.css';
 import data from '../diagrams/data/out';
 
 
-
-
-
-
-function getUnique(arr, index) {
-  const unique = arr
-       .map(e => e[index])
-       // store the keys of the unique objects
-       .map((e, i, final) => final.indexOf(e) === i && i)
-       // eliminate the dead keys & store unique objects
-      .filter(e => arr[e]).map(e => arr[e]);      
-  return unique;
-}
-
-const uniqueStudyPrograms = getUnique(data,'Study_program'); 
-const major = getUnique(data, 'Major');
-
-// console.log(uniqueStudyPrograms[1].Study_program)
-
-// let studyPrograms = [];
-//          for(let i = 0; i<uniqueStudyPrograms.length; i++) {
-//              studyPrograms += uniqueStudyPrograms[i].Study_program
-//          }
-// console.log(studyPrograms)
-
-
-
-
-
 Survey.StylesManager.applyTheme("orange");
 
 class FindYourType extends Component {
@@ -93,14 +64,6 @@ var onSurveyCompletion = this.state.isCompleted ? (
 //   return value;
 // };
 
-// console.log(this.model);
-// for (let studyprogram of uniqueStudyPrograms) {
-//   if (studyprogram.Study_program.includes ('B.Sc.')) {
-//       setStudyProgramsBachelor(studyProgramsBachelor.concat(studyprogram))
-//   }
-// }
-
-// console.log(studyProgramsBachelor)
 
 return (
 <div className="App">
@@ -313,16 +276,16 @@ return (
                     visibleIf: "{Major}=Bachelor",
                     // isRequired: true,
                     colCount: 0,
-                    choices: []
-                    // [
-                    //   "B.Sc. Computer Engineering (Software Engineering)",
-                    //   "B.Sc. Computer Engineering (Communications)",
-                    //   "B.Sc. Electrical and Electronic Engineering",
-                    //   "B.Sc. Mechanical Engineering",
-                    //   "B.Sc. Metallurgy and Metal Forming",
-                    //   "B.Sc. Steel Technology and Metall Forming",
-                    //   "B.Sc. Structural Engineering"
-                    //           ]
+                    choices: 
+                    [
+                      "B.Sc. Computer Engineering (Software Engineering)",
+                      "B.Sc. Computer Engineering (Communications)",
+                      "B.Sc. Electrical and Electronic Engineering",
+                      "B.Sc. Mechanical Engineering",
+                      "B.Sc. Metallurgy and Metal Forming",
+                      "B.Sc. Steel Technology and Metall Forming",
+                      "B.Sc. Structural Engineering"
+                              ]
                   }, {
                     type: "dropdown",
                     name: "programm",

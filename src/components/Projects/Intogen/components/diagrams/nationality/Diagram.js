@@ -45,7 +45,6 @@ function Diagram(props) {
     {
         name: 'Female',
         data: props.females,
-        // default: nichts???
         color: Highcharts.getOptions().colors[3]
     }, 
     {

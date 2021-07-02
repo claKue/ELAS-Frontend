@@ -131,9 +131,13 @@
 
 /* visualization page */
 
-.boxes {
+/* .boxes {
   display: flex;
   flex-direction: row;
+} */
+
+.autocomplete {
+  margin-bottom: 15px;
 }
 
 .border {
