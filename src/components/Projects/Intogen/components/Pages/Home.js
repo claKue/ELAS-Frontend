@@ -1,17 +1,9 @@
 import React from 'react';
 import '../../Intogen.css'
-
-import CardsActivists from '../Cards/CardsActivists';
-import CardsReflectors from '../Cards/CardsReflectors';
-import CardsTheorists from '../Cards/CardsTheorists';
-import CardsPragmatists from '../Cards/CardsPragmatists';
-// import Cards from '../Cards/Cards';
-
 import Footer from '../Footer'
 import img1 from '../assets/learning_styles.png';
-// import LearningCards from '../LearningCards.js'
-
 import Icons from '../Icons';
+import { AppContainer } from '../Cards/AppContainer';
 
 export default function Home() {
     return (
@@ -24,11 +16,11 @@ export default function Home() {
                     <p className="text-container">
                         Intogen is David Kolb's research based web service, which helps ISE students of the University Duisburg-Essen
                         to identify their preferred Learning Styles. The Learning style's data will be used to provide an overview on the basis of their nationalities and education.
-                        After completing the survey, students are able to see suggested courses they might like to study based of their Learning Style. <br/><br/>
-                        Dataset overview: <br/>
+                        After completing the survey, students are able to see suggested courses they might like to study based on their Learning Style. <br/><br/>
+                        Following datasets are included: <br/>
                         1- Nationality <br/>
                         2- Education<br/>
-                        3- Course suggestion with Learning Styles
+                        3- Course suggestion with Learning Styles (Find Your Type)
                     </p>
                 
                 <img className="image" src={img1} alt="learning styles" />
@@ -38,11 +30,9 @@ export default function Home() {
              
 
                 {/* style zu singleCards siehe Intogen.css */}
-                <div className="singleCards"> 
-                    <CardsActivists />
-                    <CardsReflectors />
-                    <CardsPragmatists />
-                    <CardsTheorists />
+                <div className="Cards"> 
+
+                <AppContainer />
                 </div>
                 <Icons/>
             </div>

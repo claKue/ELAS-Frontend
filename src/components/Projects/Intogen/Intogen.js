@@ -16,6 +16,7 @@ function Intogen() {
           <Navbar/> 
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/intogen" exact component={Home} />
             <Route path="/visualization" component={Visualization} />
             <Route path="/nationality" component={Nationality} />
             <Route path="/education" component={Education} />
