@@ -5,13 +5,46 @@ import { SiteCard } from "./SiteCard";
 export class AppContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = [{
+      cardtitle: "ACTIVISTS",
+      cardundertitle: "Concrete experiencer"
+    },
+    {
+      cardtitle: "THEORIST",
+      cardundertitle: "Concrete experiencer"
+    },
+    {
+      cardtitle: "PRAGMATIST",
+      cardundertitle: "Concrete experiencer"
+    },
+    {
+      cardtitle: "REFLECTOR",
+      cardundertitle: "Concrete experiencer"
+    }
+  ];
   }
+
 
   render() {
     return (
           <SiteCardArea>
-            <SiteCard
+            {this.state.map(da => {
+              return(
+                <SiteCard
+                  cardtitle={da.cardtitle}
+                  cardundertitle={da.cardundertitle}
+                  // cardundertitle2={"Active experimenter"}
+                  // carddescription={
+                  //   "Activists learning style is: „hands-on“. They rely on intuition rather than logic and have a strong preference for „doing“ rather than „thinking“. They use other people’s analysis and take a more practical, experimental approach. They like new challenges, experiences and take risks. The central focus is on team problem-solving."
+                  // }
+                  // cardexpandedtitle={"Activists are accomodators:"}
+                  // cardexpandedtext={
+                  //   "Accomodators tend to rely on other people's information. They are gut oriented people and don’t like logical analysis. They do not like routine and will take creative risks to see what happens. People with this learning style will ask themselves: 'What if?'"
+                  // }
+                />
+              )
+            })}
+            {/* <SiteCard
               cardtitle={"ACTIVISTS"}
               cardundertitle={"Concrete experiencer"}
               cardundertitle2={"Active experimenter"}
@@ -60,8 +93,8 @@ export class AppContainer extends React.Component {
               cardexpandedtext={
                "People with converging learning styles are more attracted to technology. They like to experiment with new ideas and to work with practical applications. They like to figure out how things work in practise. Pragmatists like facts and effiency. People with this learning style will ask themselves: 'How?'"
               }
-            />
-          </SiteCardArea>
+            /> */}
+          </SiteCardArea> 
     );
   }
 }

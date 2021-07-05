@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../Intogen.css'
 import Footer from '../Footer'
 import img1 from '../assets/learning_styles.png';
 import Icons from '../Icons';
 import { AppContainer } from '../Cards/AppContainer';
+import {Link, BrowserRouter as Router} from 'react-router-dom';
 
 export default function Home() {
+
+    const [click, setClick] = useState(false);
+    const closeMobileMenu = () => setClick(false);
+
     return (
         <>
             <hr class="border2" data-content="Home"/>
@@ -18,9 +23,9 @@ export default function Home() {
                         to identify their preferred Learning Styles. The Learning style's data will be used to provide an overview on the basis of their nationalities and education.
                         After completing the survey, students are able to see suggested courses they might like to study based on their Learning Style. <br/><br/>
                         Following datasets are included: <br/>
-                        1- Nationality <br/>
-                        2- Education<br/>
-                        3- Course suggestion with Learning Styles (Find Your Type)
+                        1 - Nationality <br/>
+                        2 - Education<br/>
+                        3 - Course suggestion based on your learning style (<Link to="/findyourtype" className="aboutUsFindType" onClick={closeMobileMenu}>Find Your Type</Link>)
                     </p>
                 
                 <img className="image" src={img1} alt="learning styles" />

@@ -20,6 +20,9 @@ export default function Education() {
     const [amountmales, setAmountmales] = useState();
     const [amountfemales, setAmountfemales] = useState();
     const [category, setCategory] = useState([]);
+    
+    console.log(females.length)
+
 
     const [studyProgram, setStudyProgram] = useState([{label: ""}]);
 
@@ -44,6 +47,7 @@ export default function Education() {
     const ise = [{ ise: 'ISE' }];
 
     const [value, setValue] = useState('master');
+
 
 
 
@@ -139,19 +143,24 @@ export default function Education() {
         setAmountmales(amountAllMales)
         setAmountfemales(amountAllFemales)
         setCategory(['Activist','Reflector','Theorist','Pragmatist'])
+
+
+
     }
 
     const handleMajor = (events, values) => {
 
-        
+        setValue(events.target.value);
+        console.log(values)
 
-        const filter = data.filter(a => a.Major == values.Major)
-        // console.log(filter)
+        const filter = data.filter(a => a.Major === values.Major)
+        console.log(filter)
 
         setDiagramData(filter)
 
         // console.log(filter)
         const uniqueStudyPrograms = getUnique(filter,'Study_program'); 
+        console.log(uniqueStudyPrograms)
 
         let studyPrograms = [];
         for(let i = 0; i<uniqueStudyPrograms.length; i++) {
@@ -265,16 +274,12 @@ export default function Education() {
     }
     
     const handleSelect = (events, values) => {
-        // const filter = data.filter(a => a.Study_program == values.Study_program)
-        // console.log(filter)
-        console.log(diagramData)
+        console.log(values)
 
-
-        // Hier liegt das Problem: Wie bekomme ich angeklicktes Study Program von Master/ Bachelor??? Hat das was mit label zu tun?
-        const filter = data.filter(a => a.label == values.label)
+        const filter = data.filter(a => a.Study_program === values.label)
         console.log(filter)
-
-        
+        // console.log(diagramData)
+      
 
         const study_programMales = filter.filter(t=>t.Gender ==='Male');
         // console.log(study_programMales)
@@ -393,23 +398,29 @@ export default function Education() {
                             onChange={handleChange}
                             renderInput={(params) => <TextField {...params} label="ISE" variant="outlined" />}
                         />
-                        <Autocomplete
-                            className="autocomplete"
-                            id="combo-box-demo"
-                            options={major}
-                            getOptionLabel={(option) => option.Major} 
-                            style={{ width: 200, marginRight: 10 }}
-                            size= {"small"} 
-                            onChange={handleMajor}
-                            renderInput={(params) => <TextField {...params} label="Major" variant="outlined" />}
-                        />   
+
+                        {females.length !== 0 ? <> 
+                            <Autocomplete
+                                className="autocomplete"
+                                id="combo-box-demo"
+                                options={major}
+                                getOptionLabel={(option) => option.Major} 
+                                style={{ width: 200, marginRight: 10 }}
+                                size= {"small"} 
+                                onChange={handleMajor}
+                                renderInput={(params) => <TextField {...params} label="Major" variant="outlined" />}
+                            /> 
+                        </> : <> </> }
+
+                          
 
                         <FormControl component="fieldset">
                                 <RadioGroup row value={value}>
-                                    <FormControlLabel onChange={handleMajor} value="master" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Master" />
-                                    <FormControlLabel onChange={handleMajor} value="bachelor" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Bachelor" />    
+                                    <FormControlLabel value="master" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Master" />
+                                    <FormControlLabel value="bachelor" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Bachelor" />    
                                 </RadioGroup>
-                        </FormControl>     
+                        </FormControl>   
+                          
 
                                  
                         <Autocomplete

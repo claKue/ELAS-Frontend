@@ -3,9 +3,9 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import Footer from '../Footer';
 import Results from '../Results';
-import Formular from '../Formular'
+// import Formular from '../Formular'
 import '../../Intogen.css';
-import data from '../diagrams/data/out';
+// import data from '../diagrams/data/out';
 
 import * as widgets from "surveyjs-widgets";
 import $ from "jquery"; 
@@ -101,8 +101,7 @@ return (
           {
             type: "radiogroup",
             name: "introduction",
-            title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response."
-            
+            title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
           }
         ]
       }, { 
