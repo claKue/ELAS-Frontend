@@ -205,6 +205,10 @@
   font-size: 100px;
 }
 /* styling for ProgressBar */
+.sv_main {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+  'Lucida Sans', Arial, sans-serif;
+}
 
 .sv_progress-buttons__list-container .sv_progress-buttons__list li::before {
   border: 3px solid #FF6601;
@@ -228,4 +232,8 @@
 .sv_progress-buttons__list-container 
 .sv_progress-buttons__list li.sv_progress-buttons__list-element--passed + li::after {
   background-color: #FF6601;
+}
+
+.pageTitle {
+  font-size: 10em;
 }

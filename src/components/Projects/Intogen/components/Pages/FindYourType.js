@@ -62,6 +62,9 @@ var onSurveyCompletion = this.state.isCompleted ? (
 </div>
 ) : null;
 
+console.log(this.model.data);
+
+
 return (
 <div className="App">
   <hr class="border2" data-content="Find your Type"/>
@@ -97,11 +100,18 @@ return (
     showQuestionNumbers: "off",
     pages: [
       {
+        title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
         questions: [
           {
             type: "radiogroup",
+<<<<<<< Updated upstream
             name: "introduction",
             title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
+=======
+            name: "",
+            title: ""
+            
+>>>>>>> Stashed changes
           }
         ]
       }, { 
