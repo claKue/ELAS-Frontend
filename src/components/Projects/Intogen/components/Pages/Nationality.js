@@ -36,6 +36,7 @@ export default function Nationality() {
     const handleSelect = (events, values) => {
 
         const filter = data.filter(a => a.Nationality == values.Nationality)
+        console.log(filter)
 
         const nationalityMales = filter.filter(t=>t.Gender ==='Male');
 

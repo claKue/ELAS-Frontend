@@ -23,6 +23,8 @@ export default function Education() {
 
     const [studyProgram, setStudyProgram] = useState([{label: ""}]);
 
+    const [diagramData, setDiagramData] = useState([]);
+
     function getUnique(arr, index) {
         const unique = arr
              .map(e => e[index])
@@ -35,7 +37,7 @@ export default function Education() {
 
 
     const uniqueStudyPrograms = getUnique(data,'Study_program'); 
-    console.log(uniqueStudyPrograms)
+    // console.log(uniqueStudyPrograms)
 
     const major = getUnique(data, 'Major');
 
@@ -141,9 +143,12 @@ export default function Education() {
 
     const handleMajor = (events, values) => {
 
-        setValue(events.target.value);
+        
 
         const filter = data.filter(a => a.Major == values.Major)
+        // console.log(filter)
+
+        setDiagramData(filter)
 
         // console.log(filter)
         const uniqueStudyPrograms = getUnique(filter,'Study_program'); 
@@ -260,14 +265,22 @@ export default function Education() {
     }
     
     const handleSelect = (events, values) => {
-        const filter = data.filter(a => a.Study_program == values.Study_program)
+        // const filter = data.filter(a => a.Study_program == values.Study_program)
         // console.log(filter)
+        console.log(diagramData)
+
+
+        // Hier liegt das Problem: Wie bekomme ich angeklicktes Study Program von Master/ Bachelor??? Hat das was mit label zu tun?
+        const filter = data.filter(a => a.label == values.label)
+        console.log(filter)
+
+        
 
         const study_programMales = filter.filter(t=>t.Gender ==='Male');
-        console.log(study_programMales)
+        // console.log(study_programMales)
 
         const study_programFemales = filter.filter(t=>t.Gender ==='Female');
-        console.log(study_programFemales)
+        // console.log(study_programFemales)
 
         
 
