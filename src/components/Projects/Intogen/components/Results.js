@@ -13,10 +13,18 @@ import FindYourType from '../components/Pages/FindYourType'
 
 export default function Nationality() {
 
-    const [activist, setActivist] = useState([]);
-    const [reflector, setReflector] = useState([]);
-    const [theorist, setTheorist] = useState([]);
-    const [pragmatist, setPragmatist] = useState([]);
+
+    // const [activist, setActivist] = useState([]);
+    // const [reflector, setReflector] = useState([]);
+    // const [theorist, setTheorist] = useState([]);
+    // const [pragmatist, setPragmatist] = useState([]);
+
+    // const [scoreAc, setScoreAc] = useState([]);
+    // const [scoreRef, setScoreRef] = useState([]);
+    // const [scoreTheo, setScoreTheo] = useState([]);
+    // const [scorePrag, setScorePrag] = useState([]);
+
+    // const [score, setScore] = useState([]);
 
     // setActivist([activistScore])
     // setReflector([reflectorScore])
@@ -28,7 +36,7 @@ export default function Nationality() {
     const output = 
         {
         "Activist":{
-            "2":10,
+            "2":0,
             "4":0,
             "10":10,
             "13":0,
@@ -79,18 +87,58 @@ export default function Nationality() {
         }
     
         const values = Object.values(output)
-        const abc = values[0]
-    
-        console.log(Object.values(abc))
-        const deb = Object.values(abc)
+        const activist = values[0]
+        // console.log(Object.values(activist))
+        const ac = Object.values(activist)
         let Activist = 0
-        deb.forEach(d=> {
-            Activist=Activist + d
+        ac.forEach(d => {
+            Activist = Activist + d
         })
-        console.log(Activist)
-        let array= []
-        array.push(Activist)
-        console.log(array)
+        console.log("Summe Activist: " + Activist)
+        // setScoreAc(Activist)
+
+
+        const reflector = values[1]
+        // console.log(Object.values(reflector))
+        const ref = Object.values(reflector)
+        let Reflector = 0
+        ref.forEach(d => {
+            Reflector = Reflector + d
+        })
+        console.log("Summe Reflector: " + Reflector)
+        // setScoreRef(Reflector)
+
+
+        const theorist = values[2]
+        // console.log(Object.values(theorist))
+        const theo = Object.values(theorist)
+        let Theorist = 0
+        theo.forEach(d => {
+            Theorist = Theorist + d
+        })
+        console.log("Summe Theorist: " + Theorist)
+        // setScoreTheo(Theorist)
+
+
+        const pragmatist = values[3]
+        // console.log(Object.values(pragmatist))
+        const prag = Object.values(pragmatist)
+        let Pragmatist = 0
+        prag.forEach(d => {
+            Pragmatist = Pragmatist + d
+        })
+        console.log("Summe Pragmatist: " + Pragmatist)
+        // setScorePrag(Pragmatist)
+
+        
+        let resultsLearningStyle = []
+        resultsLearningStyle.push(Activist)
+        resultsLearningStyle.push(Reflector)
+        resultsLearningStyle.push(Theorist)
+        resultsLearningStyle.push(Pragmatist)
+        console.log(resultsLearningStyle)
+
+        // setScore(resultsLearningStyle)
 
 
     return (  
@@ -104,8 +152,7 @@ export default function Nationality() {
                         approach towards learning.
                     </div>
                     <div className="diagram-container">
-                        <ResultsDiagram activists={activist} reflectors={reflector} 
-                            theorists={theorist} pragmatists={pragmatist} />
+                        <ResultsDiagram />
                     </div>
 
                     <h4 className="titles">Change combinations for different suggestions:</h4>

@@ -20,13 +20,10 @@ export default function Education() {
     const [amountmales, setAmountmales] = useState();
     const [amountfemales, setAmountfemales] = useState();
     const [category, setCategory] = useState([]);
-    
-    console.log(females.length)
 
+    const [popUp, setPopUp] = useState([]);
 
     const [studyProgram, setStudyProgram] = useState([{label: ""}]);
-
-    const [diagramData, setDiagramData] = useState([]);
 
     function getUnique(arr, index) {
         const unique = arr
@@ -38,17 +35,14 @@ export default function Education() {
         return unique;
     }
 
-
     const uniqueStudyPrograms = getUnique(data,'Study_program'); 
     // console.log(uniqueStudyPrograms)
 
     const major = getUnique(data, 'Major');
 
-    const ise = [{ ise: 'ISE' }];
+    const ise = [{ ise: 'International Studies in Engineering' }];
 
     const [value, setValue] = useState('master');
-
-
 
 
     const handleChange = () => {
@@ -150,13 +144,13 @@ export default function Education() {
 
     const handleMajor = (events, values) => {
 
+        setPopUp(values)
+
         setValue(events.target.value);
         console.log(values)
 
         const filter = data.filter(a => a.Major === values.Major)
         console.log(filter)
-
-        setDiagramData(filter)
 
         // console.log(filter)
         const uniqueStudyPrograms = getUnique(filter,'Study_program'); 
@@ -393,7 +387,7 @@ export default function Education() {
                             id="combo-box-demo"
                             options={ise}
                             getOptionLabel={(option) => option.ise} 
-                            style={{ width: 200, marginRight: 10 }}
+                            style={{ width: 600, marginRight: 10 }}
                             size= {"small"}
                             onChange={handleChange}
                             renderInput={(params) => <TextField {...params} label="ISE" variant="outlined" />}
@@ -405,34 +399,38 @@ export default function Education() {
                                 id="combo-box-demo"
                                 options={major}
                                 getOptionLabel={(option) => option.Major} 
-                                style={{ width: 200, marginRight: 10 }}
+                                style={{ width: 600, marginRight: 10 }}
                                 size= {"small"} 
                                 onChange={handleMajor}
                                 renderInput={(params) => <TextField {...params} label="Major" variant="outlined" />}
-                            /> 
+                            />      
                         </> : <> </> }
+
+                        {popUp.length !== 0 ? <>
+                                <Autocomplete
+                                    className="autocomplete"
+                                    id="combo-box-demo"
+                                    options={studyProgram}
+                                    getOptionLabel={(option) => option.label} 
+                                    style={{ width: 600, marginRight: 10 }}
+                                    size= {"small"}
+                                    onChange={handleSelect}
+                                    renderInput={(params) => <TextField {...params} label="Study program" variant="outlined" />}
+                                />
+                        </> : <> </>}
 
                           
 
-                        <FormControl component="fieldset">
+                        {/* <FormControl component="fieldset">
                                 <RadioGroup row value={value}>
                                     <FormControlLabel value="master" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Master" />
                                     <FormControlLabel value="bachelor" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Bachelor" />    
                                 </RadioGroup>
-                        </FormControl>   
+                        </FormControl>    */}
                           
 
                                  
-                        <Autocomplete
-                            className="autocomplete"
-                            id="combo-box-demo"
-                            options={studyProgram}
-                            getOptionLabel={(option) => option.label} 
-                            style={{ width: 400, marginRight: 10 }}
-                            size= {"small"}
-                            onChange={handleSelect}
-                            renderInput={(params) => <TextField {...params} label="Study program" variant="outlined" />}
-                        />
+                        
                     </div>
                     <p className="subtitlesDiagram">
                         Following are the learning types' averages of your <span className="underlined">study program.</span>

@@ -40,8 +40,8 @@ function ResultsDiagram(props) {
     series: [{
         type: 'column',
         colorByPoint: true,
-        data:  [53, 22, 13, 40],
-        // [props.activists, props.reflectors, props.theorists, props.pragmatists],
+        // data:  props.scores,
+        data:  [50, 70, 20, 90],
         showInLegend: false
     }]
   }
