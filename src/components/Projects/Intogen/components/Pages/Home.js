@@ -15,7 +15,6 @@ export default function Home() {
         <>
             <hr class="border2" data-content="Home"/>
             <div className="page-container">
-                
                     <span className="subTitle">Welcome to <b>Intogen </b></span><br/>
                     <hr class="border4"/>
                     <p className="text-container">
@@ -27,17 +26,12 @@ export default function Home() {
                         2 - Education<br/>
                         3 - Course suggestion based on your learning style (<Link to="/findyourtype" className="aboutUsFindType" onClick={closeMobileMenu}>Find Your Type</Link>)
                     </p>
-                
                 <img className="image" src={img1} alt="learning styles" />
-
                 <hr class="border1"/>
                 <b className="descriptions">Learn more about Kolb's Learning Styles:</b>
              
-
-                {/* style zu singleCards siehe Intogen.css */}
                 <div className="Cards"> 
-
-                <AppContainer />
+                    <AppContainer />
                 </div>
                 <Icons/>
             </div>

@@ -26,21 +26,25 @@ export class SiteCard extends React.Component {
           <Typography style={{ color: "#FF6600" }} variant="h5" component="h2">
             {this.props.cardtitle}
           </Typography>
+
           <Typography color="textSecondary" gutterBottom>
             {this.props.cardundertitle}
             <Typography color="textSecondary" gutterBottom>
               {this.props.cardundertitle2}
             </Typography>
           </Typography>
+
           <Typography variant="body2" component="p">
             {this.props.carddescription}
           </Typography>
         </CardContent>
+
         <CardActions disableSpacing>
           <IconButton onClick={this.handleExpandClick}>
             <ExpandMoreIcon />
           </IconButton>
         </CardActions>
+        
         <Collapse in={this.state.expand} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography color="textSecondary" paragraph>{this.props.cardexpandedtitle}</Typography>

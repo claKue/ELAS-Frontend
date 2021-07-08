@@ -11,25 +11,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 import FindYourType from '../components/Pages/FindYourType'
 
-export default function Nationality() {
+export default function Results(props) {
 
-
-    // const [activist, setActivist] = useState([]);
-    // const [reflector, setReflector] = useState([]);
-    // const [theorist, setTheorist] = useState([]);
-    // const [pragmatist, setPragmatist] = useState([]);
-
-    // const [scoreAc, setScoreAc] = useState([]);
-    // const [scoreRef, setScoreRef] = useState([]);
-    // const [scoreTheo, setScoreTheo] = useState([]);
-    // const [scorePrag, setScorePrag] = useState([]);
-
-    // const [score, setScore] = useState([]);
-
-    // setActivist([activistScore])
-    // setReflector([reflectorScore])
-    // setTheorist([theoristScore])
-    // setPragmatist([pragmatistScore])
+    // data = props.data
+    // console.log(data1)
 
 
     const data =  [53, 22, 13, 40]
@@ -95,8 +80,6 @@ export default function Nationality() {
             Activist = Activist + d
         })
         console.log("Summe Activist: " + Activist)
-        // setScoreAc(Activist)
-
 
         const reflector = values[1]
         // console.log(Object.values(reflector))
@@ -106,8 +89,6 @@ export default function Nationality() {
             Reflector = Reflector + d
         })
         console.log("Summe Reflector: " + Reflector)
-        // setScoreRef(Reflector)
-
 
         const theorist = values[2]
         // console.log(Object.values(theorist))
@@ -117,8 +98,6 @@ export default function Nationality() {
             Theorist = Theorist + d
         })
         console.log("Summe Theorist: " + Theorist)
-        // setScoreTheo(Theorist)
-
 
         const pragmatist = values[3]
         // console.log(Object.values(pragmatist))
@@ -128,7 +107,6 @@ export default function Nationality() {
             Pragmatist = Pragmatist + d
         })
         console.log("Summe Pragmatist: " + Pragmatist)
-        // setScorePrag(Pragmatist)
 
         
         let resultsLearningStyle = []
@@ -138,74 +116,64 @@ export default function Nationality() {
         resultsLearningStyle.push(Pragmatist)
         console.log(resultsLearningStyle)
 
-        // setScore(resultsLearningStyle)
-
-
     return (  
         <> 
-                <div className="leftSide">
-                    <h4>Results of your test</h4>
-                    <div className="textDescription">
-                        Following chart shows your preferred 
-                        learning styles and high percentage 
-                        of type which reflects your general 
-                        approach towards learning.
-                    </div>
-                    <div className="diagram-container">
-                        <ResultsDiagram />
-                    </div>
-
-                    <h4 className="titles">Change combinations for different suggestions:</h4>
-                    <div className="textDescription">
-                        On changing combinations you will see matching 
-                        courses with highest percentage of students 
-                        matching to your types from your study program. 
-                    </div>
-
-                    <div className="checkBoxes">
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }}/>} label="Activist" />
-                            <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Reflector" />
-                            <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Pragmatist" />
-                            <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Theorist" />
-                        </FormGroup>
-                    </div>
-
-                    <h4 className="titles">Suggested courses:</h4>
-                    <div className="textDescription">
-                        Following courses are estimated by comparing your style 
-                        scores with student's style scores present in that specific 
-                        course. High percentage courses are those courses which has 
-                        more similar learners like you. <br/> <br/>
-                        Note: This estimation does not guarantee that you will 
-                        score a good GPA in the courses, it suggests that you may 
-                        enjoy studying the course, taking your learning styles in consideration.  
-                    </div>
-
-                    <div className="diagram-container">
-                        <ResultsCourses />
-                    </div>
-
-                    <h4 className="titles">Suggested courses weightage:</h4>
-                    <div className="textDescription">
-                        Suggested courses percentages 
-                        depends on number of students in that course, 
-                        which means that if there is only one student in a course 
-                        then the percentage will obviously be high but the weightage will be low.  
-                    </div>
-
-                    <div className="diagram-container">
-                        <ResultsCourses />
-                    </div>
+            <div className="leftSide">
+                <h4>Results of your test</h4>
+                <div className="textDescription">
+                    Following chart shows your preferred 
+                    learning styles and high percentage 
+                    of type which reflects your general 
+                    approach towards learning.
                 </div>
-                
-                <div className="rightSide">
-                    <h4>Kolb's Learning Styles</h4>
-                    <hr class="border1"/>
-                    <div className="cards1">
-                        <LearningCards/>
-                    </div>
-                </div>       
+                <div className="diagram-container">
+                    <ResultsDiagram />
+                </div>
+                <h4 className="titles">Change combinations for different suggestions:</h4>
+                <div className="textDescription">
+                    On changing combinations you will see matching 
+                    courses with highest percentage of students 
+                    matching to your types from your study program. 
+                </div>
+                <div className="checkBoxes">
+                    <FormGroup>
+                        <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }}/>} label="Activist" />
+                        <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Reflector" />
+                        <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Pragmatist" />
+                        <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Theorist" />
+                    </FormGroup>
+                </div>
+                <h4 className="titles">Suggested courses:</h4>
+                <div className="textDescription">
+                    Following courses are estimated by comparing your style 
+                    scores with student's style scores present in that specific 
+                    course. High percentage courses are those courses which has 
+                    more similar learners like you. <br/> <br/>
+                    Note: This estimation does not guarantee that you will 
+                    score a good GPA in the courses, it suggests that you may 
+                    enjoy studying the course, taking your learning styles in consideration.  
+                </div>
+                <div className="diagram-container">
+                    <ResultsCourses />
+                </div>
+                <h4 className="titles">Suggested courses weightage:</h4>
+                <div className="textDescription">
+                    Suggested courses percentages 
+                    depends on number of students in that course, 
+                    which means that if there is only one student in a course 
+                    then the percentage will obviously be high but the weightage will be low.  
+                </div>
+                <div className="diagram-container">
+                    <ResultsCourses />
+                </div>
+            </div>
+            <div className="rightSide">
+                <h4>Kolb's Learning Styles</h4>
+                <hr class="border1"/>
+                <div className="cards1">
+                    <LearningCards/>
+                </div>
+            </div>       
         </>
     );
 }

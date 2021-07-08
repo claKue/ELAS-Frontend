@@ -4,7 +4,6 @@ import Footer from '../Footer'
 import LearningCards from '../LearningCards'
 import Diagram from '../diagrams/nationality/Diagram'
 import data from '../diagrams/data/out';
-
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
@@ -13,11 +12,10 @@ export default function Nationality() {
     const [females, setFemales] = useState([]);
     const [males, setMales] = useState([]);
     const [average, setAverage] = useState([]);
-
     const [amountmales, setAmountmales] = useState();
     const [amountfemales, setAmountfemales] = useState();
-
     const [category, setCategory] = useState([]);
+    const uniqueNationalities = getUnique(data,'Nationality');  
 
     // eliminates all duplicate countries
     function getUnique(arr, index) {
@@ -30,21 +28,14 @@ export default function Nationality() {
         return unique;
     }
 
-    const uniqueNationalities = getUnique(data,'Nationality');  
-
-
     const handleSelect = (events, values) => {
 
         const filter = data.filter(a => a.Nationality == values.Nationality)
-        console.log(filter)
-
         const nationalityMales = filter.filter(t=>t.Gender ==='Male');
-
         const nationalityFemales = filter.filter(t=>t.Gender ==='Female');
 
         let amountMales = nationalityMales.length
         let amountFemales = nationalityFemales.length
-
 
         // Male Average Nationality Activist
         let activistSumMales = 0;
@@ -52,7 +43,6 @@ export default function Nationality() {
             activistSumMales += nationalityMales[i].Activist
         }
         let activistAverageMales = activistSumMales / amountMales
-        // console.log("Activist Average Males: " + activistAverageMales)
 
         // Female Average Nationality Activist
         let activistSumFemales = 0;
@@ -63,7 +53,6 @@ export default function Nationality() {
             }
             activistAverageFemales = activistSumFemales / amountFemales
         }
-        // console.log("Activist Average Females: " + activistAverageMales)
 
         // Male Average Nationality Reflector
         let reflectorSumMales = 0;
@@ -71,9 +60,8 @@ export default function Nationality() {
             reflectorSumMales += nationalityMales[i].Reflector
         }
         let reflectorAverageMales = reflectorSumMales / amountMales
-        // console.log("Reflector Average Males: " + reflectorAverageMales)
 
-        // // Female Average Nationality Reflector
+        // Female Average Nationality Reflector
         let reflectorSumFemales = 0;
         let reflectorAverageFemales = 0;
         if (amountFemales !== 0) {
@@ -82,7 +70,6 @@ export default function Nationality() {
             }
             reflectorAverageFemales = reflectorSumFemales / amountFemales
         }
-        // console.log("Reflector Average Females: " + reflectorAverageMales)
 
         // Male Average Nationality Theorist
         let theoristSumMales = 0;
@@ -90,9 +77,8 @@ export default function Nationality() {
             theoristSumMales += nationalityMales[i].Theorist
         }
         let theoristAverageMales = theoristSumMales / amountMales
-        // console.log("Theorist Average Males: " + theoristAverageMales)
 
-        // // Female Average Nationality Theorist
+        // Female Average Nationality Theorist
         let theoristSumFemales = 0;
         let theoristAverageFemales = 0;
         if (amountFemales !== 0) {
@@ -101,7 +87,6 @@ export default function Nationality() {
             }
             theoristAverageFemales = theoristSumFemales / amountFemales
         }
-        // console.log("Theorist Average Females: " + theoristAverageMales)
 
         // Male Average Nationality Pragmatist
         let pragmatistSumMales = 0;
@@ -109,7 +94,6 @@ export default function Nationality() {
             pragmatistSumMales += nationalityMales[i].Pragmatist
         }
         let pragmatistAverageMales = pragmatistSumMales / amountMales
-        // console.log("Pragmatist Average Males: " + pragmatistAverageMales)
 
         // Female Average Nationality Pragmatist
         let pragmatistSumFemales = 0;
@@ -120,8 +104,6 @@ export default function Nationality() {
             }
             pragmatistAverageFemales = pragmatistSumFemales / amountFemales
         }
-        // console.log("Pragmatist Average Females: " + pragmatistAverageMales)
-
 
         // Average Activist
         let averageActivist = (activistAverageMales + activistAverageFemales) / 2
@@ -142,21 +124,14 @@ export default function Nationality() {
             averagePragmatist = pragmatistAverageMales
         }
 
-
         setMales([activistAverageMales, reflectorAverageMales, theoristAverageMales, pragmatistAverageMales])
         setFemales([activistAverageFemales, reflectorAverageFemales, theoristAverageFemales, pragmatistAverageFemales])
         setAverage([averageActivist, averageReflector, averageTheorist, averagePragmatist])
-
         setAmountmales(amountMales)
         setAmountfemales(amountFemales)
-        
         setCategory(['Activist','Reflector','Theorist','Pragmatist'])
     }
-
-    
-    // console.log(option)
-    
-
+  
     return (  
         <> 
             <hr class="border2" data-content="Nationality"/>
