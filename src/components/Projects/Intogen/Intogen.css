@@ -197,6 +197,11 @@
 5. findYourType pages
 ==================================== */
 
+.text-container2 {  
+  font-size: 18px;
+  margin-top: 10px;
+}
+
 .findyourtype {
   background-position: center;
   background-size: fill;

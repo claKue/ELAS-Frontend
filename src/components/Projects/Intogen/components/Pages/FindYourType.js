@@ -11,8 +11,7 @@ import * as widgets from "surveyjs-widgets";
 import $ from "jquery"; 
 import "easy-autocomplete/dist/easy-autocomplete.css";
 
-// const [data, setData] = useState([]);
-// setData(this.model.data)
+
 
 Survey.StylesManager.applyTheme("orange");
 
@@ -22,9 +21,19 @@ class FindYourType extends Component {
       window["$"] = window["jQuery"] = $;
       require("easy-autocomplete/dist/jquery.easy-autocomplete.js");
       this.model = new Survey.Model(json)
-      this.state = {}
+      this.state = {
+        data: ""
+      }
       this.onCompleteComponent = this.onCompleteComponent.bind(this)
+
+      // const [data, setData] = useState([]);
+      // setData(JSON.stringify(this.model.data)
   }
+
+  handleData = () => {
+    this.setState({ data: JSON.stringify(this.model.data) });
+  }
+
   onCompleteComponent = () => {
     this.setState({
       isCompleted: true
@@ -43,20 +52,37 @@ class FindYourType extends Component {
       />
     ) : null
 
+    // console.log(this.state.data)
+
     var onSurveyCompletion = this.state.isCompleted ? (
       <div>
+        
         {/* {JSON.stringify(this.model.data)} */}
-        <Results/>
+        <Results handleData={this.handleData} data={this.state.data}/>
       </div>
     ) : null;
 
-    console.log(JSON.stringify(this.model.data));
+    // console.log(JSON.stringify(this.model.data));
+
+    
 
     return (
       <div className="App">
         <hr class="border2" data-content="Find your Type"/>
         <div className="page-container">
           <span className="subTitle">David Kolb's Learning Style <b>Questionnaire</b></span><br/>
+          {/* <div className="text-container2">
+            The questions are based on David Kolb's research. This questionnaire is designed to 
+            define out <b>your preferred learning style(s)</b> as an adult. <br/><br/>
+            Over the years, you have probably developed learning habits that help you benefit more 
+            from some experiences than from others. <br/>
+            This questionnaire will probably take you about <b>7-10 minutes</b> to complete. The accuracy of your 
+            results depends on how honest you are. There are no right or wrong answers. <br/><br/>
+            For each statement, choose if you would rather agree or disagree with it. 
+            If you find yourself wondering which situation to think of when answering a question, 
+            just think about how you are when you are working with people. Go with your <b>first gut reaction </b> 
+            instead of overthinking your response. <br/><br/>
+          </div> */}
           { surveyRender }
           { onSurveyCompletion }
         </div>
@@ -80,6 +106,7 @@ var myCss = {
   }
 };
 
+
 const json = {
   showProgressBar: "top",
   showQuestionNumbers: "off",
@@ -93,7 +120,7 @@ const json = {
           title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
           name: "",
           title: ""
-        }
+        },
       ]
     }, 
     { 
@@ -201,7 +228,7 @@ const json = {
       ]
     }, 
       
-    // Major, StudyProgramm, Nationality, Gender
+    // Major, Study program, Nationality, Gender
     {
       questions: [
         {
@@ -214,9 +241,9 @@ const json = {
         }, 
         {
           type: "dropdown",
-          name: "programm",
+          name: "program",
           title: "Please choose your study program.",
-        //   visibleIf: "{Major}=Bachelor",
+          visibleIf: "{Major}=Bachelor",
           // isRequired: true,
           
           choices: 
@@ -232,9 +259,9 @@ const json = {
         }, 
         {
           type: "dropdown",
-          name: "programm",
+          name: "program",
           title: "Please choose your study program.",
-        //   visibleIf: "{Major}=Master",
+          visibleIf: "{Major}=Master",
           // isRequired: true,
           
           choices: 

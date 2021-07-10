@@ -15,10 +15,10 @@ export default function Home() {
         <>
             <hr class="border2" data-content="Home"/>
             <div className="page-container">
-                    <span className="subTitle">Welcome to <b>Intogen </b></span><br/>
+                    <span className="subTitle">Welcome to <b>IntoGen </b></span><br/>
                     <hr class="border4"/>
                     <p className="text-container">
-                        Intogen is David Kolb's research based web service, which helps ISE students of the University Duisburg-Essen
+                        IntoGen is David Kolb's research based web service, which helps ISE students of the University Duisburg-Essen
                         to identify their preferred Learning Styles. The Learning style's data will be used to provide an overview on the basis of their nationalities and education.
                         After completing the survey, students are able to see suggested courses they might like to study based on their Learning Style. <br/><br/>
                         Following datasets are included: <br/>

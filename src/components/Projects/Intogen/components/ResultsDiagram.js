@@ -13,6 +13,7 @@ function ResultsDiagram(props) {
     },
     xAxis: {
         categories: ["Activist", "Reflector", "Theorist", "Pragmatist"],
+        // categories: props.categories,
         crosshair: true
     },
     yAxis: {
@@ -40,8 +41,8 @@ function ResultsDiagram(props) {
     series: [{
         type: 'column',
         colorByPoint: true,
-        // data:  props.scores,
-        data:  [50, 70, 20, 90],
+        // data: props.data,
+        data: [30, 50, 10, 90],
         showInLegend: false
     }]
   }
