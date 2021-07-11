@@ -3,6 +3,7 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
 import './Navbar.css';
 import {NavDropdown} from 'react-bootstrap'
 import logo from './assets/logo.jpg'
+import logoNew from './assets/image0.jpeg'
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -14,7 +15,7 @@ function Navbar() {
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                        <img className="logoNav"src={logo} style={{ width:300 }} alt="Logo"/>
+                        <img className="logoNav"src={logoNew} style={{ width:300 }} alt="Logo"/>
                     </Link>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className="nav-item">
