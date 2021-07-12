@@ -241,7 +241,7 @@ const json = {
         }, 
         {
           type: "dropdown",
-          name: "program",
+          name: "program-bachelor",
           title: "Please choose your study program.",
           visibleIf: "{Major}=Bachelor",
           // isRequired: true,
@@ -258,12 +258,12 @@ const json = {
             ]
         }, 
         {
-          type: "dropdown",
-          name: "program",
+          
+          name: "program-master",
           title: "Please choose your study program.",
+          type: "dropdown",
           visibleIf: "{Major}=Master",
           // isRequired: true,
-          
           choices: 
             [
               "M.Sc. Automation and Control Engineering",
