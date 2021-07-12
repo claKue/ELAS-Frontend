@@ -41,8 +41,8 @@ function ResultsDiagram(props) {
     series: [{
         type: 'column',
         colorByPoint: true,
-        // data: props.data,
-        data: [30, 50, 10, 90],
+        data: props.data,
+        // data: [30, 50, 10, 90],
         showInLegend: false
     }]
   }

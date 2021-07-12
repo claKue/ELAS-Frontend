@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LearningCards from './LearningCards'
 import Diagram from './diagrams/nationality/Diagram'
 import './Results.css';
@@ -13,12 +13,8 @@ import Button from '@material-ui/core/Button';
 
 import FindYourType from '../components/Pages/FindYourType'
 
-export default function Results({ data, handleData }) {
-
-    // const [score, setScore] = useState([]);
-    // const [category, setCategory] = useState([]);
-
-    // data = props.data
+export default function Results({ data }) {
+    const [results, setResults] = useState([])
 
     // const data =  [53, 22, 13, 40]
     const output = 
@@ -73,67 +69,67 @@ export default function Results({ data, handleData }) {
             },
         }
 
+    console.log(data)
     // console.log(output)
-    // console.log({data})
 
-    // let score = {handleData}
-    // console.log(score)
 
-    const values = Object.values(output)
-    const activist = values[0]
-    // console.log(Object.values(activist))
-    const ac = Object.values(activist)
-    let Activist = 0
-    ac.forEach(d => {
-        Activist = Activist + d
-    })
+    useEffect(() => {
+     
+        console.log(data)
+        const values = Object.values(data)
+        console.log(values)
 
-    const reflector = values[1]
-    // console.log(Object.values(reflector))
-    const ref = Object.values(reflector)
-    let Reflector = 0
-    ref.forEach(d => {
-        Reflector = Reflector + d
-    })
+        // console.log(Object.values(activist))
+        const ac = Object.values(values[0])
+        let Activist = 0
+        ac.forEach(d => {
+            Activist = Activist + d
+        })
 
-    const theorist = values[2]
-    // console.log(Object.values(theorist))
-    const theo = Object.values(theorist)
-    let Theorist = 0
-    theo.forEach(d => {
-        Theorist = Theorist + d
-    })
+        // console.log(Object.values(reflector))
+        const ref = Object.values(values[1])
+        let Reflector = 0
+        ref.forEach(d => {
+            Reflector = Reflector + d
+        })
 
-    const pragmatist = values[3]
-    // console.log(Object.values(pragmatist))
-    const prag = Object.values(pragmatist)
-    let Pragmatist = 0
-    prag.forEach(d => {
-        Pragmatist = Pragmatist + d
-    })
+        // console.log(Object.values(theorist))
+        const theo = Object.values(values[2])
+        let Theorist = 0
+        theo.forEach(d => {
+            Theorist = Theorist + d
+        })
 
-        
-    let resultsLearningStyle = []
-    resultsLearningStyle.push(Activist)
-    resultsLearningStyle.push(Reflector)
-    resultsLearningStyle.push(Theorist)
-    resultsLearningStyle.push(Pragmatist)
-    // console.log(resultsLearningStyle)
-    
+        // console.log(Object.values(pragmatist))
+        const prag = Object.values(values[3])
+        let Pragmatist = 0
+        prag.forEach(d => {
+            Pragmatist = Pragmatist + d
+        })
 
-    // setScore(resultsLearningStyle);
-    // setCategory(['Activist','Reflector','Theorist','Pragmatist'])
+            
+        let resultsLearningStyle = []
+        resultsLearningStyle.push(Activist)
+        resultsLearningStyle.push(Reflector)
+        resultsLearningStyle.push(Theorist)
+        resultsLearningStyle.push(Pragmatist)
+        // console.log(resultsLearningStyle)
 
-    console.log({data})
+        setResults(resultsLearningStyle)
 
+
+        // console.log({data})
+    }, []);
+
+    console.log(results)
 
     return (  
         <> 
             
 
             <div className="leftSide">
-                <h1>{data}</h1>
-                <Button onClick={handleData} variant="outlined">Show me the results!</Button>
+                {/* <h5>{data}</h5> */}
+                {/* <Button onClick={handleData} variant="outlined">Show me the results!</Button> */}
 
                 <h4>Results of your test</h4>
                 <div className="textDescription">
@@ -143,8 +139,10 @@ export default function Results({ data, handleData }) {
                     approach towards learning.
                 </div>
                 <div className="diagram-container">
-                    {/* <ResultsDiagram data={score} categories={category} /> */}
-                    <ResultsDiagram/>
+                    {results.length !== 0 ? <> 
+                        <ResultsDiagram data={results}  /> 
+                    </> : <> </>}
+                    
                 </div>
                 <h4 className="titles">Change combinations for different suggestions:</h4>
                 <div className="textDescription">
