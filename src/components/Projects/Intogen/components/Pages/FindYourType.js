@@ -13,6 +13,7 @@ import "easy-autocomplete/dist/easy-autocomplete.css";
 
 
 
+
 Survey.StylesManager.applyTheme("orange");
 
 class FindYourType extends Component {
@@ -22,17 +23,19 @@ class FindYourType extends Component {
       require("easy-autocomplete/dist/jquery.easy-autocomplete.js");
       this.model = new Survey.Model(json)
       this.state = {
-        data: ""
+        // data: ""
       }
       this.onCompleteComponent = this.onCompleteComponent.bind(this)
 
       // const [data, setData] = useState([]);
       // setData(JSON.stringify(this.model.data)
   }
+  
+  
 
-  handleData = () => {
-    this.setState({ data: JSON.stringify(this.model.data) });
-  }
+  // handleData = () => {
+  //   this.setState({ data: JSON.stringify(this.model.data) });
+  // }
 
   onCompleteComponent = () => {
     this.setState({
@@ -44,6 +47,7 @@ class FindYourType extends Component {
     widgets.autocomplete(Survey);
     var surveyRender = !this.state.isCompleted ? (
       <Survey.Survey 
+        
         model={this.model}
         json={json}
         css={myCss}
@@ -56,13 +60,21 @@ class FindYourType extends Component {
 
     var onSurveyCompletion = this.state.isCompleted ? (
       <div>
-        
-        {/* {JSON.stringify(this.model.data)} */}
-        <Results handleData={this.handleData} data={this.state.data}/>
+        {JSON.stringify(this.model.data)}
+        {/* <Results handleData={this.handleData} data={this.state.data}/> */}
       </div>
     ) : null;
 
-    // console.log(JSON.stringify(this.model.data));
+    // console.log(this.model.data);
+
+    const values = Object.values(this.model.data);
+    console.log(values);
+
+    // const sumValues = this.model.data => Object.values(this.model.data).reduce((2, 4) => 2 + 4)
+    // 2, 4, 10, 13, 18, 21, 24, 30, 37, 39
+    
+    
+    
 
     
 
