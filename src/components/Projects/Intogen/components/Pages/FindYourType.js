@@ -3,16 +3,11 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import Footer from '../Footer';
 import Results from '../Results';
-// import Formular from '../Formular'
 import '../../Intogen.css';
-// import data from '../diagrams/data/out';
 
 import * as widgets from "surveyjs-widgets";
 import $ from "jquery"; 
 import "easy-autocomplete/dist/easy-autocomplete.css";
-
-
-
 
 Survey.StylesManager.applyTheme("orange");
 
@@ -26,15 +21,6 @@ class FindYourType extends Component {
         data: ""
       }
       this.onCompleteComponent = this.onCompleteComponent.bind(this)
-
-      // const [data, setData] = useState([]);
-      // setData(JSON.stringify(this.model.data)
-  }
-  
-  
-
-  handleData = () => {
-    this.setState({ data: JSON.stringify(this.model.data) });
   }
 
   onCompleteComponent = () => {
@@ -47,7 +33,6 @@ class FindYourType extends Component {
     widgets.autocomplete(Survey);
     var surveyRender = !this.state.isCompleted ? (
       <Survey.Survey 
-        
         model={this.model}
         json={json}
         css={myCss}
@@ -56,28 +41,11 @@ class FindYourType extends Component {
       />
     ) : null
 
-    console.log(this.state.data)
-    console.log(this.model.data)
-
     var onSurveyCompletion = this.state.isCompleted ? (
       <div>
-        {/* {JSON.stringify(this.model.data)} */}
-        <Results handleData={this.handleData} data={this.model.data}/>
+        <Results data={this.model.data}/>
       </div>
     ) : null;
-
-    // console.log(this.model.data);
-
-    // const values = Object.values(this.model.data);
-    // console.log(values);
-
-    // const sumValues = this.model.data => Object.values(this.model.data).reduce((2, 4) => 2 + 4)
-    // 2, 4, 10, 13, 18, 21, 24, 30, 37, 39
-    
-    
-    
-
-    
 
     return (
       <div className="App">

@@ -1,106 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import LearningCards from './LearningCards'
-import Diagram from './diagrams/nationality/Diagram'
 import './Results.css';
 import ResultsDiagram from '../components/ResultsDiagram';
 import ResultsCourses from './ResultsCourses';
+import ResultsWeightage from './ResultsWeightage';
 
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-import Button from '@material-ui/core/Button';
-
-import FindYourType from '../components/Pages/FindYourType'
-
 export default function Results({ data }) {
-    const [results, setResults] = useState([])
-
-    // const data =  [53, 22, 13, 40]
-    const output = 
-        {
-            "Activist":{
-                "2":0,
-                "4":0,
-                "10":10,
-                "13":0,
-                "18":10,
-                "21":0,
-                "24":10,
-                "30":0,
-                "37":10,
-                "39":0 
-            },
-            "Reflector":{
-                "5":10,
-                "9":0,
-                "14":0,
-                "16":0,
-                "17":0,
-                "20":0,
-                "25":0,
-                "29":0,
-                "33":0,
-                "34":10
-            },
-            "Theorist":{
-                "1":0,
-                "6":0,
-                "8":10,
-                "11":10,
-                "15":10,
-                "22":0,
-                "27":10,
-                "32":10,
-                "35":0,
-                "40":0
-            },
-            "Pragmatist":{
-                "3":0,
-                "7":0,
-                "12":0,
-                "19":0,
-                "23":10,
-                "26":10,
-                "28":10,
-                "31":0,
-                "36":0,
-                "38":0
-            },
-        }
-
-    console.log(data)
-    // console.log(output)
-
+    const [results, setResults] = useState([]);
+    const [category, setCategory] = useState([]);
 
     useEffect(() => {
-     
-        console.log(data)
         const values = Object.values(data)
-        console.log(values)
 
-        // console.log(Object.values(activist))
         const ac = Object.values(values[0])
         let Activist = 0
         ac.forEach(d => {
             Activist = Activist + d
         })
 
-        // console.log(Object.values(reflector))
         const ref = Object.values(values[1])
         let Reflector = 0
         ref.forEach(d => {
             Reflector = Reflector + d
         })
 
-        // console.log(Object.values(theorist))
         const theo = Object.values(values[2])
         let Theorist = 0
         theo.forEach(d => {
             Theorist = Theorist + d
         })
 
-        // console.log(Object.values(pragmatist))
         const prag = Object.values(values[3])
         let Pragmatist = 0
         prag.forEach(d => {
@@ -113,25 +46,15 @@ export default function Results({ data }) {
         resultsLearningStyle.push(Reflector)
         resultsLearningStyle.push(Theorist)
         resultsLearningStyle.push(Pragmatist)
-        // console.log(resultsLearningStyle)
 
         setResults(resultsLearningStyle)
-
-
-        // console.log({data})
+        setCategory(['Activist','Reflector','Theorist','Pragmatist'])
     }, []);
-
-    console.log(results)
 
     return (  
         <> 
-            
-
             <div className="leftSide">
-                {/* <h5>{data}</h5> */}
-                {/* <Button onClick={handleData} variant="outlined">Show me the results!</Button> */}
-
-                <h4>Results of your test</h4>
+                <h4 className="headLiner">Results of your test</h4>
                 <div className="textDescription">
                     Following chart shows your preferred 
                     learning styles and high percentage 
@@ -140,9 +63,8 @@ export default function Results({ data }) {
                 </div>
                 <div className="diagram-container">
                     {results.length !== 0 ? <> 
-                        <ResultsDiagram data={results}  /> 
+                        <ResultsDiagram data={results} categories={category} /> 
                     </> : <> </>}
-                    
                 </div>
                 <h4 className="titles">Change combinations for different suggestions:</h4>
                 <div className="textDescription">
@@ -179,7 +101,7 @@ export default function Results({ data }) {
                     then the percentage will obviously be high but the weightage will be low.  
                 </div>
                 <div className="diagram-container">
-                    <ResultsCourses />
+                    <ResultsWeightage />
                 </div>
             </div>
             <div className="rightSide">

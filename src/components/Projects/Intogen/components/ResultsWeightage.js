@@ -2,31 +2,31 @@ import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-function ResultsDiagram(props) {
+function ResultsCourses(props) {
 
   const options = {
     chart: {
       type: 'column'
     },
     title: {
-        text: "Your personal learning style preferences"
+        text: "Courses weightage"
     },
     xAxis: {
-        categories: props.categories,
+        categories: ["Course1", "Course2", "Course1", "Course2", "Course1", "Course2","Course1", "Course2", "Course1", "Course2"],
         crosshair: true
     },
     yAxis: {
         min: 0,
-        max: 100,
+        max: 7,
         title: {
-            text: 'Percentage (%)'
+            text: 'Weightage'
         }
     },
     tooltip: {
         valueDecimals: 0,
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f}%</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.f}</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
@@ -40,7 +40,7 @@ function ResultsDiagram(props) {
     series: [{
         type: 'column',
         colorByPoint: true,
-        data: props.data,
+        data:  [5, 3, 2, 7, 1, 2, 1, 1, 6, 5, 8, 2, 4, 3],
         showInLegend: false
     }]
   }
@@ -52,4 +52,4 @@ function ResultsDiagram(props) {
     )
 }
 
-export default ResultsDiagram;
+export default ResultsCourses;
