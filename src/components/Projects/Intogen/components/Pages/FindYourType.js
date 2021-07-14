@@ -47,7 +47,7 @@ class FindYourType extends Component {
       </div>
     ) : null;
 
-      console.log(this.model.data)
+    // console.log(this.model.data)
 
     return (
       <div className="App">

@@ -10,6 +10,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 import data from './diagrams/data/out'
+import courses from './diagrams/data/bachelors_study_program_with_courses'
 
 export default function Results({ dataR }) {
 
@@ -31,10 +32,10 @@ export default function Results({ dataR }) {
 
     useEffect(() => {
         const values = Object.values(dataR)
-        // console.log(values)
+        console.log(values)
+        
 
         const ac = Object.values(values[0])
-        // console.log(ac)
         let Activist = 0
         ac.forEach(d => {
             Activist = Activist + d
@@ -79,43 +80,76 @@ export default function Results({ dataR }) {
         let simPrag = []
 
         for(let i = 0; i<data.length; i++) {
-            if(data[i].Activist === resultsLearningStyle[0]) {
-                suggestedCourses.push(data[i].Subject1)
-                suggestedCourses.push(data[i].Subject2)
-                simAct = 100 - Math.abs(data[i].Activist - resultsLearningStyle[0]);
-                // console.log("Similarity Activist: " + simAct)
-                coursePerc.push(simAct)
-                coursePerc.push(simAct)
-            }
-            if(data[i].Reflector === resultsLearningStyle[1]) {
-                suggestedCourses.push(data[i].Subject1)
-                suggestedCourses.push(data[i].Subject2)
-                simRefl = 100 - Math.abs(data[i].Reflector- resultsLearningStyle[1]);
-            }
-            if(data[i].Theorist === resultsLearningStyle[2]) {
-                suggestedCourses.push(data[i].Subject1)
-                suggestedCourses.push(data[i].Subject2)
-                simTheo = 100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]);
-            }
-            if(data[i].Pragmatist === resultsLearningStyle[3]) {
-                suggestedCourses.push(data[i].Subject1)
-                suggestedCourses.push(data[i].Subject2)
-                simPrag = 100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]);
+            if(data[i].Subject1 !== "INVALID" || data[i].Subject2 !== "INVALID") {
+                if(data[i].Activist === resultsLearningStyle[0]) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
+                } else if (data[i].Activist === (resultsLearningStyle[0] + 10)) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
+                } else if (data[i].Activist === (resultsLearningStyle[0] - 10)) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
+                }
                 
+                if(data[i].Reflector === resultsLearningStyle[1]) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
+                } else if (data[i].Reflector === (resultsLearningStyle[1] + 10)) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
+                } else if (data[i].Reflector === (resultsLearningStyle[1] - 10)) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
+                } 
+
+                if(data[i].Theorist === resultsLearningStyle[2]) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
+                } else if (data[i].Theorist === (resultsLearningStyle[2] + 10)) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
+                } else if (data[i].Theorist === (resultsLearningStyle[2] - 10)) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
+                } 
+
+
+                if(data[i].Pragmatist === resultsLearningStyle[3]) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
+                } else if (data[i].Pragmatist === (resultsLearningStyle[3] + 10)) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
+                } else if (data[i].Pragmatist === (resultsLearningStyle[3] - 10)) {
+                    suggestedCourses.push(data[i].Subject1)
+                    suggestedCourses.push(data[i].Subject2)
+                    simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
+                } 
             }
             
         }
 
-        // let similarity = simAct + simRefl + simTheo + simPrag;
-        // console.log(similarity)
+        console.log(simAct)
+        console.log(simRefl)
+        console.log(simTheo)
+        console.log(simPrag)  
 
-        // coursePerc.push(similarity)
-
+        // coursePerc = simAct
         
 
-        
-
-
+        // courses: welche sind wichtig für jeweiliges study program??? --> dann fallen sehr viele weg und passen ins Diagramm
         let uniqueCourses = [...new Set(suggestedCourses)]
 
         let position = uniqueCourses.indexOf('INVALID');
@@ -126,8 +160,8 @@ export default function Results({ dataR }) {
         setCourses(uniqueCourses)
         setCoursesPercentage(coursePerc)
 
-    }, []);
 
+    }, []);
 
 
     return (  
