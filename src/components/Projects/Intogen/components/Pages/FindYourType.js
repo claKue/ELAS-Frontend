@@ -43,7 +43,7 @@ class FindYourType extends Component {
 
     var onSurveyCompletion = this.state.isCompleted ? (
       <div>
-        <Results data={this.model.data}/>
+        <Results dataR={this.model.data}/>
       </div>
     ) : null;
 

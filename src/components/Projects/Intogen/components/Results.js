@@ -9,14 +9,21 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-export default function Results({ data }) {
+import data from './diagrams/data/out'
+
+export default function Results({ dataR }) {
+
     const [results, setResults] = useState([]);
     const [category, setCategory] = useState([]);
+    const [courses, setCourses] = useState([]);
+    const [coursesPercentage, setCoursesPercentage] = useState([]);
 
     useEffect(() => {
-        const values = Object.values(data)
+        const values = Object.values(dataR)
+        // console.log(values)
 
         const ac = Object.values(values[0])
+        // console.log(ac)
         let Activist = 0
         ac.forEach(d => {
             Activist = Activist + d
@@ -39,8 +46,7 @@ export default function Results({ data }) {
         prag.forEach(d => {
             Pragmatist = Pragmatist + d
         })
-
-            
+ 
         let resultsLearningStyle = []
         resultsLearningStyle.push(Activist)
         resultsLearningStyle.push(Reflector)
@@ -49,7 +55,61 @@ export default function Results({ data }) {
 
         setResults(resultsLearningStyle)
         setCategory(['Activist','Reflector','Theorist','Pragmatist'])
+
+        console.log(resultsLearningStyle)
+
+
+
+        let suggestedCourses = []
+        let coursePerc = []
+        let simAct = []
+        let simRefl = []
+        let simTheo = []
+        let simPrag = []
+
+        for(let i = 0; i<data.length; i++) {
+            if(data[i].Activist === resultsLearningStyle[0]) {
+                suggestedCourses.push(data[i].Subject1)
+                suggestedCourses.push(data[i].Subject2)
+                simAct = 100 - Math.abs(data[i].Activist - resultsLearningStyle[0]);
+                console.log("Similarity Activist: " + simAct)
+            }
+            if(data[i].Reflector === resultsLearningStyle[1]) {
+                suggestedCourses.push(data[i].Subject1)
+                suggestedCourses.push(data[i].Subject2)
+                simRefl = 100 - Math.abs(data[i].Reflector- resultsLearningStyle[1]);
+            }
+            if(data[i].Theorist === resultsLearningStyle[2]) {
+                suggestedCourses.push(data[i].Subject1)
+                suggestedCourses.push(data[i].Subject2)
+                simTheo = 100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]);
+            }
+            if(data[i].Pragmatist === resultsLearningStyle[3]) {
+                suggestedCourses.push(data[i].Subject1)
+                suggestedCourses.push(data[i].Subject2)
+                simPrag = 100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]);
+            }
+            
+        }
+        // coursePerc.push(50)
+
+        let similarity = simAct + simRefl + simTheo + simPrag;
+        console.log(similarity)
+
+
+        let uniqueCourses = [...new Set(suggestedCourses)]
+
+        let position = uniqueCourses.indexOf('INVALID');
+        let removed = uniqueCourses.splice(position, 1);
+      
+
+        console.log(uniqueCourses)
+        setCourses(uniqueCourses)
+        setCoursesPercentage(coursePerc)
+
     }, []);
+
+
 
     return (  
         <> 
@@ -91,7 +151,7 @@ export default function Results({ data }) {
                     enjoy studying the course, taking your learning styles in consideration.  
                 </div>
                 <div className="diagram-container">
-                    <ResultsCourses />
+                    <ResultsCourses courses={courses} percentages={coursesPercentage}/>
                 </div>
                 <h4 className="titles">Suggested courses weightage:</h4>
                 <div className="textDescription">

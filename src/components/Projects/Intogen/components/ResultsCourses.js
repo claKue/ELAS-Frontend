@@ -12,7 +12,7 @@ function ResultsCourses(props) {
         text: "Courses you might like to study"
     },
     xAxis: {
-        categories: ["Course1", "Course2", "Course1", "Course2", "Course1", "Course2","Course1", "Course2", "Course1", "Course2"],
+        categories: props.courses,
         crosshair: true
     },
     yAxis: {
@@ -40,7 +40,7 @@ function ResultsCourses(props) {
     series: [{
         type: 'column',
         colorByPoint: true,
-        data:  [53, 22, 13, 40, 34, 22, 33, 77, 55, 11, 99, 56, 44],
+        data:  props.percentages,
         showInLegend: false
     }]
   }
