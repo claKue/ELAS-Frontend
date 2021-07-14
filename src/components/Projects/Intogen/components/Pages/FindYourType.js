@@ -47,6 +47,8 @@ class FindYourType extends Component {
       </div>
     ) : null;
 
+      console.log(this.model.data)
+
     return (
       <div className="App">
         <hr class="border2" data-content="Find your Type"/>
@@ -363,7 +365,7 @@ const json = {
             ]	
         }, {
             type:"rating",
-            name: "gpa-most-liked",
+            name: "gpa-most-liked-bachelor",
             visibleIf: "{Major}=Bachelor",
             title: "Please select the grade you have achieved in the course you liked the most.",
             // isRequired: true,
@@ -467,7 +469,7 @@ const json = {
            }, 
            {
             type:"rating",
-            name: "gpa-most-disliked",
+            name: "gpa-most-disliked-bachelor",
             visibleIf: "{Major}=Bachelor",
             title: "Please select the grade you have achieved in the course you disliked the most.",
             // isRequired: true,
@@ -731,7 +733,7 @@ const json = {
             }, 
             {
               type:"rating",
-              name: "gpa-most-liked",
+              name: "gpa-most-liked-master",
               visibleIf: "{Major}=Master",
               title: "Please select the grade you have achieved in the course you liked the most.",
               // isRequired: true,
@@ -994,7 +996,7 @@ const json = {
             }, 
             {
               type:"rating",
-              name: "gpa-most-disliked",
+              name: "gpa-most-disliked-master",
               visibleIf: "{Major}=Master",
               title: "Please select the grade you have achieved in the course you disliked the most.",
               // isRequired: true,
