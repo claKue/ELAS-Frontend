@@ -18,6 +18,17 @@ export default function Results({ dataR }) {
     const [courses, setCourses] = useState([]);
     const [coursesPercentage, setCoursesPercentage] = useState([]);
 
+    const [state, setState] = useState({
+        checkedA: true,
+        checkedR: true,
+        checkedT: true,
+        checkedP: true,
+      });
+
+    const handleChange = (event) => {
+        setState({ ...state, [event.target.name]: event.target.checked });
+    };
+
     useEffect(() => {
         const values = Object.values(dataR)
         // console.log(values)
@@ -72,7 +83,9 @@ export default function Results({ dataR }) {
                 suggestedCourses.push(data[i].Subject1)
                 suggestedCourses.push(data[i].Subject2)
                 simAct = 100 - Math.abs(data[i].Activist - resultsLearningStyle[0]);
-                console.log("Similarity Activist: " + simAct)
+                // console.log("Similarity Activist: " + simAct)
+                coursePerc.push(simAct)
+                coursePerc.push(simAct)
             }
             if(data[i].Reflector === resultsLearningStyle[1]) {
                 suggestedCourses.push(data[i].Subject1)
@@ -88,13 +101,19 @@ export default function Results({ dataR }) {
                 suggestedCourses.push(data[i].Subject1)
                 suggestedCourses.push(data[i].Subject2)
                 simPrag = 100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]);
+                
             }
             
         }
-        // coursePerc.push(50)
 
-        let similarity = simAct + simRefl + simTheo + simPrag;
-        console.log(similarity)
+        // let similarity = simAct + simRefl + simTheo + simPrag;
+        // console.log(similarity)
+
+        // coursePerc.push(similarity)
+
+        
+
+        
 
 
         let uniqueCourses = [...new Set(suggestedCourses)]
@@ -134,10 +153,20 @@ export default function Results({ dataR }) {
                 </div>
                 <div className="checkBoxes">
                     <FormGroup>
-                        <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }}/>} label="Activist" />
-                        <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Reflector" />
-                        <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Pragmatist" />
-                        <FormControlLabel control={<Checkbox style ={{ color: "rgb(255, 102, 0)" }} />} label="Theorist" />
+                        <FormControlLabel 
+                            control={
+                                <Checkbox 
+                                    name="checkedA" 
+                                    checked={state.checkedA} 
+                                    onChange={handleChange} 
+                                    style ={{ color: "rgb(255, 102, 0)" }}
+                                />
+                            } 
+                            label="Activist" 
+                        />
+                        <FormControlLabel control={<Checkbox name="checkedR" checked={state.checkedR} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Reflector" />
+                        <FormControlLabel control={<Checkbox name="checkedT" checked={state.checkedT} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Theorist" />
+                        <FormControlLabel control={<Checkbox name="checkedP" checked={state.checkedP} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Pragmatist" />
                     </FormGroup>
                 </div>
                 <h4 className="titles">Suggested courses:</h4>
