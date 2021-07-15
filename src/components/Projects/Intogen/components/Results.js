@@ -81,11 +81,13 @@ export default function Results({ dataR }) {
 
         for(let i = 0; i<data.length; i++) {
             if(data[i].Subject1 !== "INVALID" || data[i].Subject2 !== "INVALID") {
+
                 if(data[i].Activist === resultsLearningStyle[0]) {
                     suggestedCourses.push(data[i].Subject1)
                     suggestedCourses.push(data[i].Subject2)
                     simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
-                } else if (data[i].Activist === (resultsLearningStyle[0] + 10)) {
+                } 
+                else if (data[i].Activist === (resultsLearningStyle[0] + 10)) {
                     suggestedCourses.push(data[i].Subject1)
                     suggestedCourses.push(data[i].Subject2)
                     simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
@@ -141,12 +143,12 @@ export default function Results({ dataR }) {
             
         }
 
-        console.log(simAct)
-        console.log(simRefl)
-        console.log(simTheo)
-        console.log(simPrag)  
+        console.log(simAct.slice(1, 10))
+        console.log(simRefl.slice(1, 10))
+        console.log(simTheo.slice(1, 10))
+        console.log(simPrag.slice(1, 10))  
 
-        // coursePerc = simAct
+        coursePerc = simAct
         
 
         // courses: welche sind wichtig für jeweiliges study program??? --> dann fallen sehr viele weg und passen ins Diagramm
@@ -156,9 +158,9 @@ export default function Results({ dataR }) {
         let removed = uniqueCourses.splice(position, 1);
       
 
-        console.log(uniqueCourses)
+        console.log(uniqueCourses.slice(1,10))
         setCourses(uniqueCourses)
-        setCoursesPercentage(coursePerc)
+        setCoursesPercentage(coursePerc.slice(1, 15))
 
 
     }, []);
