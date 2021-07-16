@@ -12,7 +12,7 @@ function ResultsCourses(props) {
         text: "Courses weightage"
     },
     xAxis: {
-        categories: ["Course1", "Course2", "Course1", "Course2", "Course1", "Course2","Course1", "Course2", "Course1", "Course2"],
+        categories: props.courses,
         crosshair: true
     },
     yAxis: {

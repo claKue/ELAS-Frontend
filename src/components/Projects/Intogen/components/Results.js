@@ -18,6 +18,7 @@ export default function Results({ dataR }) {
     const [category, setCategory] = useState([]);
     const [courses, setCourses] = useState([]);
     const [coursesPercentage, setCoursesPercentage] = useState([]);
+    const [weightage, setWeightage] = useState([]);
 
     const [state, setState] = useState({
         checkedA: true,
@@ -79,89 +80,147 @@ export default function Results({ dataR }) {
         let simTheo = []
         let simPrag = []
 
+
+        let relevantCourses = []
+        for(let i = 0; i<data.length; i++) {
+            if (values[5] === data[i].Study_program) {
+                if(data[i].Subject1 !== "INVALID" || data[i].Subject2 !== "INVALID") {
+                    relevantCourses.push(data[i].Subject1)
+                    relevantCourses.push(data[i].Subject2)
+                }
+            }
+        }
+        // console.log(relevantCourses)
+
         for(let i = 0; i<data.length; i++) {
             if(data[i].Subject1 !== "INVALID" || data[i].Subject2 !== "INVALID") {
 
                 if(data[i].Activist === resultsLearningStyle[0]) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
-                } 
-                else if (data[i].Activist === (resultsLearningStyle[0] + 10)) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
+                    // }
+                } else if (data[i].Activist === (resultsLearningStyle[0] + 10)) {
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
+                    // }
                 } else if (data[i].Activist === (resultsLearningStyle[0] - 10)) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
+                    // }
                 }
                 
                 if(data[i].Reflector === resultsLearningStyle[1]) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
+                    // }
                 } else if (data[i].Reflector === (resultsLearningStyle[1] + 10)) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
+                    // }
                 } else if (data[i].Reflector === (resultsLearningStyle[1] - 10)) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
+                    // }
                 } 
 
                 if(data[i].Theorist === resultsLearningStyle[2]) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
+                    // }
                 } else if (data[i].Theorist === (resultsLearningStyle[2] + 10)) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
+                    // }
                 } else if (data[i].Theorist === (resultsLearningStyle[2] - 10)) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
+                    // }
                 } 
 
 
                 if(data[i].Pragmatist === resultsLearningStyle[3]) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
+                    // }
                 } else if (data[i].Pragmatist === (resultsLearningStyle[3] + 10)) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
+                    // }
                 } else if (data[i].Pragmatist === (resultsLearningStyle[3] - 10)) {
-                    suggestedCourses.push(data[i].Subject1)
-                    suggestedCourses.push(data[i].Subject2)
-                    simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
+                    // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
+                        suggestedCourses.push(data[i].Subject1)
+                        suggestedCourses.push(data[i].Subject2)
+                        simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
+                    // }
                 } 
             }
             
         }
 
-        console.log(simAct.slice(1, 10))
-        console.log(simRefl.slice(1, 10))
-        console.log(simTheo.slice(1, 10))
-        console.log(simPrag.slice(1, 10))  
+        console.log(simAct.slice(0, 10))
+        console.log(simRefl.slice(0, 10))
+        console.log(simTheo.slice(0, 10))
+        console.log(simPrag.slice(0, 10))  
 
         coursePerc = simAct
+        
+        // Durchschnitt, der für Diagramm genutzt wird
+        let average = []
+        for(let i = 0; i<50; i++) {
+            let sum = simAct[i] + simRefl[i] + simTheo[i] + simPrag[i]
+            average.push(sum/4)
+        }
+        console.log(average)
         
 
         // courses: welche sind wichtig für jeweiliges study program??? --> dann fallen sehr viele weg und passen ins Diagramm
         let uniqueCourses = [...new Set(suggestedCourses)]
+       
+
 
         let position = uniqueCourses.indexOf('INVALID');
         let removed = uniqueCourses.splice(position, 1);
       
 
-        console.log(uniqueCourses.slice(1,10))
+        console.log(uniqueCourses)
         setCourses(uniqueCourses)
-        setCoursesPercentage(coursePerc.slice(1, 15))
+        setCoursesPercentage(coursePerc.slice(0, 15))
 
+        // Weightage
+        let weightageCounter = 0
+        let weightage = []
+        for(let z = 0; z<uniqueCourses.length; z++) {
+            weightageCounter = 0
+            for(let i = 0; i<data.length; i++) {
+                if(uniqueCourses[z] === data[i].Subject1 || uniqueCourses[z] === data[i].Subject2) {
+                    weightageCounter += 1
+                }
+            }
+            weightage.push(weightageCounter)
+        }
+        console.log(weightage)
 
     }, []);
 
@@ -226,7 +285,7 @@ export default function Results({ dataR }) {
                     then the percentage will obviously be high but the weightage will be low.  
                 </div>
                 <div className="diagram-container">
-                    <ResultsWeightage />
+                    <ResultsWeightage courses={courses} />
                 </div>
             </div>
             <div className="rightSide">
