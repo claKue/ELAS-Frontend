@@ -40,7 +40,7 @@ function ResultsCourses(props) {
     series: [{
         type: 'column',
         colorByPoint: true,
-        data:  [5, 3, 2, 7, 1, 2, 1, 1, 6, 5, 8, 2, 4, 3],
+        data: props.weightages,
         showInLegend: false
     }]
   }

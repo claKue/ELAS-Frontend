@@ -47,25 +47,11 @@ class FindYourType extends Component {
       </div>
     ) : null;
 
-    // console.log(this.model.data)
-
     return (
       <div className="App">
         <hr class="border2" data-content="Find your Type"/>
         <div className="page-container">
           <span className="subTitle">David Kolb's Learning Style <b>Questionnaire</b></span><br/>
-          {/* <div className="text-container2">
-            The questions are based on David Kolb's research. This questionnaire is designed to 
-            define out <b>your preferred learning style(s)</b> as an adult. <br/><br/>
-            Over the years, you have probably developed learning habits that help you benefit more 
-            from some experiences than from others. <br/>
-            This questionnaire will probably take you about <b>7-10 minutes</b> to complete. The accuracy of your 
-            results depends on how honest you are. There are no right or wrong answers. <br/><br/>
-            For each statement, choose if you would rather agree or disagree with it. 
-            If you find yourself wondering which situation to think of when answering a question, 
-            just think about how you are when you are working with people. Go with your <b>first gut reaction </b> 
-            instead of overthinking your response. <br/><br/>
-          </div> */}
           { surveyRender }
           { onSurveyCompletion }
         </div>
@@ -88,7 +74,6 @@ var myCss = {
     cellTextSelected: "sv-matrix__text--checked",
   }
 };
-
 
 const json = {
   showProgressBar: "top",

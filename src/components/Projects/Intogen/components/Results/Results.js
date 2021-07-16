@@ -4,13 +4,11 @@ import './Results.css';
 import ResultsDiagram from './ResultsDiagram';
 import ResultsCourses from './ResultsCourses';
 import ResultsWeightage from './ResultsWeightage';
-
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-
 import data from '../Diagrams/Data/out'
-// import courses from './diagrams/data/bachelors_study_program_with_courses'
+
+// import FormGroup from '@material-ui/core/FormGroup';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import Checkbox from '@material-ui/core/Checkbox';
 
 export default function Results({ dataR }) {
 
@@ -20,22 +18,21 @@ export default function Results({ dataR }) {
     const [coursesPercentage, setCoursesPercentage] = useState([]);
     const [weightage, setWeightage] = useState([]);
 
-    const [state, setState] = useState({
-        checkedA: true,
-        checkedR: true,
-        checkedT: true,
-        checkedP: true,
-      });
+    // const [state, setState] = useState({
+    //     checkedA: true,
+    //     checkedR: true,
+    //     checkedT: true,
+    //     checkedP: true,
+    //   });
 
-    const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
-    };
+    // const handleChange = (event) => {
+    //     setState({ ...state, [event.target.name]: event.target.checked });
+    // };
 
     useEffect(() => {
         const values = Object.values(dataR)
         console.log(values)
         
-
         const ac = Object.values(values[0])
         let Activist = 0
         ac.forEach(d => {
@@ -68,10 +65,7 @@ export default function Results({ dataR }) {
 
         setResults(resultsLearningStyle)
         setCategory(['Activist','Reflector','Theorist','Pragmatist'])
-
         console.log(resultsLearningStyle)
-
-
 
         let suggestedCourses = []
         let coursePerc = []
@@ -80,7 +74,7 @@ export default function Results({ dataR }) {
         let simTheo = []
         let simPrag = []
 
-
+        // funktioniert nicht so richtig
         let relevantCourses = []
         for(let i = 0; i<data.length; i++) {
             if (values[5] === data[i].Study_program) {
@@ -155,7 +149,6 @@ export default function Results({ dataR }) {
                     // }
                 } 
 
-
                 if(data[i].Pragmatist === resultsLearningStyle[3]) {
                     // if (data[i].Subject1 in relevantCourses && data[i].Subject2 in relevantCourses) {
                         suggestedCourses.push(data[i].Subject1)
@@ -175,8 +168,7 @@ export default function Results({ dataR }) {
                         simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
                     // }
                 } 
-            }
-            
+            } 
         }
 
         console.log(simAct.slice(0, 10))
@@ -194,19 +186,15 @@ export default function Results({ dataR }) {
         }
         console.log(average)
         
-
         // courses: welche sind wichtig für jeweiliges study program??? --> dann fallen sehr viele weg und passen ins Diagramm
         let uniqueCourses = [...new Set(suggestedCourses)]
        
-
-
         let position = uniqueCourses.indexOf('INVALID');
         let removed = uniqueCourses.splice(position, 1);
       
-
         console.log(uniqueCourses)
         setCourses(uniqueCourses)
-        setCoursesPercentage(coursePerc.slice(0, 15))
+        setCoursesPercentage(average)
 
         // Weightage
         let weightageCounter = 0
@@ -221,6 +209,7 @@ export default function Results({ dataR }) {
             weightage.push(weightageCounter)
         }
         console.log(weightage)
+        setWeightage(weightage)
 
     }, []);
 
@@ -240,7 +229,7 @@ export default function Results({ dataR }) {
                         <ResultsDiagram data={results} categories={category} /> 
                     </> : <> </>}
                 </div>
-                <h4 className="titles">Change combinations for different suggestions:</h4>
+                {/* <h4 className="titles">Change combinations for different suggestions:</h4>
                 <div className="textDescription">
                     On changing combinations you will see matching 
                     courses with highest percentage of students 
@@ -248,22 +237,12 @@ export default function Results({ dataR }) {
                 </div>
                 <div className="checkBoxes">
                     <FormGroup>
-                        <FormControlLabel 
-                            control={
-                                <Checkbox 
-                                    name="checkedA" 
-                                    checked={state.checkedA} 
-                                    onChange={handleChange} 
-                                    style ={{ color: "rgb(255, 102, 0)" }}
-                                />
-                            } 
-                            label="Activist" 
-                        />
+                        <FormControlLabel control={<Checkbox name="checkedA" checked={state.checkedA} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Activist" />
                         <FormControlLabel control={<Checkbox name="checkedR" checked={state.checkedR} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Reflector" />
                         <FormControlLabel control={<Checkbox name="checkedT" checked={state.checkedT} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Theorist" />
                         <FormControlLabel control={<Checkbox name="checkedP" checked={state.checkedP} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Pragmatist" />
                     </FormGroup>
-                </div>
+                </div> */}
                 <h4 className="titles">Suggested courses:</h4>
                 <div className="textDescription">
                     Following courses are estimated by comparing your style 
@@ -285,7 +264,7 @@ export default function Results({ dataR }) {
                     then the percentage will obviously be high but the weightage will be low.  
                 </div>
                 <div className="diagram-container">
-                    <ResultsWeightage courses={courses} />
+                    <ResultsWeightage courses={courses} weightages={weightage} />
                 </div>
             </div>
             <div className="rightSide">
