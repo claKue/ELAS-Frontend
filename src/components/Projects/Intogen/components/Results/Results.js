@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import LearningCards from './LearningCards'
+import LearningCards from '../Cards/LearningCards'
 import './Results.css';
-import ResultsDiagram from '../components/ResultsDiagram';
+import ResultsDiagram from './ResultsDiagram';
 import ResultsCourses from './ResultsCourses';
 import ResultsWeightage from './ResultsWeightage';
 
@@ -9,8 +9,8 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-import data from './diagrams/data/out'
-import courses from './diagrams/data/bachelors_study_program_with_courses'
+import data from '../Diagrams/Data/out'
+// import courses from './diagrams/data/bachelors_study_program_with_courses'
 
 export default function Results({ dataR }) {
 

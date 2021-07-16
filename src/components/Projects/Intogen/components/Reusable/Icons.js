@@ -1,7 +1,6 @@
 import React from 'react';
 import { IconContext } from "react-icons";
-import { FaGithub } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import { FaGithub, FaYoutube } from "react-icons/fa";
 import './Icons.css';
 
 export default function Icons() {

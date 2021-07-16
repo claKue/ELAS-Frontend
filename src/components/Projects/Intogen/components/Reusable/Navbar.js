@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {Link, BrowserRouter as Router} from 'react-router-dom';
 import './Navbar.css';
 import {NavDropdown} from 'react-bootstrap'
-import logo from './assets/logo.jpg'
-import logoNew from './assets/image1.jpeg'
+import logo from '../Assets/logo.jpg'
+import logoNew from '../Assets/image1.jpeg'
 
 function Navbar() {
     const [click, setClick] = useState(false);

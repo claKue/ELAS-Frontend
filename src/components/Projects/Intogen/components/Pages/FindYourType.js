@@ -1,8 +1,8 @@
 import React, { Component, useState } from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
-import Footer from '../Footer';
-import Results from '../Results';
+import Footer from '../Reusable/Footer';
+import Results from '../Results/Results';
 import '../../Intogen.css';
 
 import * as widgets from "surveyjs-widgets";

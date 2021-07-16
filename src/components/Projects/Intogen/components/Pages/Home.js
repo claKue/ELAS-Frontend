@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../../Intogen.css'
-import Footer from '../Footer'
-import img1 from '../assets/learning_styles.png';
-import Icons from '../Icons';
+import Footer from '../Reusable/Footer'
+import img1 from '../Assets/learning_styles.png';
+import Icons from '../Reusable/Icons';
 import { AppContainer } from '../Cards/AppContainer';
 import {Link, BrowserRouter as Router} from 'react-router-dom';
 

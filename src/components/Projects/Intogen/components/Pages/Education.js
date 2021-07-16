@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import '../../Intogen.css'
-import LearningCards from '../LearningCards'
-import Footer from '../Footer'
-import Diagram from '../diagrams/nationality/Diagram'
-import data from '../diagrams/data/out';
+import LearningCards from '../Cards/LearningCards'
+import Footer from '../Reusable/Footer'
+import Diagram from '../Diagrams/Diagram'
+import data from '../Diagrams/Data/out';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import FormControlLabel from '@material-ui/core/FormControlLabel';

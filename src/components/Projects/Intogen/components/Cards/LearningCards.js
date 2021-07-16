@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Intogen.css';
+import '../../Intogen.css';
 import './LearningCards.css';
 import {withStyles} from '@material-ui/core/styles'
 import MuiAccordion from '@material-ui/core/Accordion'

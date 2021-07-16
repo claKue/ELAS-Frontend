@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../../Intogen.css'
-import img2 from '../assets/unilogo.png'
-import Footer from '../Footer'
+import img2 from '../Assets/unilogo.png'
+import Footer from '../Reusable/Footer'
 import {Link, BrowserRouter as Router} from 'react-router-dom';
-import Icons from '../Icons';
+import Icons from '../Reusable/Icons';
 
 export default function AboutUs() {
 
