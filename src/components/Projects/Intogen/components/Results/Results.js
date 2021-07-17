@@ -171,6 +171,7 @@ export default function Results({ dataR }) {
 
 
         // Durchschnitt, der für Diagramm genutzt wird
+        // Anzahl des Durchschnitts Arrays muss so lang sein wie suggestedCourses!!!
         let average = []
         for(let i = 0; i<suggestedCourses.length; i++) {
             let sum = simAct[i] + simRefl[i] + simTheo[i] + simPrag[i]
