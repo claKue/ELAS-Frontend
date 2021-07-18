@@ -83,7 +83,6 @@ export default function Results({ dataR }) {
                 }
             }
         }
-        console.log(relevantCourses)
 
         for(let i = 0; i<data.length; i++) {
             if(data[i].Subject1 !== "INVALID" || data[i].Subject2 !== "INVALID") {
@@ -145,56 +144,32 @@ export default function Results({ dataR }) {
             } 
         }
 
-        console.log(simAct)
-        console.log(simRefl)
-        console.log(simTheo)
-        console.log(simPrag)  
-
-        // hier sollen die irrelevanten Kurse aus dem suggestedCourses array entfernt werden
-        // Theorie: Wenn suggestedCourse an der Stelle x NICHT in relevantCourses, dann aus Array löschen 
-        // relevantCourses und suggestedCourses funktionieren einzeln super, jetzt nur noch kombinieren
-        // for(let x = 0; x<suggestedCourses.length; x++) {
-        //     if (suggestedCourses.indexOf(x) not in relevantCourses) {
-        //         // 'not in' geht nicht
-        //         // Funktion, mit der man einzelne Elemente aus Array entfernen kann, gibt es nicht
-        //         // hier muss so etwas in der Art hin: 
-        //         // suggestedCourses[x].delete
-        //     }
-        // }
         var suitableCourses = relevantCourses.filter(function(val){
             return suggestedCourses.indexOf(val) !== -1;
         });
-        console.log(suitableCourses);
 
+        let uniqueSuitableCourses = [...new Set(suitableCourses)];
+        console.log(uniqueSuitableCourses)
 
-        const test = [0, 1, 2]
-        if (0 in test) {
-            console.log("in funktioniert")
-        }
-
-
-        // Durchschnitt, der für Diagramm genutzt wird
-        // Anzahl des Durchschnitts Arrays muss so lang sein wie suggestedCourses!!!
+        // Averages
         let average = []
-        for(let i = 0; i<suggestedCourses.length; i++) {
+        for(let i = 0; i<uniqueSuitableCourses.length; i++) {
             let sum = simAct[i] + simRefl[i] + simTheo[i] + simPrag[i]
             average.push(sum/4)
         }
-        console.log(average)
         
         let uniqueCourses = [...new Set(suggestedCourses)]
        
         let position = uniqueCourses.indexOf('INVALID');
         let removed = uniqueCourses.splice(position, 1);
       
-        console.log(uniqueCourses)
-        setCourses(suitableCourses.slice(0, 10))
-        setCoursesPercentage(average.slice(0, 10))
+        setCourses(uniqueSuitableCourses)
+        setCoursesPercentage(average)
 
         // Weightage
         let weightageCounter = 0
         let weightage = []
-        for(let z = 0; z<uniqueCourses.length; z++) {
+        for(let z = 0; z<uniqueSuitableCourses.length; z++) {
             weightageCounter = 0
             for(let i = 0; i<data.length; i++) {
                 if(uniqueCourses[z] === data[i].Subject1 || uniqueCourses[z] === data[i].Subject2) {
@@ -203,7 +178,6 @@ export default function Results({ dataR }) {
             }
             weightage.push(weightageCounter)
         }
-        console.log(weightage)
         setWeightage(weightage)
 
     }, []);
