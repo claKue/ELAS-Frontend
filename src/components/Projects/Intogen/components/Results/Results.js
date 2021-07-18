@@ -153,15 +153,18 @@ export default function Results({ dataR }) {
         // hier sollen die irrelevanten Kurse aus dem suggestedCourses array entfernt werden
         // Theorie: Wenn suggestedCourse an der Stelle x NICHT in relevantCourses, dann aus Array löschen 
         // relevantCourses und suggestedCourses funktionieren einzeln super, jetzt nur noch kombinieren
-        for(let x = 0; x<suggestedCourses.length; x++) {
-            if (suggestedCourses.indexOf(x) not in relevantCourses) {
-                // 'not in' geht nicht
-                // Funktion, mit der man einzelne Elemente aus Array entfernen kann, gibt es nicht
-                // hier muss so etwas in der Art hin: 
-                // suggestedCourses[x].delete
-            }
-        }
-
+        // for(let x = 0; x<suggestedCourses.length; x++) {
+        //     if (suggestedCourses.indexOf(x) not in relevantCourses) {
+        //         // 'not in' geht nicht
+        //         // Funktion, mit der man einzelne Elemente aus Array entfernen kann, gibt es nicht
+        //         // hier muss so etwas in der Art hin: 
+        //         // suggestedCourses[x].delete
+        //     }
+        // }
+        var suitableCourses = relevantCourses.filter(function(val){
+            return suggestedCourses.indexOf(val) !== -1;
+        });
+        console.log(suitableCourses);
 
 
         const test = [0, 1, 2]
@@ -185,8 +188,8 @@ export default function Results({ dataR }) {
         let removed = uniqueCourses.splice(position, 1);
       
         console.log(uniqueCourses)
-        setCourses(uniqueCourses)
-        setCoursesPercentage(average)
+        setCourses(suitableCourses.slice(0, 10))
+        setCoursesPercentage(average.slice(0, 10))
 
         // Weightage
         let weightageCounter = 0
