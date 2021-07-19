@@ -216,7 +216,7 @@ export default function Results({ dataR }) {
                 <div className="textDescription">
                     Following courses are estimated by comparing your style 
                     scores with student's style scores present in that specific 
-                    course. High percentage courses are those courses which has 
+                    course. High percentage courses are those courses which have 
                     more similar learners like you. <br/> <br/>
                     Note: This estimation does not guarantee that you will 
                     score a good GPA in the courses, it suggests that you may 
@@ -228,7 +228,7 @@ export default function Results({ dataR }) {
                 <h4 className="titles">Suggested courses weightage:</h4>
                 <div className="textDescription">
                     Suggested courses percentages 
-                    depends on number of students in that course, 
+                    depend on number of students in that course, 
                     which means that if there is only one student in a course 
                     then the percentage will obviously be high but the weightage will be low.  
                 </div>

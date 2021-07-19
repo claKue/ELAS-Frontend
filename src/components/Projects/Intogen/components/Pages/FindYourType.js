@@ -103,9 +103,9 @@ const json = {
             { value: 0, text: "Disagree" }
           ],    
           rows: [
-            { value: "2", text: "I often act without considering the possible consequences." },
-            { value: "4", text: "I often find that actions based on feelings are as sound as those based on careful thought and analysis." },
-            { value: "10", text: "I am attracted more to novel, unusual ideas than to practical ones." },
+            { value: "2", text: "I often act without considering the possible consequences."},
+            { value: "4", text: "I often find that actions based on feelings are as sound as those based on careful thought and analysis."},
+            { value: "10", text: "I am attracted more to novel, unusual ideas than to practical ones."},
             { value: "13", text: "I enjoy fun-loving spontaneous people."},
             { value: "18", text: "I prefer to respond to events in a spontaneous, flexible way rather than plan things out in advance."},
             { value: "21", text: "It is more important to enjoy the present moment than to think about the past or future."},
@@ -129,8 +129,8 @@ const json = {
             { value: 0, text: "Disagree" }
           ],
           rows: [
-            { value: "5", text: "I like the sort of work where I have time for thorough preparation and implementation." },
-            { value: "9", text: "I take care over how I interpret data and avoid jumping to conclusions." },
+            { value: "5", text: "I like the sort of work where I have time for thorough preparation and implementation."},
+            { value: "9", text: "I take care over how I interpret data and avoid jumping to conclusions."},
             { value: "14", text: "I pay careful attention to detail before coming to a conclusion."},
             { value: "16", text: "In discussions, I enjoy watching the plotting and scheming of the other participants."},
             { value: "17", text: "I prefer to have as many sources of information as possible - the more information to think over the better."},
@@ -155,8 +155,8 @@ const json = {
             { value: 0, text: "Disagree" }
           ],
           rows: [
-            { value: "1", text: "I have strong beliefs about what is right and wrong, good and bad." }, 
-            { value: "6", text: "I regularly question people about their basic assumptions." },
+            { value: "1", text: "I have strong beliefs about what is right and wrong, good and bad."}, 
+            { value: "6", text: "I regularly question people about their basic assumptions."},
             { value: "8", text: "I get on best with logical, analytical people and less well with spontaneous, `irrational` people." },
             { value: "11", text: "I like to relate my actions to a general principle, standard or belief."},
             { value: "15", text: "I find it difficult to produce ideas on impulse."},
@@ -164,7 +164,7 @@ const json = {
             { value: "27", text: "I believe that rational, logical thinking should win the day."},
             { value: "32", text: "In discussions with people I often find I am the most dispassionate and objective."},
             { value: "35", text: "I tend to be tough on people who find it difficult to adopt a logical approach."},
-            { value: "40", text: "I like meetings to be run on methodical lines, sticking to laid down agenda."}
+            { value: "40", text: "I like meetings to be run on methodical lines, sticking to a laid down agenda."}
           ]
         }
       ]
@@ -181,8 +181,8 @@ const json = {
             { value: 0, text: "Disagree" }
           ],
           rows: [
-            { value: "3", text: "I have a reputation for saying what I think, simply and directly." },
-            { value: "7", text: "When I hear about a new idea or approach, I immediatley start working out how to apply it in practice." },
+            { value: "3", text: "I have a reputation for saying what I think, simply and directly."},
+            { value: "7", text: "When I hear about a new idea or approach, I immediatley start working out how to apply it in practice."},
             { value: "12", text: "In discussions, I like to get straight to the point."},
             { value: "19", text: "I tend to be attracted to techniques such as flow charts, contingency plans etc."},
             { value: "23", text: "In meetings, I put forward practical, realistic ideas."},
@@ -190,7 +190,7 @@ const json = {
             { value: "28", text: "In discussions, I get impatient with irrelevant issues and digressions."},
             { value: "31", text: "In discussions, I often find I am a realist, keeping people to the point and avoiding wild speculations."},
             { value: "36", text: "Most times I believe the end justifies the means."},
-            { value: "38", text: "I do whatever is practical to get the jon done."}
+            { value: "38", text: "I do whatever is practical to get the job done."}
           ]
         }
       ]
