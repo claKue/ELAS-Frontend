@@ -53,20 +53,8 @@ export default function Results({ dataR }) {
         resultsLearningStyle.push(Pragmatist)
 
         console.log(resultsLearningStyle)
-        resultsLearningStyle.sort((a, b) => (a > b) ? -1 : 1)
-        // x-Achse (Lerntypen) müssen sich auch entsprechend ändern!!!
-        console.log(resultsLearningStyle)
         setResults(resultsLearningStyle)
-
-
         setCategory(['Activist','Reflector','Theorist','Pragmatist'])
-
-        let suggestedCourses = []
-        let coursePerc = []
-        let simAct = []
-        let simRefl = []
-        let simTheo = []
-        let simPrag = []
 
         let relevantCourses = []
         for(let i = 0; i<data.length; i++) {
@@ -78,31 +66,37 @@ export default function Results({ dataR }) {
             }
         }
 
+        let suggestedCourses = []
+        let simAct = []
+        let simRefl = []
+        let simTheo = []
+        let simPrag = []
+
         for(let i = 0; i<data.length; i++) {
             if(data[i].Subject1 !== "INVALID" || data[i].Subject2 !== "INVALID") {
                 if(data[i].Activist === resultsLearningStyle[0]) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
-                } else if (data[i].Activist === (resultsLearningStyle[0] + 10)) {
+                } else if (data[i].Activist === (resultsLearningStyle[0] + 10) || data[i].Activist === (resultsLearningStyle[0] - 10)) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
-                } else if (data[i].Activist === (resultsLearningStyle[0] - 10)) {
+                } else if (data[i].Activist === (resultsLearningStyle[0] + 20 || data[i].Activist === (resultsLearningStyle[0] - 20))) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simAct.push(100 - Math.abs(data[i].Activist - resultsLearningStyle[0]));
-                }
+                } 
                 
                 if(data[i].Reflector === resultsLearningStyle[1]) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
-                } else if (data[i].Reflector === (resultsLearningStyle[1] + 10)) {
+                } else if (data[i].Reflector === (resultsLearningStyle[1] + 10) || data[i].Reflector === (resultsLearningStyle[1] - 10)) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
-                } else if (data[i].Reflector === (resultsLearningStyle[1] - 10)) {
+                } else if (data[i].Reflector === (resultsLearningStyle[1] + 20) || data[i].Reflector === (resultsLearningStyle[1] - 20)) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simRefl.push(100 - Math.abs(data[i].Reflector - resultsLearningStyle[1]));
@@ -112,11 +106,11 @@ export default function Results({ dataR }) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
-                } else if (data[i].Theorist === (resultsLearningStyle[2] + 10)) {
+                } else if (data[i].Theorist === (resultsLearningStyle[2] + 10) || data[i].Reflector === (resultsLearningStyle[1] - 10)) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
-                } else if (data[i].Theorist === (resultsLearningStyle[2] - 10)) {
+                } else if (data[i].Theorist === (resultsLearningStyle[2] + 20) || data[i].Reflector === (resultsLearningStyle[1] - 20)) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simTheo.push(100 - Math.abs(data[i].Theorist - resultsLearningStyle[2]));
@@ -126,11 +120,11 @@ export default function Results({ dataR }) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
-                } else if (data[i].Pragmatist === (resultsLearningStyle[3] + 10)) {
+                } else if (data[i].Pragmatist === (resultsLearningStyle[3] + 10) || data[i].Reflector === (resultsLearningStyle[1] - 10)) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
-                } else if (data[i].Pragmatist === (resultsLearningStyle[3] - 10)) {
+                } else if (data[i].Pragmatist === (resultsLearningStyle[3] + 20) || data[i].Reflector === (resultsLearningStyle[1] - 20)) {
                         suggestedCourses.push(data[i].Subject1)
                         suggestedCourses.push(data[i].Subject2)
                         simPrag.push(100 - Math.abs(data[i].Pragmatist - resultsLearningStyle[3]));
@@ -138,12 +132,18 @@ export default function Results({ dataR }) {
             } 
         }
 
+        // compares relevant courses with all courses that match the learning style
         var suitableCourses = relevantCourses.filter(function(val){
             return suggestedCourses.indexOf(val) !== -1;
         });
 
+        // deletes duplicates 
         let uniqueSuitableCourses = [...new Set(suitableCourses)];
-        console.log(uniqueSuitableCourses)
+
+        let position = uniqueSuitableCourses.indexOf('INVALID');
+        uniqueSuitableCourses.splice(position, 1);
+
+        setCourses(uniqueSuitableCourses)
 
         // Averages
         let average = []
@@ -151,16 +151,9 @@ export default function Results({ dataR }) {
             let sum = simAct[i] + simRefl[i] + simTheo[i] + simPrag[i]
             average.push(sum/4)
         }
-        
-        let uniqueCourses = [...new Set(suggestedCourses)]
-       
-        let position = uniqueCourses.indexOf('INVALID');
-        let removed = uniqueCourses.splice(position, 1);
-      
-        setCourses(uniqueSuitableCourses)
-        average.sort((a, b) => (a > b) ? -1 : 1)
-        // Kurse Reihenfolge auch ändern!!! (x-Achse)
         setCoursesPercentage(average)
+        
+        average.sort((a, b) => (a > b) ? -1 : 1)
 
         // Weightage
         let weightageCounter = 0
@@ -168,7 +161,7 @@ export default function Results({ dataR }) {
         for(let z = 0; z<uniqueSuitableCourses.length; z++) {
             weightageCounter = 0
             for(let i = 0; i<data.length; i++) {
-                if(uniqueCourses[z] === data[i].Subject1 || uniqueCourses[z] === data[i].Subject2) {
+                if(uniqueSuitableCourses[z] === data[i].Subject1 || uniqueSuitableCourses[z] === data[i].Subject2) {
                     weightageCounter += 1
                 }
             }
