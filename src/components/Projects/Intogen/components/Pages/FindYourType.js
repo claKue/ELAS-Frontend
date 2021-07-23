@@ -51,7 +51,7 @@ class FindYourType extends Component {
       <div className="App">
         <hr class="border2" data-content="Find your Type"/>
         <div className="page-container">
-          <span className="subTitle">David Kolb's Learning Style <b>Questionnaire</b></span><br/>
+          <span className="subTitle">David Kolb's Learning Style <b>Questionnaire</b></span><br/><br/>
           { surveyRender }
           { onSurveyCompletion }
         </div>

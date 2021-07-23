@@ -12,7 +12,7 @@ export class AppContainer extends React.Component {
         cardundertitle2: "Active experimenter",
         carddescription: "Activists learning style is: „hands-on“. They rely on intuition rather than logic and have a strong preference for „doing“ rather than „thinking“. They use other people’s analysis and take a more practical, experimental approach. They like new challenges, experiences and take risks. The central focus is on team problem-solving.",
         cardexpandedtitle: "Activists are accomodators:",
-        cardexpandedtext: "Accomodators tend to rely on other people's information. They are gut oriented people and don’t like logical analysis. They do not like routine and will take creative risks to see what happens. People with this learning style will ask themselves: 'What if?'"
+        cardexpandedtext: "Accomodators tend to rely on other people's information. They are oriented people and don’t like logical analysis. They do not like routine and will take creative risks to see what happens. People with this learning style will ask themselves: 'What if something happens?'"
       },
       {
         cardtitle: "THEORIST",
@@ -20,7 +20,7 @@ export class AppContainer extends React.Component {
         cardundertitle2: "Reflective observer",
         carddescription: "Theorists learning preference involves a logical approach. Ideas and concepts are more important than people. People with this learning style want a good and clear explanation rather than a practical opportunity. They have an understanding of wide-ranging information and organizing it in a clear, logical way.",
         cardexpandedtitle: "Theorists are assimilators:",
-        cardexpandedtext: "Assimilators are less focused on people and more interested in ideas and abstract concepts. They are more attracted to logically sounding theories. They prefer readings, lectures and having time to think things through. People with this learning style will ask themselves: 'What is there I can know?'"
+        cardexpandedtext: "Assimilators are less focused on people and more interested in ideas and abstract concepts. They are more attracted to logically sounding theories. They prefer readings, lectures and having time to think things through. People will ask themselves: 'What is there I can know?'"
       },
       {
         cardtitle: "PRAGMATIST",

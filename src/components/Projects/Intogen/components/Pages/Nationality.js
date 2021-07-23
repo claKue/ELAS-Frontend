@@ -15,7 +15,8 @@ export default function Nationality() {
     const [amountmales, setAmountmales] = useState();
     const [amountfemales, setAmountfemales] = useState();
     const [category, setCategory] = useState([]);
-    const uniqueNationalities = getUnique(data,'Nationality');  
+    const uniqueNationalities = getUnique(data,'Nationality'); 
+    uniqueNationalities.sort((a, b) => (a.Nationality > b.Nationality) ? 1 : -1)
 
     // eliminates all duplicate countries
     function getUnique(arr, index) {
@@ -39,10 +40,13 @@ export default function Nationality() {
 
         // Male Average Nationality Activist
         let activistSumMales = 0;
-        for(let i = 0; i<amountMales; i++) {
-            activistSumMales += nationalityMales[i].Activist
+        let activistAverageMales = 0;
+        if (amountMales !== 0) {
+            for(let i = 0; i<amountMales; i++) {
+                activistSumMales += nationalityMales[i].Activist
+            }
+            activistAverageMales = activistSumMales / amountMales
         }
-        let activistAverageMales = activistSumMales / amountMales
 
         // Female Average Nationality Activist
         let activistSumFemales = 0;
@@ -56,10 +60,13 @@ export default function Nationality() {
 
         // Male Average Nationality Reflector
         let reflectorSumMales = 0;
-        for(let i = 0; i<amountMales; i++) {
-            reflectorSumMales += nationalityMales[i].Reflector
+        let reflectorAverageMales = 0;
+        if (amountMales !== 0) {
+            for(let i = 0; i<amountMales; i++) {
+                reflectorSumMales += nationalityMales[i].Reflector
+            }
+            reflectorAverageMales = reflectorSumMales / amountMales
         }
-        let reflectorAverageMales = reflectorSumMales / amountMales
 
         // Female Average Nationality Reflector
         let reflectorSumFemales = 0;
@@ -73,10 +80,13 @@ export default function Nationality() {
 
         // Male Average Nationality Theorist
         let theoristSumMales = 0;
-        for(let i = 0; i<amountMales; i++) {
-            theoristSumMales += nationalityMales[i].Theorist
+        let theoristAverageMales = 0;
+        if (amountMales !== 0) {
+            for(let i = 0; i<amountMales; i++) {
+                theoristSumMales += nationalityMales[i].Theorist
+            }
+            theoristAverageMales = theoristSumMales / amountMales
         }
-        let theoristAverageMales = theoristSumMales / amountMales
 
         // Female Average Nationality Theorist
         let theoristSumFemales = 0;
@@ -90,10 +100,13 @@ export default function Nationality() {
 
         // Male Average Nationality Pragmatist
         let pragmatistSumMales = 0;
-        for(let i = 0; i<amountMales; i++) {
-            pragmatistSumMales += nationalityMales[i].Pragmatist
+        let pragmatistAverageMales = 0;
+        if (amountMales !== 0) {
+            for(let i = 0; i<amountMales; i++) {
+                pragmatistSumMales += nationalityMales[i].Pragmatist
+            }
+            pragmatistAverageMales = pragmatistSumMales / amountMales
         }
-        let pragmatistAverageMales = pragmatistSumMales / amountMales
 
         // Female Average Nationality Pragmatist
         let pragmatistSumFemales = 0;
@@ -124,6 +137,13 @@ export default function Nationality() {
             averagePragmatist = pragmatistAverageMales
         }
 
+        if (amountMales == 0) {
+            averageActivist = activistAverageFemales
+            averageReflector = reflectorAverageFemales
+            averageTheorist = theoristAverageFemales
+            averagePragmatist = pragmatistAverageFemales
+        }
+
         setMales([activistAverageMales, reflectorAverageMales, theoristAverageMales, pragmatistAverageMales])
         setFemales([activistAverageFemales, reflectorAverageFemales, theoristAverageFemales, pragmatistAverageFemales])
         setAverage([averageActivist, averageReflector, averageTheorist, averagePragmatist])
@@ -150,7 +170,7 @@ export default function Nationality() {
                         />
                     </div>
                     <p className="subtitlesDiagram">
-                        Following are the learning types' averages of your <span className="underlined">nationality.</span>
+                        Following are the learning types' averages of your nationality.
                     </p>
                     <hr class="border"/>
                     <div className="diagram-container">

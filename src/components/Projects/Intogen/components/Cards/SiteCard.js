@@ -41,7 +41,7 @@ export class SiteCard extends React.Component {
 
         <CardActions disableSpacing>
           <IconButton onClick={this.handleExpandClick}>
-            <ExpandMoreIcon />
+            <ExpandMoreIcon/>
           </IconButton>
         </CardActions>
         

@@ -18,17 +18,6 @@ export default function Results({ dataR }) {
     const [coursesPercentage, setCoursesPercentage] = useState([]);
     const [weightage, setWeightage] = useState([]);
 
-    // const [state, setState] = useState({
-    //     checkedA: true,
-    //     checkedR: true,
-    //     checkedT: true,
-    //     checkedP: true,
-    //   });
-
-    // const handleChange = (event) => {
-    //     setState({ ...state, [event.target.name]: event.target.checked });
-    // };
-
     useEffect(() => {
         const values = Object.values(dataR)
         console.log(values)
@@ -63,9 +52,14 @@ export default function Results({ dataR }) {
         resultsLearningStyle.push(Theorist)
         resultsLearningStyle.push(Pragmatist)
 
-        setResults(resultsLearningStyle)
-        setCategory(['Activist','Reflector','Theorist','Pragmatist'])
         console.log(resultsLearningStyle)
+        resultsLearningStyle.sort((a, b) => (a > b) ? -1 : 1)
+        // x-Achse (Lerntypen) müssen sich auch entsprechend ändern!!!
+        console.log(resultsLearningStyle)
+        setResults(resultsLearningStyle)
+
+
+        setCategory(['Activist','Reflector','Theorist','Pragmatist'])
 
         let suggestedCourses = []
         let coursePerc = []
@@ -164,6 +158,8 @@ export default function Results({ dataR }) {
         let removed = uniqueCourses.splice(position, 1);
       
         setCourses(uniqueSuitableCourses)
+        average.sort((a, b) => (a > b) ? -1 : 1)
+        // Kurse Reihenfolge auch ändern!!! (x-Achse)
         setCoursesPercentage(average)
 
         // Weightage
@@ -182,11 +178,10 @@ export default function Results({ dataR }) {
 
     }, []);
 
-
     return (  
         <> 
             <div className="leftSide">
-                <h4 className="headLiner">Results of your test</h4>
+                <h4>Results of your test</h4>
                 <div className="textDescription">
                     Following chart shows your preferred 
                     learning styles and high percentage 
@@ -198,20 +193,6 @@ export default function Results({ dataR }) {
                         <ResultsDiagram data={results} categories={category} /> 
                     </> : <> </>}
                 </div>
-                {/* <h4 className="titles">Change combinations for different suggestions:</h4>
-                <div className="textDescription">
-                    On changing combinations you will see matching 
-                    courses with highest percentage of students 
-                    matching to your types from your study program. 
-                </div>
-                <div className="checkBoxes">
-                    <FormGroup>
-                        <FormControlLabel control={<Checkbox name="checkedA" checked={state.checkedA} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Activist" />
-                        <FormControlLabel control={<Checkbox name="checkedR" checked={state.checkedR} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Reflector" />
-                        <FormControlLabel control={<Checkbox name="checkedT" checked={state.checkedT} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Theorist" />
-                        <FormControlLabel control={<Checkbox name="checkedP" checked={state.checkedP} onChange={handleChange} style ={{ color: "rgb(255, 102, 0)" }} />} label="Pragmatist" />
-                    </FormGroup>
-                </div> */}
                 <h4 className="titles">Suggested courses:</h4>
                 <div className="textDescription">
                     Following courses are estimated by comparing your style 

@@ -147,13 +147,10 @@ export default function Education() {
 
         // Female, Activist Average (Major)
         let activistSumFemales = 0;
-        let activistAverageFemales = 0;
-        if (amountFemales !== 0) {
-            for(let i = 0; i<amountFemales; i++) {
-                activistSumFemales += females[i].Activist
-            }
-            activistAverageFemales = activistSumFemales / amountFemales
+        for(let i = 0; i<amountFemales; i++) {
+            activistSumFemales += females[i].Activist
         }
+        let activistAverageFemales = activistSumFemales / amountFemales
 
         // Male, Reflector Average (Major)
         let reflectorSumMales = 0;
@@ -164,13 +161,10 @@ export default function Education() {
 
         // Female, Reflector Average (Major)
         let reflectorSumFemales = 0;
-        let reflectorAverageFemales = 0;
-        if (amountFemales !== 0) {
-            for(let i = 0; i<amountFemales; i++) {
-                reflectorSumFemales += females[i].Reflector
-            }
-            reflectorAverageFemales = reflectorSumFemales / amountFemales
+        for(let i = 0; i<amountFemales; i++) {
+            reflectorSumFemales += females[i].Reflector
         }
+        let reflectorAverageFemales = reflectorSumFemales / amountFemales
 
         // Male, Theorist Average (Major)
         let theoristSumMales = 0;
@@ -181,13 +175,10 @@ export default function Education() {
 
         // Female, Theorist Average (Major)
         let theoristSumFemales = 0;
-        let theoristAverageFemales = 0;
-        if (amountFemales !== 0) {
-            for(let i = 0; i<amountFemales; i++) {
-                theoristSumFemales += females[i].Theorist
-            }
-            theoristAverageFemales = theoristSumFemales / amountFemales
+        for(let i = 0; i<amountFemales; i++) {
+            theoristSumFemales += females[i].Theorist
         }
+        let theoristAverageFemales = theoristSumFemales / amountFemales
 
         // Male, Pragmatist Average (Major)
         let pragmatistSumMales = 0;
@@ -198,13 +189,10 @@ export default function Education() {
 
         // Female, Pragmatist Average (Major)
         let pragmatistSumFemales = 0;
-        let pragmatistAverageFemales = 0;
-        if (amountFemales !== 0) {
-            for(let i = 0; i<amountFemales; i++) {
-                pragmatistSumFemales += females[i].Pragmatist
-            }
-            pragmatistAverageFemales = pragmatistSumFemales / amountFemales
+        for(let i = 0; i<amountFemales; i++) {
+            pragmatistSumFemales += females[i].Pragmatist
         }
+        let pragmatistAverageFemales = pragmatistSumFemales / amountFemales
 
         // Average Activist
         let averageActivist = (activistAverageMales + activistAverageFemales) / 2
@@ -217,13 +205,6 @@ export default function Education() {
 
         // Average Pragmatist
         let averagePragmatist = (pragmatistAverageMales + pragmatistAverageFemales) / 2
-
-        if (amountFemales == 0) {
-            averageActivist = activistAverageMales
-            averageReflector = reflectorAverageMales
-            averageTheorist = theoristAverageMales
-            averagePragmatist = pragmatistAverageMales
-        }
 
         setMales([activistAverageMales, reflectorAverageMales, theoristAverageMales, pragmatistAverageMales])
         setFemales([activistAverageFemales, reflectorAverageFemales, theoristAverageFemales, pragmatistAverageFemales])
@@ -244,10 +225,13 @@ export default function Education() {
 
         // Male, Activist Average (Study Program)
         let activistSumMales = 0;
-        for(let i = 0; i<amountMales; i++) {
-            activistSumMales += study_programMales[i].Activist
+        let activistAverageMales = 0;
+        if (amountMales !== 0) {
+            for(let i = 0; i<amountMales; i++) {
+                activistSumMales += study_programMales[i].Activist
+            }
+            activistAverageMales = activistSumMales / amountMales
         }
-        let activistAverageMales = activistSumMales / amountMales
 
         // Female, Activist Average (Study Program)
         let activistSumFemales = 0;
@@ -261,10 +245,13 @@ export default function Education() {
 
         // Male, Reflector Average (Study Program)
         let reflectorSumMales = 0;
-        for(let i = 0; i<amountMales; i++) {
-            reflectorSumMales += study_programMales[i].Reflector
+        let reflectorAverageMales = 0;
+        if (amountMales !== 0) {
+            for(let i = 0; i<amountMales; i++) {
+                reflectorSumMales += study_programMales[i].Reflector
+            }
+            reflectorAverageMales = reflectorSumMales / amountMales
         }
-        let reflectorAverageMales = reflectorSumMales / amountMales
 
         // Female, Reflector Average (Study Program)
         let reflectorSumFemales = 0;
@@ -278,10 +265,13 @@ export default function Education() {
 
         // Male, Theorist Average (Study Program)
         let theoristSumMales = 0;
-        for(let i = 0; i<amountMales; i++) {
-             theoristSumMales += study_programMales[i].Theorist
+        let theoristAverageMales = 0;
+        if (amountMales !== 0) {
+            for(let i = 0; i<amountMales; i++) {
+                theoristSumMales += study_programMales[i].Theorist
+            }
+            theoristAverageMales = theoristSumMales / amountMales
         }
-        let theoristAverageMales = theoristSumMales / amountMales
 
         // Female, Theorist Average (Study Program)
         let theoristSumFemales = 0;
@@ -295,10 +285,13 @@ export default function Education() {
 
         // Male, Pragmatist Average (Study Program)
         let pragmatistSumMales = 0;
-        for(let i = 0; i<amountMales; i++) {
-             pragmatistSumMales += study_programMales[i].Pragmatist
+        let pragmatistAverageMales = 0;
+        if (amountMales !== 0) {
+            for(let i = 0; i<amountMales; i++) {
+                pragmatistSumMales += study_programMales[i].Pragmatist
+            }
+            pragmatistAverageMales = pragmatistSumMales / amountMales
         }
-        let pragmatistAverageMales = pragmatistSumMales / amountMales
 
         // Female, Pragmatist Average (Study Program)
         let pragmatistSumFemales = 0;
@@ -327,6 +320,13 @@ export default function Education() {
             averageReflector = reflectorAverageMales
             averageTheorist = theoristAverageMales
             averagePragmatist = pragmatistAverageMales
+        }
+
+        if (amountMales == 0) {
+            averageActivist = activistAverageFemales
+            averageReflector = reflectorAverageFemales
+            averageTheorist = theoristAverageFemales
+            averagePragmatist = pragmatistAverageFemales
         }
 
         setMales([activistAverageMales, reflectorAverageMales, theoristAverageMales, pragmatistAverageMales])
@@ -388,7 +388,7 @@ export default function Education() {
 
                     </div>
                     <p className="subtitlesDiagram">
-                        Following are the learning types' averages of your <span className="underlined">study program.</span>
+                        Following are the learning types' averages of your study program.
                     </p>
                     <hr class="border"/>
                     <div className="diagram-container">
