@@ -51,7 +51,7 @@ class FindYourType extends Component {
       <div className="App">
         <hr class="border2" data-content="Find your Type"/>
         <div className="page-container">
-          <span className="subTitle">David Kolb's Learning Style <b>Questionnaire</b></span><br/><br/>
+          <span className="subTitle">David Kolb's Learning Style <b>Questionnaire</b></span><br/>
           { surveyRender }
           { onSurveyCompletion }
         </div>
@@ -72,6 +72,12 @@ var myCss = {
     materialDecorator: "sv-item__decorator sv-radio__decorator",
     cellText: "sv-matrix__text",
     cellTextSelected: "sv-matrix__text--checked",
+  },
+  radiogroup: {
+    root: "sv_qcbc form-inline",
+    container: "sv_container",
+    body: "sv_body",
+    
   }
 };
 
@@ -80,14 +86,14 @@ const json = {
   showQuestionNumbers: "off",
   pages: [
     {
-      title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
-      questions: [
+      // title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
+      questions: 
+      [
         {
           type: "radiogroup",
-          name: "introduction",
-          title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
           name: "",
-          title: ""
+          title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
+
         },
       ]
     }, 
