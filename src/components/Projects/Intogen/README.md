@@ -35,9 +35,9 @@ It is designed to help students
 
 
 ## Visualization
-<img size="100px" src="components/Assets/ProjectImage.png">
-<img height="100px" src="components/Assets/ProjectImage2.png">
-<img width="100px" src="components/Assets/ProjectImage3.png">
+<img src="components/Assets/Bild1.png">
+<img src="components/Assets/ProjectImage2.png">
+<img src="components/Assets/ProjectImage3.png">
 <img src="components/Assets/ProjectImage4.png">
 <img src="components/Assets/ProjectImage5.png">
 <img src="components/Assets/ProjectImage6.png">
