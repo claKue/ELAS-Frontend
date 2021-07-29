@@ -1,5 +1,5 @@
 <p align="center">
-<img height="110px" src="components/Assets/image1.jpeg" alt="IntoGen Logo">
+<img height="110px" src="components/Assets/image1.png" alt="IntoGen Logo">
 </p>
 
 # IntoGen
@@ -14,7 +14,7 @@ It is designed to help students
 
 
 ## Project Architecture
-<img src="components/Assets/ProjectArchitecture.PNG">
+<img src="components/Assets/architecture.PNG">
 
 ## Libraries used
 - Material UI (e.g. Autocomplete, Accordion)
@@ -23,12 +23,12 @@ It is designed to help students
 
 
 ## Visualization
-<img src="components/Assets/ProjectImage">
-<img src="components/Assets/ProjectImage2">
-<img src="components/Assets/ProjectImage3">
-<img src="components/Assets/ProjectImage4">
-<img src="components/Assets/ProjectImage5">
-<img src="components/Assets/ProjectImage6">
+<img src="components/Assets/ProjectImage.png">
+<img src="components/Assets/ProjectImage2.png">
+<img src="components/Assets/ProjectImage3.png">
+<img src="components/Assets/ProjectImage4.png">
+<img src="components/Assets/ProjectImage5.png">
+<img src="components/Assets/ProjectImage6.png">
 
 ## Links
 <a href="">Advertisement Video</a></br>
