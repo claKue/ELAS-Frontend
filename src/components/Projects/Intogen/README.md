@@ -1,43 +1,61 @@
-# Intogen
-Libraries used:
-1. Node.js
-2. Material UI
-3. Javascript
-4. SurveyJS Library
-5. React
-6. Highcharts
-7. Easy Autocomplete 
+<p align="center">
+<img height="110px" src="Assets/image1.jpeg" alt="IntoGen Logo">
+</p>
 
-Project Description:
-Intogen is a webservice for students of Universität Duisburg-Essen to find out their personal learning type based on David Kolb's research and find suitable courses for their specific learning type.
+# IntoGen
 
-Project Architecture:
-Image name "ProjectArchitecture.PNG"
+IntoGen is a web service for students of the University Duisburg-Essen to find out their personal learning type based on David Kolb's research and find suitable courses for their specific learning type.
 
-Visualization Images:
-Image name "image1.jpeg"
-Image name "learning_styles.png"
-Image name "logo.jpg"
-Image name "unilogo.png"
+## Project Architecture
+<img src="Assets/ProjectArchitecture.PNG">
 
-Screenshot of the Project:
-Image name "ProjectImage"
-Image name "ProjectImage2"
-Image name "ProjectImage3"
-Image name "ProjectImage4"
-Image name "ProjectImage5"
-Image name "ProjectImage6"
-
-Project Live Demo Link:
+## Libraries used
+- Material UI (e.g. Autocomplete, Accordion)
+- SurveyJS
+- Highcharts
 
 
-How to run as localhost:
-Use "npm install" to install dependencies
-Run "npm start" to start frontend localhost
-Run "python -m flask run" to start backend localhost
+## Visualization
+<img src="Assets/ProjectImage">
+<img src="Assets/ProjectImage2">
+<img src="Assets/ProjectImage3">
+<img src="Assets/ProjectImage4">
+<img src="Assets/ProjectImage5">
+<img src="Assets/ProjectImage6">
 
-Developers:
+## Links
+<a href="">Advertisement Video</a>
+<a href="">Live Demo</a>
 
+## Get Started
+
+1. Make sure you have followed the instructions from the ELAS README file.
+
+2. Frontend Installation
+- Make sure you have downloaded and installed node packages
+
+- Open command prompt/ terminal, move inside 'frontend' folder, and follow the steps below:
+
+```sh
+npm install
+``` 
+
+- Run the script and start the application
+
+```sh
+npm start
+``` 
+
+3. Backend Installation
+- Open a comand prompt/ terminal, move inside 'backend' folder, and follow the steps below:
+
+```sh
+python -m flask run
+``` 
+
+Application will start automatically in [http://localhost:3000] (http://localhost:3000)
+
+## Developers
 Dilara Ince
-Clarissa Kümhoff
+Clarissa Kümhof
 Willi Dick
