@@ -5,6 +5,18 @@
 # IntoGen
 ### Never study false again – Your Guide to Your Learning Type
 
+## Table of Contents
+
+* [Project information](#project-info)
+* [Project Architecture](#project-architecture)
+* [Libraries used](#libraries-used)
+* [Visualization](#visuakization)
+* [Links](#links)
+* [Get Started](#get-started)
+* [Developers](#developers)
+
+## Project information
+
 IntoGen is a web service for ISE students of the University Duisburg-Essen to find out their personal learning type based on David Kolb's research.
 
 It is designed to help students
@@ -63,6 +75,7 @@ python -m flask run
 Application will start automatically in http://localhost:3000
 
 ## Developers
+Komedia students in the 4th and 6th semester: </br>
 Dilara Ince </br>
 Clarissa Kümhof </br>
 Willi Dick
