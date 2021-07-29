@@ -14,7 +14,7 @@ It is designed to help students
 
 
 ## Project Architecture
-<img src="components/Assets/architecture.PNG">
+<img src="components/Assets/architecture.png">
 
 ## Libraries used
 - Material UI (e.g. Autocomplete, Accordion)
