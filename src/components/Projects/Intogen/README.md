@@ -7,15 +7,15 @@
 
 ## Table of Contents
 
-* [Project information](#project-info)
+* [Project Information](#project-information)
 * [Project Architecture](#project-architecture)
 * [Libraries used](#libraries-used)
-* [Visualization](#visuakization)
+* [Visualization](#visualization)
 * [Links](#links)
 * [Get Started](#get-started)
 * [Developers](#developers)
 
-## Project information
+## Project Information
 
 IntoGen is a web service for ISE students of the University Duisburg-Essen to find out their personal learning type based on David Kolb's research.
 
@@ -35,16 +35,16 @@ It is designed to help students
 
 
 ## Visualization
-<img src="components/Assets/ProjectImage.png">
-<img src="components/Assets/ProjectImage2.png">
-<img src="components/Assets/ProjectImage3.png">
+<img size="100px" src="components/Assets/ProjectImage.png">
+<img height="100px" src="components/Assets/ProjectImage2.png">
+<img width="100px" src="components/Assets/ProjectImage3.png">
 <img src="components/Assets/ProjectImage4.png">
 <img src="components/Assets/ProjectImage5.png">
 <img src="components/Assets/ProjectImage6.png">
 
 ## Links
 <a href="">Advertisement Video</a></br>
-<a href="">Live Demo</a>
+<a href="">Demo</a>
 
 ## Get Started
 
