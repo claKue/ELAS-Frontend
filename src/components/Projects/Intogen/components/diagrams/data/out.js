@@ -1,5 +1,3 @@
-// CSV to JSON Converter: https://www.convertcsv.com/csv-to-json.htm
-
 const data = [
   {
     Activist: 70,

@@ -7,7 +7,6 @@ import { AppContainer } from '../Cards/AppContainer';
 import {Link, BrowserRouter as Router} from 'react-router-dom';
 
 export default function Home() {
-
     const [click, setClick] = useState(false);
     const closeMobileMenu = () => setClick(false);
 

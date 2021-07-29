@@ -2,12 +2,10 @@ import React, {useState} from 'react';
 import {Link, BrowserRouter as Router} from 'react-router-dom';
 import './Navbar.css';
 import {NavDropdown} from 'react-bootstrap'
-import logo from '../Assets/logo.jpg'
-import logoNew from '../Assets/image1.jpeg'
+import logoNew from '../Assets/image1.png'
 
 function Navbar() {
     const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click); 
     const closeMobileMenu = () => setClick(false);
 
     return (   

@@ -6,12 +6,7 @@ import ResultsCourses from './ResultsCourses';
 import ResultsWeightage from './ResultsWeightage';
 import data from '../Diagrams/Data/out'
 
-// import FormGroup from '@material-ui/core/FormGroup';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import Checkbox from '@material-ui/core/Checkbox';
-
 export default function Results({ dataR }) {
-
     const [results, setResults] = useState([]);
     const [category, setCategory] = useState([]);
     const [courses, setCourses] = useState([]);

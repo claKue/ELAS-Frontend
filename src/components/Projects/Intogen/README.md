@@ -33,14 +33,14 @@ It is designed to help students
 - SurveyJS
 - Highcharts
 
-
 ## Visualization
-<img src="components/Assets/Bild1.png">
-<img src="components/Assets/ProjectImage2.png">
-<img src="components/Assets/ProjectImage3.png">
-<img src="components/Assets/ProjectImage4.png">
-<img src="components/Assets/ProjectImage5.png">
-<img src="components/Assets/ProjectImage6.png">
+<img src="components/Assets/screenshot.png">
+<img src="components/Assets/screenshot1.png">
+<img src="components/Assets/screenshot2.png">
+<img src="components/Assets/screenshot3.png">
+<img src="components/Assets/screenshot4.png">
+<img src="components/Assets/screenshot5.png">
+<img src="components/Assets/screenshot6.png">
 
 ## Links
 <a href="">Advertisement Video</a></br>
@@ -76,6 +76,6 @@ Application will start automatically in http://localhost:3000
 
 ## Developers
 Komedia students in the 4th and 6th semester: </br>
-Dilara Ince </br>
-Clarissa Kümhof </br>
-Willi Dick
+- Dilara Ince </br>
+- Clarissa Kümhof </br>
+- Willi Dick

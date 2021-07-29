@@ -4,7 +4,6 @@ import "survey-react/survey.css";
 import Footer from '../Reusable/Footer';
 import Results from '../Results/Results';
 import '../../Intogen.css';
-
 import * as widgets from "surveyjs-widgets";
 import $ from "jquery"; 
 import "easy-autocomplete/dist/easy-autocomplete.css";
@@ -86,14 +85,12 @@ const json = {
   showQuestionNumbers: "off",
   pages: [
     {
-      // title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
       questions: 
       [
         {
           type: "radiogroup",
           name: "",
           title: "Questions are based on David Kolb's research. This questionnaire is designed to define out your preferred learning styles(s) as an adult. Over the years, you have probably developed learning habits that help you benefit more from some experiences than from others. This questionnaire will probably take you about 7-10 minutes to complete. The accuracy of your results depends on how honest you are. There are no right or wrong answers. For each statement, choose if you would rather agree or disagree with it. If you find yourself wondering which situation to think of when answering a question, just think about how you are when you are working with people. Go with your first gut reaction instead of overthinking your response.",
-
         },
       ]
     }, 
@@ -103,7 +100,7 @@ const json = {
           type: "matrix",
           name: "Activist", 
           title: "Please indicate if you agree or disagree with the following statements!",
-          // isAllRowRequired: true,
+          isAllRowRequired: true,
           columns: [ 
             { value: 10, text: "Agree" }, 
             { value: 0, text: "Disagree" }
@@ -129,7 +126,7 @@ const json = {
           type: "matrix",
           name: "Reflector",
           title:"Good! Now please proceed as before.",
-          //isAllRowRequired: true,
+          isAllRowRequired: true,
           columns: [ 
             { value: 10, text: "Agree" }, 
             { value: 0, text: "Disagree" }
@@ -155,7 +152,7 @@ const json = {
           type: "matrix",
           name: "Theorist",
           title: "Again, please choose if you would rather agree or disagree!",
-          //isAllRowRequired: true,
+          isAllRowRequired: true,
           columns: [ 
             { value: 10,  text: "Agree" }, 
             { value: 0, text: "Disagree" }
@@ -181,7 +178,7 @@ const json = {
           type: "matrix",
           name: "Pragmatist",
           title: "Almost done! Please indicate if you agree or disagree with the presented statements.",
-          //isAllRowRequired: true,
+          isAllRowRequired: true,
           columns: [ 
             { value: 10, text: "Agree" }, 
             { value: 0, text: "Disagree" }
@@ -201,15 +198,13 @@ const json = {
         }
       ]
     }, 
-      
-    // Major, Study program, Nationality, Gender
     {
       questions: [
         {
           type: "radiogroup",
           name: "Major",
           title: "What are you currently studying?",
-          //   isRequired: true,
+          isRequired: true,
           colCount: 2,
           choices: ["Bachelor", "Master"]
         }, 
@@ -218,7 +213,7 @@ const json = {
           name: "program-bachelor",
           title: "Please choose your study program.",
           visibleIf: "{Major}=Bachelor",
-          // isRequired: true,
+          isRequired: true,
           
           choices: 
             [
@@ -237,7 +232,7 @@ const json = {
           title: "Please choose your study program.",
           type: "dropdown",
           visibleIf: "{Major}=Master",
-          // isRequired: true,
+          isRequired: true,
           choices: 
             [
               "M.Sc. Automation and Control Engineering",
@@ -256,12 +251,11 @@ const json = {
               "M.Sc. Power Engineering"
             ]            
         }, 
-        //visibleIf: Major=Bachelor
         {
           name: "most-liked-bachelor",
           title: "Please name a course which you liked the most.",
           type: "text",
-          // isRequired: true,
+          isRequired: true,
           visibleIf: "{Major}=Bachelor",
           choices: 
             [ 
@@ -359,12 +353,12 @@ const json = {
             name: "gpa-most-liked-bachelor",
             visibleIf: "{Major}=Bachelor",
             title: "Please select the grade you have achieved in the course you liked the most.",
-            // isRequired: true,
+            isRequired: true,
         }, {
             name: "most-disliked-bachelor",
             title: "Please name a course which you disliked the most.",
             type: "text",
-            // isRequired: true,
+            isRequired: true,
             visibleIf: "{Major}=Bachelor",
             choices: 
             [ 
@@ -463,14 +457,13 @@ const json = {
             name: "gpa-most-disliked-bachelor",
             visibleIf: "{Major}=Bachelor",
             title: "Please select the grade you have achieved in the course you disliked the most.",
-            // isRequired: true,
+            isRequired: true,
            },  
-            //visibleIf: Major= Master
            {
             name: "most-liked-master",
             title: "Please name a course which you liked the most.",
             type: "text",
-            // isRequired: true,
+            isRequired: true,
             visibleIf: "{Major}=Master",
             choices: 
             [ 
@@ -727,13 +720,13 @@ const json = {
               name: "gpa-most-liked-master",
               visibleIf: "{Major}=Master",
               title: "Please select the grade you have achieved in the course you liked the most.",
-              // isRequired: true,
+              isRequired: true,
             }, 
             {
               name: "most-disliked-master",
               title: "Please name a course which you disliked the most.",
               type: "text",
-              // isRequired: true,
+              isRequired: true,
               visibleIf: "{Major}=Master",
               choices: 
               [ 
@@ -990,14 +983,13 @@ const json = {
               name: "gpa-most-disliked-master",
               visibleIf: "{Major}=Master",
               title: "Please select the grade you have achieved in the course you disliked the most.",
-              // isRequired: true,
+              isRequired: true,
             },
-            //country, gender
             {
               type: "text",
               name: "country",
               title: "Please name your country.",
-              // isRequired: true,
+              isRequired: true,
               choices: 
               [
                   "Afghanistan",
@@ -1263,7 +1255,7 @@ const json = {
               type: "radiogroup",
               name: "gender",
               title: "Please state your gender.",
-              // isRequired: true,
+              isRequired: true,
               colCount: 3,
               choices: 
                 [

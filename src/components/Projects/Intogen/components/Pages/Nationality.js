@@ -8,7 +8,6 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 export default function Nationality() {
-
     const [females, setFemales] = useState([]);
     const [males, setMales] = useState([]);
     const [average, setAverage] = useState([]);

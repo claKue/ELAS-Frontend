@@ -17,7 +17,6 @@ function ResultsCourses(props) {
     },
     yAxis: {
         min: 0,
-        // max: 7,
         title: {
             text: 'Weightage'
         }

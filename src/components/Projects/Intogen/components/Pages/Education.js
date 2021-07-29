@@ -12,7 +12,6 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 
 export default function Education() {
-
     const [females, setFemales] = useState([]);
     const [males, setMales] = useState([]);
     const [average, setAverage] = useState([]);
@@ -378,14 +377,6 @@ export default function Education() {
                                     renderInput={(params) => <TextField {...params} label="Study program" variant="outlined" />}
                                 />
                         </> : <> </>}
-
-                        {/* <FormControl component="fieldset">
-                                <RadioGroup row value={value}>
-                                    <FormControlLabel value="master" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Master" />
-                                    <FormControlLabel value="bachelor" control={<Radio style ={{ color: "rgb(255, 102, 0)" }}/>} label="Bachelor" />    
-                                </RadioGroup>
-                        </FormControl> */}
-
                     </div>
                     <p className="subtitlesDiagram">
                         Following are the learning types' averages of your study program.

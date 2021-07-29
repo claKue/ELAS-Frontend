@@ -6,7 +6,6 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
 import Icons from '../Reusable/Icons';
 
 export default function AboutUs() {
-
     const [click, setClick] = useState(false);
     const closeMobileMenu = () => setClick(false);
 
