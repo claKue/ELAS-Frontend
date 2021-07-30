@@ -1,5 +1,5 @@
 <p align="center">
-<img height="110px" src="components/Assets/image1.png" alt="IntoGen Logo">
+<img height="110px" src="components/Assets/image1.png" alt="IntoGen Logo"> </br>
 Never study false again – Your Guide to Your Learning Type
 </p>
 
@@ -46,12 +46,13 @@ It is designed to help students
 
 ## Get Started
 
-You can also follow the instructions in the [ELAS README.md] (https://github.com/ude-soco/ELAS) file. If you follow the steps there, it will also navigate you to the IntoGen page. 
+You can also follow the instructions in the [ELAS README.md](https://github.com/ude-soco/ELAS) file. If you follow the steps there, it will also navigate you to the IntoGen page. 
 
 #### Backend Installation
-- Make sure you have downloaded and installed [Python] (https://www.python.org/downloads/release/python-387/)
+- Make sure you have downloaded and installed [Python](https://www.python.org/downloads/release/python-387/)
 - Make sure you have downloaded and installed [MongoDB Community Server](https://www.mongodb.com/try/download/community)
 - Open a comand prompt/ terminal, move inside `backend` folder, and follow the steps below:
+
     - Install a python virtual environment
     ```sh
     python -m venv venv
@@ -75,9 +76,10 @@ python -m flask run
 ```
 
 #### Frontend Installation
-- Download and install [NodeJS] (https://nodejs.org/en/)
+- Download and install [NodeJS](https://nodejs.org/en/)
 - Move to `frontend` folder and rename the file `example.env` to `.env` 
 - Open command prompt/ terminal and follow the steps below:
+
     - Make sure you have downloaded and installed node packages
     ```sh
     npm install
@@ -86,7 +88,7 @@ python -m flask run
     ```sh
     npm start
     ``` 
-- Application will start automatically in [http://localhost:3000] (http://localhost:3000)
+- Application will start automatically in [http://localhost:3000](http://localhost:3000)
 
 ## Developers
 Komedia students in the 4th and 6th semester: </br>
