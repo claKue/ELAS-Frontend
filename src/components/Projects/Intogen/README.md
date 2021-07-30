@@ -1,6 +1,6 @@
 <p align="center">
 <img height="110px" src="components/Assets/image1.png" alt="IntoGen Logo"> </br>
-<b size="big" >Never study false again – Your Guide to Your Learning Type</b>
+<b height="40px" >Never study false again – Your Guide to Your Learning Type</b>
 </p>
 
 ## Table of Contents
