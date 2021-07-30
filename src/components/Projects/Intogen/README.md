@@ -41,8 +41,8 @@ It is designed to help students
 <img src="components/Assets/screenshot6.png">
 
 ## Links
-<a href="">Advertisement Video</a></br>
-<a href="">Demo</a>
+<a href="https://www.youtube.com/watch?v=HBahnBGqnn4">Advertisement Video</a></br>
+<a href="https://www.youtube.com/watch?v=xgwdKz1TzuY">Demo</a>
 
 ## Get Started
 
@@ -88,7 +88,7 @@ python -m flask run
     ```sh
     npm start
     ``` 
-- Application will start automatically in [http://localhost:3000](http://localhost:3000)
+- Application will start automatically in [http://localhost:3000](http://localhost:3000). Use the application with the zoom factor 90%
 
 ## Developers
 Komedia students in the 4th and 6th semester: </br>
