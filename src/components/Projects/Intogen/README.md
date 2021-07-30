@@ -1,6 +1,6 @@
 <p align="center">
 <img height="110px" src="components/Assets/image1.png" alt="IntoGen Logo"> </br>
-Never study false again – Your Guide to Your Learning Type
+<b size="big" >Never study false again – Your Guide to Your Learning Type</b>
 </p>
 
 ## Table of Contents
@@ -27,9 +27,9 @@ It is designed to help students
 <img src="components/Assets/architecture.png">
 
 ## Libraries used
-- Material UI (e.g. Autocomplete, Accordion)
-- SurveyJS
-- Highcharts
+- [Material UI](https://material-ui.com) (e.g. Autocomplete, Accordion)
+- [SurveyJS](https://surveyjs.io)
+- [Highcharts](https://www.highcharts.com)
 
 ## Visualization
 <img src="components/Assets/screenshot.png">
